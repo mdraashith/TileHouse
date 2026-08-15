@@ -6,6 +6,8 @@ import {
     Button,
 } from "@mui/material";
 
+import { useNavigate } from "react-router-dom";
+
 import TechStack from "./TechStack";
 import HeroVisual from "./HeroVisual";
 
@@ -17,10 +19,50 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 
 function Home() {
+
+    const navigate = useNavigate();
+
+
+    /* =====================================================
+                    PROJECT PAGE
+    ===================================================== */
+
+    const handleProjects = () => {
+        navigate("/projects");
+    };
+
+
+    /* =====================================================
+                    DOWNLOAD RESUME
+    ===================================================== */
+
+    const downloadResume = () => {
+
+        const link = document.createElement("a");
+
+        link.href = "/resume.pdf";
+
+        link.download =
+            "Mohamed-Raashith-Resume.pdf";
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        document.body.removeChild(link);
+    };
+
+
     return (
         <>
+
+            {/* =====================================================
+                            HOME
+            ===================================================== */}
+
             <Box
                 id="home"
+
                 sx={{
                     minHeight: {
                         xs: "auto",
@@ -28,6 +70,7 @@ function Home() {
                     },
 
                     width: "100%",
+
                     maxWidth: "100vw",
 
                     backgroundImage:
@@ -80,7 +123,7 @@ function Home() {
             >
 
                 {/* =====================================================
-                                LEFT CONTENT
+                            LEFT CONTENT
                 ===================================================== */}
 
                 <Box
@@ -109,7 +152,7 @@ function Home() {
                 >
 
                     {/* =================================================
-                                AVAILABLE
+                                AVAILABLE FOR WORK
                     ================================================= */}
 
                     <Box
@@ -281,7 +324,7 @@ function Home() {
 
 
                     {/* =================================================
-                                FRONTEND
+                                FRONTEND DEVELOPER
                     ================================================= */}
 
                     <Typography
@@ -364,9 +407,9 @@ function Home() {
                     </Box>
 
 
-                    {/* =================================================
+                    {/* =====================================================
                                 BUTTONS
-                    ================================================= */}
+                    ===================================================== */}
 
                     <Box
                         sx={{
@@ -399,9 +442,7 @@ function Home() {
                         ================================================= */}
 
                         <Button
-                            component="a"
-
-                            href="/projects"
+                            onClick={handleProjects}
 
                             endIcon={
                                 <ArrowForwardIcon />
@@ -465,11 +506,7 @@ function Home() {
                         ================================================= */}
 
                         <Button
-                            component="a"
-
-                            href="/resume.pdf"
-
-                            download="Mohamed-Raashith-Resume.pdf"
+                            onClick={downloadResume}
 
                             endIcon={
                                 <DownloadIcon />
@@ -536,9 +573,9 @@ function Home() {
                     </Box>
 
 
-                    {/* =================================================
+                    {/* =====================================================
                                 SOCIAL ICONS
-                    ================================================= */}
+                    ===================================================== */}
 
                     <Box
                         sx={{
@@ -623,6 +660,8 @@ function Home() {
 
                                 flexShrink: 0,
 
+                                textDecoration: "none",
+
                                 "&:hover": {
                                     borderColor:
                                         "#238DFF",
@@ -686,6 +725,8 @@ function Home() {
 
                                 flexShrink: 0,
 
+                                textDecoration: "none",
+
                                 "&:hover": {
                                     borderColor:
                                         "#238DFF",
@@ -748,6 +789,8 @@ function Home() {
                                 transition: "0.3s",
 
                                 flexShrink: 0,
+
+                                textDecoration: "none",
 
                                 "&:hover": {
                                     borderColor:
