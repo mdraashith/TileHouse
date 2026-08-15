@@ -4,7 +4,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-
+import { Box } from "@mui/material";
 import Nav from "./components/Nav";
 
 import "./App.css";
