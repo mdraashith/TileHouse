@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
     Box,
     Typography,
@@ -7,6 +8,7 @@ import {
 
 import TechStack from "./TechStack";
 import HeroVisual from "./HeroVisual";
+
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import DownloadIcon from "@mui/icons-material/Download";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -24,24 +26,33 @@ function Home() {
                         xs: "auto",
                         md: "100vh",
                     },
+
                     width: "100%",
                     maxWidth: "100vw",
-                    backgroundImage: "url('/img/homebg.png')",
+
+                    backgroundImage:
+                        "url('/img/homebg.png')",
+
                     backgroundSize: "cover",
+
                     backgroundPosition: "center",
+
                     backgroundRepeat: "no-repeat",
 
                     display: "flex",
+
                     flexDirection: {
                         xs: "column",
                         md: "row",
                     },
+
                     alignItems: {
                         xs: "stretch",
                         md: "center",
                     },
 
                     position: "relative",
+
                     overflowX: "hidden",
 
                     pt: {
@@ -68,7 +79,9 @@ function Home() {
                 }}
             >
 
-                {/* ================= LEFT CONTENT ================= */}
+                {/* =====================================================
+                                LEFT CONTENT
+                ===================================================== */}
 
                 <Box
                     sx={{
@@ -80,6 +93,7 @@ function Home() {
                         },
 
                         position: "relative",
+
                         zIndex: 10,
 
                         mt: {
@@ -89,19 +103,28 @@ function Home() {
                         },
 
                         maxWidth: "100%",
+
                         boxSizing: "border-box",
                     }}
                 >
 
-                    {/* Available */}
+                    {/* =================================================
+                                AVAILABLE
+                    ================================================= */}
 
                     <Box
                         sx={{
                             display: "inline-flex",
+
                             alignItems: "center",
+
                             gap: 1,
 
-                            px: { xs: 1.2, sm: 1.5 },
+                            px: {
+                                xs: 1.2,
+                                sm: 1.5,
+                            },
+
                             py: 0.8,
 
                             border:
@@ -114,17 +137,26 @@ function Home() {
 
                             backdropFilter: "blur(10px)",
 
-                            mb: { xs: 2, sm: 3 },
+                            mb: {
+                                xs: 2,
+                                sm: 3,
+                            },
                         }}
                     >
+
                         <Box
                             sx={{
                                 width: 9,
+
                                 height: 9,
+
                                 borderRadius: "50%",
+
                                 background: "#48E87A",
+
                                 boxShadow:
                                     "0 0 10px rgba(72,232,122,0.8)",
+
                                 flexShrink: 0,
                             }}
                         />
@@ -132,33 +164,42 @@ function Home() {
                         <Typography
                             sx={{
                                 color: "#fff",
+
                                 fontSize: {
                                     xs: 13,
                                     sm: 13,
                                     md: 13,
                                     lg: 15,
                                 },
+
                                 fontWeight: 600,
+
                                 whiteSpace: "nowrap",
                             }}
                         >
                             AVAILABLE FOR WORK
                         </Typography>
+
                     </Box>
 
 
-                    {/* Hi */}
+                    {/* =================================================
+                                HI
+                    ================================================= */}
 
                     <Typography
                         sx={{
                             color: "#fff",
+
                             fontSize: {
                                 xs: 23,
                                 sm: 25,
                                 md: 28,
                                 lg: 32,
                             },
+
                             fontWeight: 400,
+
                             mb: 1,
                         }}
                     >
@@ -166,7 +207,9 @@ function Home() {
                     </Typography>
 
 
-                    {/* Mohamed */}
+                    {/* =================================================
+                                MOHAMED
+                    ================================================= */}
 
                     <Typography
                         sx={{
@@ -180,13 +223,16 @@ function Home() {
                             },
 
                             fontWeight: 800,
+
                             lineHeight: 0.95,
+
                             letterSpacing: {
                                 xs: "-1px",
                                 sm: "-1.5px",
                                 md: "-2px",
                                 lg: "-3px",
                             },
+
                             wordBreak: "break-word",
                         }}
                     >
@@ -194,7 +240,9 @@ function Home() {
                     </Typography>
 
 
-                    {/* Raashith */}
+                    {/* =================================================
+                                RAASHITH
+                    ================================================= */}
 
                     <Typography
                         sx={{
@@ -206,31 +254,42 @@ function Home() {
                             },
 
                             fontWeight: 800,
+
                             lineHeight: 1,
+
                             letterSpacing: {
                                 xs: "-1px",
                                 sm: "-1.5px",
                                 md: "-2px",
                                 lg: "-3px",
                             },
+
                             wordBreak: "break-word",
 
                             background:
                                 "linear-gradient(90deg, #C329FF, #237EFF)",
 
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
+                            WebkitBackgroundClip:
+                                "text",
+
+                            WebkitTextFillColor:
+                                "transparent",
                         }}
                     >
                         RAASHITH
                     </Typography>
 
 
-                    {/* Frontend */}
+                    {/* =================================================
+                                FRONTEND
+                    ================================================= */}
 
                     <Typography
                         sx={{
-                            mt: { xs: 1.2, sm: 2 },
+                            mt: {
+                                xs: 1.2,
+                                sm: 2,
+                            },
 
                             fontSize: {
                                 xs: 20,
@@ -242,9 +301,11 @@ function Home() {
                             wordBreak: "break-word",
 
                             fontWeight: 600,
+
                             color: "#fff",
                         }}
                     >
+
                         <Box
                             component="span"
                             sx={{
@@ -254,21 +315,31 @@ function Home() {
                             FRONTEND
                         </Box>{" "}
                         DEVELOPER
+
                     </Typography>
 
 
-                    {/* Description */}
+                    {/* =================================================
+                                DESCRIPTION
+                    ================================================= */}
 
                     <Box
                         sx={{
                             mt: 2,
+
                             pl: 2,
-                            borderLeft: "2px solid #A83DFF",
+
+                            borderLeft:
+                                "2px solid #A83DFF",
+
                             maxWidth: 450,
+
                             width: "100%",
+
                             boxSizing: "border-box",
                         }}
                     >
+
                         <Typography
                             sx={{
                                 color: "#BDBDBD",
@@ -279,7 +350,9 @@ function Home() {
                                     md: 19,
                                     lg: 19,
                                 },
-                                fontWeight:600,
+
+                                fontWeight: 600,
+
                                 lineHeight: 1.5,
                             }}
                         >
@@ -287,42 +360,65 @@ function Home() {
                             user-friendly websites with modern
                             technologies and clean code.
                         </Typography>
+
                     </Box>
 
 
-                    {/* ================= BUTTONS ================= */}
+                    {/* =================================================
+                                BUTTONS
+                    ================================================= */}
 
                     <Box
                         sx={{
                             display: "flex",
+
                             flexDirection: {
                                 xs: "column",
                                 sm: "row",
                             },
-                            gap: { xs: 1.5, sm: 2 },
+
+                            gap: {
+                                xs: 1.5,
+                                sm: 2,
+                            },
+
                             mt: {
                                 xs: 2,
                                 sm: 3,
                                 md: 2,
                             },
+
                             width: "100%",
+
                             flexWrap: "wrap",
                         }}
                     >
 
+                        {/* =================================================
+                                    VIEW MY PROJECTS
+                        ================================================= */}
+
                         <Button
-                            endIcon={<ArrowForwardIcon />}
-                            href="#projects"
+                            component="a"
+
+                            href="/projects"
+
+                            endIcon={
+                                <ArrowForwardIcon />
+                            }
+
                             sx={{
                                 height: {
                                     xs: 50,
                                     sm: 56,
                                     md: 62,
                                 },
+
                                 width: {
-                                    xs: "60%",
+                                    xs: "65%",
                                     sm: "auto",
                                 },
+
                                 px: {
                                     xs: 2.5,
                                     md: 3.5,
@@ -331,12 +427,14 @@ function Home() {
                                 borderRadius: "13px",
 
                                 color: "#fff",
+
                                 fontSize: {
                                     xs: 18,
                                     sm: 17,
                                     md: 17,
                                     lg: 16,
                                 },
+
                                 fontWeight: 600,
 
                                 textTransform: "none",
@@ -362,18 +460,33 @@ function Home() {
                         </Button>
 
 
+                        {/* =================================================
+                                    DOWNLOAD RESUME
+                        ================================================= */}
+
                         <Button
-                            endIcon={<DownloadIcon />}
+                            component="a"
+
+                            href="/resume.pdf"
+
+                            download="Mohamed-Raashith-Resume.pdf"
+
+                            endIcon={
+                                <DownloadIcon />
+                            }
+
                             sx={{
                                 height: {
                                     xs: 50,
                                     sm: 56,
                                     md: 62,
                                 },
+
                                 width: {
-                                    xs: "60%",
+                                    xs: "65%",
                                     sm: "auto",
                                 },
+
                                 px: {
                                     xs: 2.5,
                                     md: 3.5,
@@ -384,11 +497,12 @@ function Home() {
                                 color: "#fff",
 
                                 fontSize: {
-                                    xs: 18,
+                                    xs: 17,
                                     sm: 17,
                                     md: 17,
                                     lg: 16,
                                 },
+
                                 fontWeight: 500,
 
                                 textTransform: "none",
@@ -399,12 +513,14 @@ function Home() {
                                 background:
                                     "rgba(5,8,20,0.4)",
 
-                                backdropFilter: "blur(10px)",
+                                backdropFilter:
+                                    "blur(10px)",
 
                                 transition: "0.3s",
 
                                 "&:hover": {
-                                    borderColor: "#8B3DFF",
+                                    borderColor:
+                                        "#8B3DFF",
 
                                     background:
                                         "rgba(100,40,180,0.15)",
@@ -420,20 +536,26 @@ function Home() {
                     </Box>
 
 
-                    {/* ================= SOCIAL ================= */}
+                    {/* =================================================
+                                SOCIAL ICONS
+                    ================================================= */}
 
                     <Box
                         sx={{
                             display: "flex",
+
                             alignItems: "center",
+
                             gap: {
                                 xs: 1,
                                 sm: 1.5,
                             },
+
                             mt: {
                                 xs: 3,
                                 sm: 3.5,
                             },
+
                             flexWrap: "wrap",
                         }}
                     >
@@ -441,13 +563,16 @@ function Home() {
                         <Typography
                             sx={{
                                 color: "#BDBDBD",
+
                                 fontSize: {
                                     xs: 20,
                                     sm: 15,
                                     md: 16,
                                     lg: 20,
                                 },
+
                                 fontWeight: 600,
+
                                 mr: 1,
                             }}
                         >
@@ -455,23 +580,36 @@ function Home() {
                         </Typography>
 
 
-                        {/* Github */}
+                        {/* =================================================
+                                    GITHUB
+                        ================================================= */}
 
                         <Box
                             component="a"
-                            href="#"
+
+                            href="https://github.com/mdraashith"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
+                            aria-label="GitHub"
+
                             sx={{
                                 width: {
                                     xs: 35,
                                     sm: 45,
                                 },
+
                                 height: {
                                     xs: 35,
                                     sm: 45,
                                 },
 
                                 display: "flex",
+
                                 alignItems: "center",
+
                                 justifyContent: "center",
 
                                 borderRadius: "50%",
@@ -486,7 +624,8 @@ function Home() {
                                 flexShrink: 0,
 
                                 "&:hover": {
-                                    borderColor: "#238DFF",
+                                    borderColor:
+                                        "#238DFF",
 
                                     boxShadow:
                                         "0 0 15px rgba(35,141,255,0.5)",
@@ -496,27 +635,44 @@ function Home() {
                                 },
                             }}
                         >
-                            <GitHubIcon sx={{ fontSize: "1.5rem" }} />
+                            <GitHubIcon
+                                sx={{
+                                    fontSize: "1.5rem",
+                                }}
+                            />
                         </Box>
 
 
-                        {/* LinkedIn */}
+                        {/* =================================================
+                                    LINKEDIN
+                        ================================================= */}
 
                         <Box
                             component="a"
-                            href="#"
+
+                            href="https://www.linkedin.com/"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
+                            aria-label="LinkedIn"
+
                             sx={{
                                 width: {
                                     xs: 35,
                                     sm: 45,
                                 },
+
                                 height: {
                                     xs: 35,
                                     sm: 45,
                                 },
 
                                 display: "flex",
+
                                 alignItems: "center",
+
                                 justifyContent: "center",
 
                                 borderRadius: "50%",
@@ -531,7 +687,8 @@ function Home() {
                                 flexShrink: 0,
 
                                 "&:hover": {
-                                    borderColor: "#238DFF",
+                                    borderColor:
+                                        "#238DFF",
 
                                     boxShadow:
                                         "0 0 15px rgba(35,141,255,0.5)",
@@ -541,27 +698,44 @@ function Home() {
                                 },
                             }}
                         >
-                            <LinkedInIcon sx={{ fontSize: "1.5rem" }} />
+                            <LinkedInIcon
+                                sx={{
+                                    fontSize: "1.5rem",
+                                }}
+                            />
                         </Box>
 
 
-                        {/* Instagram */}
+                        {/* =================================================
+                                    INSTAGRAM
+                        ================================================= */}
 
                         <Box
                             component="a"
-                            href="#"
+
+                            href="https://www.instagram.com/"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
+                            aria-label="Instagram"
+
                             sx={{
                                 width: {
                                     xs: 35,
                                     sm: 45,
                                 },
+
                                 height: {
                                     xs: 35,
                                     sm: 45,
                                 },
 
                                 display: "flex",
+
                                 alignItems: "center",
+
                                 justifyContent: "center",
 
                                 borderRadius: "50%",
@@ -576,7 +750,8 @@ function Home() {
                                 flexShrink: 0,
 
                                 "&:hover": {
-                                    borderColor: "#C329FF",
+                                    borderColor:
+                                        "#C329FF",
 
                                     boxShadow:
                                         "0 0 15px rgba(195,41,255,0.5)",
@@ -586,16 +761,35 @@ function Home() {
                                 },
                             }}
                         >
-                            <InstagramIcon sx={{ fontSize: "1.5rem" }} />
+                            <InstagramIcon
+                                sx={{
+                                    fontSize: "1.5rem",
+                                }}
+                            />
                         </Box>
 
                     </Box>
 
                 </Box>
+
+
+                {/* =====================================================
+                            HERO VISUAL
+                ===================================================== */}
+
                 <HeroVisual />
+
             </Box>
+
+
+            {/* =====================================================
+                            TECH STACK
+            ===================================================== */}
+
             <TechStack />
+
         </>
     );
 }
+
 export default Home;
