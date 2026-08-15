@@ -235,7 +235,7 @@ function About() {
                             px: 2,
 
                             py: 0.8,
-                            mt:2,
+                            mt:2.1,
                             mb: 2,
 
                             borderRadius: "30px",
