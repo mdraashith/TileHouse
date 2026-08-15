@@ -21,10 +21,11 @@ function Home() {
                 id="home"
                 sx={{
                     minHeight: {
-                            xs: "auto",
-                            md: "100vh",
-                        },
+                        xs: "auto",
+                        md: "100vh",
+                    },
                     width: "100%",
+                    maxWidth: "100vw",
                     backgroundImage: "url('/img/homebg.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -41,11 +42,11 @@ function Home() {
                     },
 
                     position: "relative",
-                    overflow: "hidden",
+                    overflowX: "hidden",
 
                     pt: {
-                        xs: "105px",
-                        sm: "110px",
+                        xs: "90px",
+                        sm: "100px",
                         md: "88px",
                     },
 
@@ -56,11 +57,14 @@ function Home() {
                     },
 
                     px: {
-                        xs: 2.5,
-                        sm: 4,
-                        md: 6,
-                        lg: 10,
+                        xs: 2,
+                        sm: 3,
+                        md: 5,
+                        lg: 8,
+                        xl: 10,
                     },
+
+                    boxSizing: "border-box",
                 }}
             >
 
@@ -79,9 +83,13 @@ function Home() {
                         zIndex: 10,
 
                         mt: {
-                            xs: 5,
-                            md: 0,
+                            xs: 3,
+                            sm: 5,
+                            md: 5,
                         },
+
+                        maxWidth: "100%",
+                        boxSizing: "border-box",
                     }}
                 >
 
@@ -93,7 +101,7 @@ function Home() {
                             alignItems: "center",
                             gap: 1,
 
-                            px: 1.5,
+                            px: { xs: 1.2, sm: 1.5 },
                             py: 0.8,
 
                             border:
@@ -106,7 +114,7 @@ function Home() {
 
                             backdropFilter: "blur(10px)",
 
-                            mb: 3,
+                            mb: { xs: 2, sm: 3 },
                         }}
                     >
                         <Box
@@ -117,6 +125,7 @@ function Home() {
                                 background: "#48E87A",
                                 boxShadow:
                                     "0 0 10px rgba(72,232,122,0.8)",
+                                flexShrink: 0,
                             }}
                         />
 
@@ -124,10 +133,13 @@ function Home() {
                             sx={{
                                 color: "#fff",
                                 fontSize: {
-                                    xs: 12,
-                                    md: 14,
+                                    xs: 13,
+                                    sm: 13,
+                                    md: 13,
+                                    lg: 15,
                                 },
-                                fontWeight: 500,
+                                fontWeight: 600,
+                                whiteSpace: "nowrap",
                             }}
                         >
                             AVAILABLE FOR WORK
@@ -141,8 +153,10 @@ function Home() {
                         sx={{
                             color: "#fff",
                             fontSize: {
-                                xs: 24,
-                                md: 30,
+                                xs: 23,
+                                sm: 25,
+                                md: 28,
+                                lg: 32,
                             },
                             fontWeight: 400,
                             mb: 1,
@@ -159,23 +173,21 @@ function Home() {
                             color: "#fff",
 
                             fontSize: {
-                                xs: "42px",
-                                sm: "58px",
-                                md: "76px",
-                                lg: "88px",
+                                xs: "3rem",
+                                sm: "3.3rem",
+                                md: "4.8rem",
+                                lg: "5.3rem",
                             },
 
                             fontWeight: 800,
                             lineHeight: 0.95,
                             letterSpacing: {
-                                xs: "-2px",
-                                sm: "-2.5px",
-                                md: "-3px",
+                                xs: "-1px",
+                                sm: "-1.5px",
+                                md: "-2px",
+                                lg: "-3px",
                             },
-                            whiteSpace: {
-                                xs: "normal",
-                                sm: "nowrap",
-                            },
+                            wordBreak: "break-word",
                         }}
                     >
                         MOHAMED
@@ -187,23 +199,21 @@ function Home() {
                     <Typography
                         sx={{
                             fontSize: {
-                                xs: "42px",
-                                sm: "58px",
-                                md: "76px",
-                                lg: "88px",
+                                xs: "3rem",
+                                sm: "3.3rem",
+                                md: "4.8rem",
+                                lg: "5.3rem",
                             },
 
                             fontWeight: 800,
                             lineHeight: 1,
                             letterSpacing: {
-                                xs: "-2px",
-                                sm: "-2.5px",
-                                md: "-3px",
+                                xs: "-1px",
+                                sm: "-1.5px",
+                                md: "-2px",
+                                lg: "-3px",
                             },
-                            whiteSpace: {
-                                xs: "normal",
-                                sm: "nowrap",
-                            },
+                            wordBreak: "break-word",
 
                             background:
                                 "linear-gradient(90deg, #C329FF, #237EFF)",
@@ -220,22 +230,16 @@ function Home() {
 
                     <Typography
                         sx={{
-                            mt: {
-                                xs: 1.5,
-                                sm: 2,
-                            },
+                            mt: { xs: 1.2, sm: 2 },
 
                             fontSize: {
                                 xs: 20,
-                                sm: 25,
-                                md: 30,
-                                lg: 32,
+                                sm: 23,
+                                md: 28,
+                                lg: 33,
                             },
 
-                            whiteSpace: {
-                                xs: "normal",
-                                sm: "nowrap",
-                            },
+                            wordBreak: "break-word",
 
                             fontWeight: 600,
                             color: "#fff",
@@ -261,6 +265,8 @@ function Home() {
                             pl: 2,
                             borderLeft: "2px solid #A83DFF",
                             maxWidth: 450,
+                            width: "100%",
+                            boxSizing: "border-box",
                         }}
                     >
                         <Typography
@@ -268,11 +274,13 @@ function Home() {
                                 color: "#BDBDBD",
 
                                 fontSize: {
-                                    xs: 14,
-                                    md: 16,
+                                    xs: 16,
+                                    sm: 17,
+                                    md: 19,
+                                    lg: 19,
                                 },
-
-                                lineHeight: 1.7,
+                                fontWeight:600,
+                                lineHeight: 1.5,
                             }}
                         >
                             I build responsive, interactive and
@@ -291,13 +299,14 @@ function Home() {
                                 xs: "column",
                                 sm: "row",
                             },
-                            gap: 2,
+                            gap: { xs: 1.5, sm: 2 },
                             mt: {
-                                xs: 3,
-                                sm: 3.5,
-                                md: 4,
+                                xs: 2,
+                                sm: 3,
+                                md: 2,
                             },
                             width: "100%",
+                            flexWrap: "wrap",
                         }}
                     >
 
@@ -306,12 +315,12 @@ function Home() {
                             href="#projects"
                             sx={{
                                 height: {
-                                    xs: 54,
-                                    sm: 58,
+                                    xs: 50,
+                                    sm: 56,
                                     md: 62,
                                 },
                                 width: {
-                                    xs: "100%",
+                                    xs: "60%",
                                     sm: "auto",
                                 },
                                 px: {
@@ -322,7 +331,12 @@ function Home() {
                                 borderRadius: "13px",
 
                                 color: "#fff",
-                                fontSize: 16,
+                                fontSize: {
+                                    xs: 18,
+                                    sm: 17,
+                                    md: 17,
+                                    lg: 16,
+                                },
                                 fontWeight: 600,
 
                                 textTransform: "none",
@@ -352,12 +366,12 @@ function Home() {
                             endIcon={<DownloadIcon />}
                             sx={{
                                 height: {
-                                    xs: 54,
-                                    sm: 58,
+                                    xs: 50,
+                                    sm: 56,
                                     md: 62,
                                 },
                                 width: {
-                                    xs: "100%",
+                                    xs: "60%",
                                     sm: "auto",
                                 },
                                 px: {
@@ -369,7 +383,12 @@ function Home() {
 
                                 color: "#fff",
 
-                                fontSize: 16,
+                                fontSize: {
+                                    xs: 18,
+                                    sm: 17,
+                                    md: 17,
+                                    lg: 16,
+                                },
                                 fontWeight: 500,
 
                                 textTransform: "none",
@@ -422,7 +441,13 @@ function Home() {
                         <Typography
                             sx={{
                                 color: "#BDBDBD",
-                                fontSize: 16,
+                                fontSize: {
+                                    xs: 20,
+                                    sm: 15,
+                                    md: 16,
+                                    lg: 20,
+                                },
+                                fontWeight: 600,
                                 mr: 1,
                             }}
                         >
@@ -437,11 +462,11 @@ function Home() {
                             href="#"
                             sx={{
                                 width: {
-                                    xs: 40,
+                                    xs: 35,
                                     sm: 45,
                                 },
                                 height: {
-                                    xs: 40,
+                                    xs: 35,
                                     sm: 45,
                                 },
 
@@ -458,6 +483,8 @@ function Home() {
 
                                 transition: "0.3s",
 
+                                flexShrink: 0,
+
                                 "&:hover": {
                                     borderColor: "#238DFF",
 
@@ -469,7 +496,7 @@ function Home() {
                                 },
                             }}
                         >
-                            <GitHubIcon />
+                            <GitHubIcon sx={{ fontSize: "1.5rem" }} />
                         </Box>
 
 
@@ -480,11 +507,11 @@ function Home() {
                             href="#"
                             sx={{
                                 width: {
-                                    xs: 40,
+                                    xs: 35,
                                     sm: 45,
                                 },
                                 height: {
-                                    xs: 40,
+                                    xs: 35,
                                     sm: 45,
                                 },
 
@@ -500,6 +527,8 @@ function Home() {
                                 color: "#fff",
 
                                 transition: "0.3s",
+
+                                flexShrink: 0,
 
                                 "&:hover": {
                                     borderColor: "#238DFF",
@@ -512,7 +541,7 @@ function Home() {
                                 },
                             }}
                         >
-                            <LinkedInIcon />
+                            <LinkedInIcon sx={{ fontSize: "1.5rem" }} />
                         </Box>
 
 
@@ -523,11 +552,11 @@ function Home() {
                             href="#"
                             sx={{
                                 width: {
-                                    xs: 40,
+                                    xs: 35,
                                     sm: 45,
                                 },
                                 height: {
-                                    xs: 40,
+                                    xs: 35,
                                     sm: 45,
                                 },
 
@@ -543,6 +572,8 @@ function Home() {
                                 color: "#fff",
 
                                 transition: "0.3s",
+
+                                flexShrink: 0,
 
                                 "&:hover": {
                                     borderColor: "#C329FF",
@@ -555,15 +586,15 @@ function Home() {
                                 },
                             }}
                         >
-                            <InstagramIcon />
+                            <InstagramIcon sx={{ fontSize: "1.5rem" }} />
                         </Box>
 
                     </Box>
 
                 </Box>
-                   <HeroVisual/>  
-                </Box>
-            <TechStack/>
+                <HeroVisual />
+            </Box>
+            <TechStack />
         </>
     );
 }

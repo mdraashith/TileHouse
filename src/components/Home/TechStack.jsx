@@ -40,6 +40,7 @@ function TechStack() {
         <Box
             sx={{
                 width: "100%",
+                maxWidth: "100vw",
 
                 backgroundImage: "url('/img/homebg.png')",
                 backgroundSize: "cover",
@@ -47,7 +48,7 @@ function TechStack() {
                 backgroundRepeat: "no-repeat",
 
                 px: {
-                    xs: 1.5,
+                    xs: 1.2,
                     sm: 2,
                     md: 4,
                     lg: 5,
@@ -64,6 +65,9 @@ function TechStack() {
 
                 position: "relative",
                 zIndex: 20,
+
+                boxSizing: "border-box",
+                overflowX: "hidden",
             }}
         >
             {/* MAIN CONTAINER */}
@@ -120,6 +124,7 @@ function TechStack() {
                         "0 0 25px rgba(60,50,255,0.12)",
 
                     overflow: "hidden",
+                    boxSizing: "border-box",
                 }}
             >
                 {/* TITLE */}
@@ -158,9 +163,10 @@ function TechStack() {
                             color: "#A83DFF",
 
                             fontSize: {
-                                xs: 20,
-                                sm: 15,
-                                md: 18,
+                                xs: 15,
+                                sm: 16,
+                                md: 17,
+                                lg: 18,
                             },
 
                             fontWeight: 700,
@@ -283,14 +289,14 @@ function TechStack() {
                                 alt={tech.name}
                                 sx={{
                                     width: {
-                                        xs: 40,
-                                        sm: 40,
+                                        xs: 30,
+                                        sm: 34,
                                         md: 40,
                                     },
 
                                     height: {
-                                        xs: 40,
-                                        sm: 40,
+                                        xs: 30,
+                                        sm: 34,
                                         md: 40,
                                     },
 
@@ -305,9 +311,10 @@ function TechStack() {
                                     color: "#fff",
 
                                     fontSize: {
-                                        xs: 18,
-                                        sm: 11,
-                                        md: 15,
+                                        xs: 10.5,
+                                        sm: 12,
+                                        md: 14,
+                                        lg: 15,
                                     },
 
                                     fontWeight: {

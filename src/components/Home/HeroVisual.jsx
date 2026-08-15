@@ -6,6 +6,7 @@ import {
 
 import CodeIcon from "@mui/icons-material/Code";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
+
 function HeroVisual() {
     return (
         <>
@@ -41,8 +42,8 @@ function HeroVisual() {
                     },
 
                     height: {
-                        xs: "440px",
-                        sm: "500px",
+                        xs: "380px",
+                        sm: "450px",
                         md: "calc(100% - 88px)",
                     },
 
@@ -51,7 +52,7 @@ function HeroVisual() {
                         sm: 5,
                         md: 0,
                     },
-
+                    pt:"10rem",
                     zIndex: 4,
 
                     display: "flex",
@@ -59,6 +60,9 @@ function HeroVisual() {
                     justifyContent: "center",
 
                     alignItems: "flex-end",
+
+                    maxWidth: "100%",
+                    overflow: "visible",
                 }}
             >
 
@@ -70,15 +74,16 @@ function HeroVisual() {
                     alt="Mohamed Raashith"
                     sx={{
                         width: {
-                            xs: "72%",
-                            sm: "60%",
+                            xs: "68%",
+                            sm: "58%",
                             md: "70%",
                             lg: "72%",
                         },
-                        m:{xs:-5,md:0},
+                       
+                        
                         maxWidth: {
-                            xs: "350px",
-                            sm: "380px",
+                            xs: "280px",
+                            sm: "360px",
                             md: "440px",
                         },
 
@@ -100,26 +105,25 @@ function HeroVisual() {
 
                 <Box
                     sx={{
-                        display: { xs: "block", md: "flex" },
                         position: "absolute",
                         left: {
-                            xs: "4%",
-                            sm: "8%",
+                            xs: "3%",
+                            sm: "6%",
                             md: "8%",
                         },
                         top: {
-                            xs: "7%",
-                            sm: "8%",
+                            xs: "4%",
+                            sm: "6%",
                             md: "10%",
                         },
                         width: {
-                            xs: 58,
-                            sm: 68,
+                            xs: 48,
+                            sm: 62,
                             md: 80,
                         },
                         height: {
-                            xs: 58,
-                            sm: 68,
+                            xs: 48,
+                            sm: 62,
                             md: 80,
                         },
                         display: "flex",
@@ -134,26 +138,26 @@ function HeroVisual() {
                         zIndex: 5,
                         boxShadow:
                             "0 10px 30px rgba(0,0,0,0.25)",
+                        flexShrink: 0,
                     }}
                 >
                     <CodeIcon
                         sx={{
                             fontSize: {
-                                xs: 38,
-                                sm: 45,
+                                xs: 35,
+                                sm: 38,
                                 md: 55,
                             },
                             color: "#239AFF",
                         }}
                     />
                 </Box>
-                {/* ================= 10+ PROJECTS ================= */}
+                {/* ================= 6+ PROJECTS ================= */}
                 <Box
                     sx={{
-                        display: { xs: "block", md: "block" },
                         position: "absolute",
                         right: {
-                            xs: "1%",
+                            xs: "2%",
                             sm: "3%",
                             md: "4%",
                         },
@@ -163,32 +167,37 @@ function HeroVisual() {
                             md: "3%",
                         },
                         width: {
-                            xs: 125,
-                            sm: 145,
+                            xs: 100,
+                            sm: 128,
                             md: 170,
                         },
                         p: {
-                            xs: 1.5,
-                            sm: 2,
+                            xs: 1.2,
+                            sm: 1.8,
                             md: 2.5,
                         },
                         border:
                             "1px solid rgba(255,255,255,0.2)",
-                        borderRadius: "16px",
+                        borderRadius: {
+                            xs: "12px",
+                            md: "16px",
+                        },
                         background:
                             "rgba(8,10,28,0.65)",
                         backdropFilter: "blur(12px)",
                         zIndex: 5,
+                        boxSizing: "border-box",
                     }}
                 >
                     <RocketLaunchIcon
                         sx={{
                             fontSize: {
-                                xs: 28,
+                                xs: 35,
+                                sm: 26,
                                 md: 35,
                             },
                             color: "#00BFFF",
-                            mb: 1,
+                            mb: { xs: 0.5, md: 1 },
                         }}
                     />
 
@@ -196,8 +205,8 @@ function HeroVisual() {
                         sx={{
                             color: "#fff",
                             fontSize: {
-                                xs: 24,
-                                sm: 27,
+                                xs: 25,
+                                sm: 26,
                                 md: 30,
                             },
                             fontWeight: 600,
@@ -211,7 +220,7 @@ function HeroVisual() {
                         sx={{
                             color: "#D0D0D0",
                             fontSize: {
-                                xs: 12,
+                                xs: 14,
                                 sm: 14,
                                 md: 16,
                             },
@@ -219,7 +228,7 @@ function HeroVisual() {
                                 xs: "auto",
                                 md: 155,
                             },
-                            mt: 1,
+                            mt: { xs: 0.5, md: 1 },
                             lineHeight: 1.4,
                         }}
                     >
@@ -230,27 +239,23 @@ function HeroVisual() {
 
                 <Box
                     sx={{
-                        display: { xs: "none", md: "block" },
+                        display: { xs: "none", sm: "block" },
                         position: "absolute",
 
                         right: {
-                            xs: "1%",
                             sm: "3%",
                             md: "-3%",
                         },
                         top: {
-                            xs: "38%",
                             sm: "35%",
                             md: "34%",
                         },
                         width: {
-                            xs: 125,
-                            sm: 140,
+                            sm: 128,
                             md: 155,
                         },
                         p: {
-                            xs: 1.5,
-                            sm: 2,
+                            sm: 1.8,
                             md: 2.5,
                         },
                         border:
@@ -260,11 +265,12 @@ function HeroVisual() {
                             "rgba(8,10,28,0.65)",
                         backdropFilter: "blur(12px)",
                         zIndex: 5,
+                        boxSizing: "border-box",
                     }}
                 >
                     <CodeIcon
                         sx={{
-                            fontSize: 35,
+                            fontSize: { sm: 26, md: 35 },
                             color: "#00BFFF",
                             mb: 1,
                         }}
@@ -273,8 +279,7 @@ function HeroVisual() {
                         sx={{
                             color: "#fff",
                             fontSize: {
-                                xs: 24,
-                                sm: 27,
+                                sm: 18,
                                 md: 30,
                             },
                             fontWeight: 600,
@@ -288,13 +293,12 @@ function HeroVisual() {
                         sx={{
                             color: "#D0D0D0",
                             fontSize: {
-                                xs: 12,
-                                sm: 14,
+                                sm: 10,
                                 md: 16,
                             },
                             mt: 1,
                             width: {
-                                xs: "auto",
+                                sm: "auto",
                                 md: 155,
                             },
                             lineHeight: 1.4,
@@ -319,33 +323,42 @@ function HeroVisual() {
                         },
                         transform: {
                             xs: "translateX(-50%)",
+                            sm: "translateX(-50%)",
                             md: "none",
                         },
                         bottom: {
-                            xs: "-5%",
+                            xs: "-1%",
+                            sm: "-3%",
                             md: "1%",
                         },
                         width: {
-                            xs: "75%",
-                            sm: "80%",
+                            xs: "70%",
+                            sm: "82%",
+                            md: "390px",
+                            lg: "460px",
+                        },
+                        maxWidth: {
+                            xs: "340px",
+                            sm: "420px",
                             md: "390px",
                             lg: "460px",
                         },
                         minHeight: {
-                            xs: 190,
-                            sm: 220,
+                            xs: 165,
+                            sm: 210,
                             md: 255,
                         },
                         border:
                             "1px solid rgba(255,255,255,0.22)",
                         borderRadius: "18px",
                         background:
-                            "rgba(8,10,28,0.65)",
-                        backdropFilter: "blur(2px)",
+                            "rgba(8,10,28,0.85)",
+                        backdropFilter: "blur(6px)",
                         boxShadow:
                             "0 20px 50px rgba(0,0,0,0.35)",
                         zIndex: 6,
                         overflow: "hidden",
+                        boxSizing: "border-box",
                     }}
                 >
                     {/* Window Header */}
@@ -366,11 +379,11 @@ function HeroVisual() {
                         <Box
                             sx={{
                                 width: {
-                                    xs: 10,
+                                    xs: 12,
                                     md: 13,
                                 },
                                 height: {
-                                    xs: 10,
+                                    xs: 12,
                                     md: 13,
                                 },
                                 borderRadius: "50%",
@@ -381,11 +394,11 @@ function HeroVisual() {
                         <Box
                             sx={{
                                 width: {
-                                    xs: 10,
+                                    xs: 12,
                                     md: 13,
                                 },
                                 height: {
-                                    xs: 10,
+                                    xs: 12,
                                     md: 13,
                                 },
                                 borderRadius: "50%",
@@ -396,11 +409,11 @@ function HeroVisual() {
                         <Box
                             sx={{
                                 width: {
-                                    xs: 10,
+                                    xs: 12,
                                     md: 13,
                                 },
                                 height: {
-                                    xs: 10,
+                                    xs: 12,
                                     md: 13,
                                 },
                                 borderRadius: "50%",
@@ -415,8 +428,8 @@ function HeroVisual() {
                     <Box
                         sx={{
                             p: {
-                                xs: 1.5,
-                                sm: 2,
+                                xs: 1.2,
+                                sm: 1.8,
                                 md: 2.5,
                             },
 
@@ -424,13 +437,16 @@ function HeroVisual() {
                                 "monospace",
 
                             fontSize: {
-                                xs: 9,
-                                sm: 11,
+                                xs: 8.5,
+                                sm: 10,
                                 md: 13,
                                 lg: 14,
                             },
 
                             lineHeight: 1.9,
+
+                            whiteSpace: "nowrap",
+                            overflowX: "auto",
                         }}
                     >
 
@@ -439,6 +455,7 @@ function HeroVisual() {
                             sx={{
                                 color: "#777",
                                 fontFamily: "monospace",
+                                fontSize: {xs:"14px",md:"20px"},
                             }}
                         >
                             01&nbsp;&nbsp;
@@ -463,6 +480,7 @@ function HeroVisual() {
                             sx={{
                                 color: "#777",
                                 fontFamily: "monospace",
+                                fontSize: {xs:"14px",md:"20px"},
                             }}
                         >
                             02&nbsp;&nbsp;&nbsp;&nbsp;
@@ -486,6 +504,7 @@ function HeroVisual() {
                             sx={{
                                 color: "#777",
                                 fontFamily: "monospace",
+                               fontSize: {xs:"14px",md:"20px"},
                             }}
                         >
                             03&nbsp;&nbsp;&nbsp;&nbsp;
@@ -509,6 +528,7 @@ function HeroVisual() {
                             sx={{
                                 color: "#777",
                                 fontFamily: "monospace",
+                               fontSize: {xs:"14px",md:"20px"},
                             }}
                         >
                             04&nbsp;&nbsp;&nbsp;&nbsp;
@@ -532,6 +552,7 @@ function HeroVisual() {
                             sx={{
                                 color: "#777",
                                 fontFamily: "monospace",
+                                fontSize: {xs:"14px",md:"20px"},
                             }}
                         >
                             05&nbsp;&nbsp;&nbsp;&nbsp;
@@ -555,6 +576,7 @@ function HeroVisual() {
                             sx={{
                                 color: "#777",
                                 fontFamily: "monospace",
+                                fontSize: {xs:"14px",md:"20px"},
                             }}
                         >
                             06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -572,6 +594,7 @@ function HeroVisual() {
                             sx={{
                                 color: "#777",
                                 fontFamily: "monospace",
+                                fontSize: {xs:"14px",md:"20px"},
                             }}
                         >
                             07&nbsp;&nbsp;{"};"}
