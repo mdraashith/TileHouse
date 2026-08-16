@@ -40,7 +40,7 @@ function Home() {
 
         const link = document.createElement("a");
 
-        link.href = "/resume.pdf";
+        link.href = "/itsMyResume.pdf";
 
         link.download =
             "Mohamed-Raashith-Resume.pdf";
