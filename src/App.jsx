@@ -5,9 +5,11 @@ import {
     Route,
 } from "react-router-dom";
 import { Box } from "@mui/material";
+import ScrollToTop from "./components/ScrollToTop";
 import Nav from "./components/Nav";
 
 import "./App.css";
+import Footer from "./components/Footer";
 
 
 // =====================================================
@@ -74,6 +76,7 @@ function App() {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
 
             <Nav />
 
@@ -109,6 +112,7 @@ function App() {
                 </Routes>
 
             </Suspense>
+            <Footer />
 
         </BrowserRouter>
     );
