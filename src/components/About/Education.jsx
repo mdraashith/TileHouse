@@ -1,14 +1,21 @@
 import React from "react";
+
 import {
     Box,
     Typography,
 } from "@mui/material";
+
 import SchoolIcon from "@mui/icons-material/School";
+
+
 function Education() {
+
     return (
         <Box
             sx={{
+                width: "100%",
                 maxWidth: "1200px",
+
                 mx: "auto",
 
                 mt: {
@@ -18,13 +25,14 @@ function Education() {
                 },
 
                 p: {
-                    xs: 2,
-                    sm: 3,
+                    xs: 1.5,
+                    sm: 2.5,
                     md: 4,
                 },
 
                 borderRadius: {
-                    xs: "18px",
+                    xs: "16px",
+                    sm: "18px",
                     md: "22px",
                 },
 
@@ -33,83 +41,116 @@ function Education() {
 
                 background:
                     "rgba(5,8,30,0.55)",
+
+                boxSizing: "border-box",
+
+                overflow: "hidden",
             }}
         >
-            {/* ================= TITLE ================= */}
+
+            {/* =====================================================
+                            TITLE
+            ===================================================== */}
 
             <Box
                 sx={{
                     display: "flex",
+
                     alignItems: "center",
-                    gap: 1.5,
+
+                    gap: {
+                        xs: 1,
+                        sm: 1.5,
+                    },
 
                     mb: {
-                        xs: 3,
+                        xs: 2.5,
+                        sm: 3,
                         md: 4,
                     },
+
+                    minWidth: 0,
                 }}
             >
+
                 <SchoolIcon
                     sx={{
                         fontSize: {
-                            xs: 45,
-                            sm: 27,
-                            md: 30,
+                            xs: 35,
+                            sm: 34,
+                            md: 36,
                         },
 
                         color: "#A33DFF",
 
-                        
+                        flexShrink: 0,
                     }}
                 />
 
                 <Typography
                     sx={{
                         fontSize: {
-                            xs: 25,
-                            sm: 22,
-                            md: 24,
+                            xs: 24,
+                            sm: 23,
+                            md: 25,
                         },
 
                         fontWeight: 700,
 
                         color: "#fff",
+
+                        lineHeight: 1.2,
+
+                        whiteSpace: "nowrap",
                     }}
                 >
                     Education
                 </Typography>
+
             </Box>
 
-            {/* ================= TIMELINE ================= */}
+
+            {/* =====================================================
+                            EDUCATION TIMELINE
+            ===================================================== */}
 
             <Box
                 sx={{
                     position: "relative",
 
+                    width: "100%",
+
                     display: "grid",
 
                     gridTemplateColumns: {
                         xs: "1fr",
-                        md: "1fr 1fr",
+                        sm: "1fr",
+                        md: "repeat(2, minmax(0, 1fr))",
                     },
 
                     gap: {
-                        xs: 4,
-                        md: 10,
+                        xs: 3,
+                        sm: 3.5,
+                        md: 8,
                     },
 
                     px: {
                         xs: 0,
+                        sm: 0.5,
                         md: 2,
                     },
 
-                    /* Connecting line */
+                    boxSizing: "border-box",
 
+                    minWidth: 0,
+
+                    /* Desktop connecting line */
                     "&::before": {
                         content: '""',
 
                         display: {
                             xs: "none",
+                            sm: "none",
                             md: "block",
                         },
 
@@ -117,9 +158,11 @@ function Education() {
 
                         top: "27px",
 
-                        left: "calc(50% - 45px)",
+                        left:
+                            "calc(50% - 45px)",
 
-                        right: "calc(50% - 45px)",
+                        right:
+                            "calc(50% - 45px)",
 
                         height: "2px",
 
@@ -130,14 +173,25 @@ function Education() {
                     },
                 }}
             >
-                {/* ================= B.SC ================= */}
+
+                {/* =================================================
+                            B.SC
+                ================================================= */}
 
                 <Box
                     sx={{
                         position: "relative",
 
+                        width: "100%",
+
                         p: {
                             xs: 2,
+                            sm: 2.5,
+                            md: 3,
+                        },
+
+                        pt: {
+                            xs: 2.5,
                             sm: 2.5,
                             md: 3,
                         },
@@ -154,15 +208,21 @@ function Education() {
 
                         transition: "0.3s ease",
 
+                        boxSizing: "border-box",
+
+                        minWidth: 0,
+
                         "&:hover": {
-                            borderColor: "#8D4DFF",
+                            borderColor:
+                                "#8D4DFF",
 
                             boxShadow:
                                 "0 0 25px rgba(110,60,255,0.18)",
                         },
                     }}
                 >
-                    {/* Timeline Dot */}
+
+                    {/* ================= DOT ================= */}
 
                     <Box
                         sx={{
@@ -172,15 +232,18 @@ function Education() {
 
                             left: {
                                 xs: "25px",
+                                sm: "25px",
                                 md: "50%",
                             },
 
                             transform: {
                                 xs: "none",
+                                sm: "none",
                                 md: "translateX(-50%)",
                             },
 
                             width: 16,
+
                             height: 16,
 
                             borderRadius: "50%",
@@ -193,34 +256,48 @@ function Education() {
 
                             boxShadow:
                                 "0 0 12px rgba(144,60,255,0.8)",
+
+                            zIndex: 2,
                         }}
                     />
+
+
+                    {/* ================= TITLE ================= */}
 
                     <Typography
                         sx={{
                             color: "#fff",
 
                             fontSize: {
-                                xs: 25,
-                                sm: 18,
-                                md: 20,
+                                xs: 21,
+                                sm: 19,
+                                md: 23,
                             },
 
                             fontWeight: 700,
 
+                            lineHeight: 1.35,
+
                             mb: 1,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         B.Sc., Computer Science
                     </Typography>
+
+
+                    {/* ================= YEAR ================= */}
 
                     <Typography
                         sx={{
                             color: "#756CFF",
 
                             fontSize: {
-                                xs: 18,
+                                xs: 17,
                                 sm: 15,
+                                md: 18,
                             },
 
                             fontWeight: 600,
@@ -231,13 +308,17 @@ function Education() {
                         2023 - 2026
                     </Typography>
 
+
+                    {/* ================= COLLEGE ================= */}
+
                     <Typography
                         sx={{
                             color: "#D6D8E5",
 
                             fontSize: {
-                                xs: 22,
-                                sm: 16,
+                                xs: 17,
+                                sm: 15,
+                                md: 18,
                             },
 
                             fontWeight: 500,
@@ -245,18 +326,25 @@ function Education() {
                             lineHeight: 1.6,
 
                             mb: 1,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         A.V.C College (Autonomous)
                     </Typography>
+
+
+                    {/* ================= LOCATION ================= */}
 
                     <Typography
                         sx={{
                             color: "#D6D8E5",
 
                             fontSize: {
-                                xs: 20,
-                                sm: 16,
+                                xs: 15,
+                                sm: 15,
+                                md: 17,
                             },
 
                             fontWeight: 500,
@@ -264,38 +352,60 @@ function Education() {
                             lineHeight: 1.6,
 
                             mb: 1.5,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         Mannampandal, Mayiladuthurai -
                         609 305
                     </Typography>
 
+
+                    {/* ================= DESCRIPTION ================= */}
+
                     <Typography
                         sx={{
                             color: "#BFC2D1",
 
                             fontSize: {
-                                xs: 16,
-                                sm: 17,
+                                xs: 15,
+                                sm: 14,
+                                md: 16,
                             },
 
                             lineHeight: 1.7,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         Focused on software development,
                         data structures, web technologies
                         and database management.
                     </Typography>
+
                 </Box>
 
-                {/* ================= HSC ================= */}
+
+                {/* =================================================
+                            HSC
+                ================================================= */}
 
                 <Box
                     sx={{
                         position: "relative",
 
+                        width: "100%",
+
                         p: {
                             xs: 2,
+                            sm: 2.5,
+                            md: 3,
+                        },
+
+                        pt: {
+                            xs: 2.5,
                             sm: 2.5,
                             md: 3,
                         },
@@ -312,15 +422,21 @@ function Education() {
 
                         transition: "0.3s ease",
 
+                        boxSizing: "border-box",
+
+                        minWidth: 0,
+
                         "&:hover": {
-                            borderColor: "#8D4DFF",
+                            borderColor:
+                                "#8D4DFF",
 
                             boxShadow:
                                 "0 0 25px rgba(110,60,255,0.18)",
                         },
                     }}
                 >
-                    {/* Timeline Dot */}
+
+                    {/* ================= DOT ================= */}
 
                     <Box
                         sx={{
@@ -330,15 +446,18 @@ function Education() {
 
                             left: {
                                 xs: "25px",
+                                sm: "25px",
                                 md: "50%",
                             },
 
                             transform: {
                                 xs: "none",
+                                sm: "none",
                                 md: "translateX(-50%)",
                             },
 
                             width: 16,
+
                             height: 16,
 
                             borderRadius: "50%",
@@ -351,35 +470,49 @@ function Education() {
 
                             boxShadow:
                                 "0 0 12px rgba(144,60,255,0.8)",
+
+                            zIndex: 2,
                         }}
                     />
+
+
+                    {/* ================= TITLE ================= */}
 
                     <Typography
                         sx={{
                             color: "#fff",
 
                             fontSize: {
-                                xs: 25,
-                                sm: 18,
-                                md: 20,
+                                xs: 21,
+                                sm: 19,
+                                md: 23,
                             },
-
                             fontWeight: 700,
 
+                            lineHeight: 1.35,
+
                             mb: 1,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         Higher Secondary Education
                     </Typography>
+
+
+                    {/* ================= YEAR ================= */}
 
                     <Typography
                         sx={{
                             color: "#756CFF",
 
                             fontSize: {
-                                xs: 18,
+                                xs: 17,
                                 sm: 15,
+                                md: 18,
                             },
+
 
                             fontWeight: 600,
 
@@ -389,13 +522,17 @@ function Education() {
                         2021 - 2023
                     </Typography>
 
+
+                    {/* ================= SCHOOL ================= */}
+
                     <Typography
                         sx={{
                             color: "#D6D8E5",
 
                             fontSize: {
-                                xs: 20,
-                                sm: 16,
+                                xs: 17,
+                                sm: 15,
+                                md: 18,
                             },
 
                             fontWeight: 500,
@@ -403,6 +540,9 @@ function Education() {
                             lineHeight: 1.6,
 
                             mb: 1,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         Gurunana Sambanthar Mission
@@ -410,13 +550,17 @@ function Education() {
                         School
                     </Typography>
 
+
+                    {/* ================= LOCATION ================= */}
+
                     <Typography
                         sx={{
                             color: "#D6D8E5",
 
                             fontSize: {
-                                xs: 19,
-                                sm: 16,
+                                xs: 15,
+                                sm: 15,
+                                md: 17,
                             },
 
                             fontWeight: 500,
@@ -424,31 +568,45 @@ function Education() {
                             lineHeight: 1.6,
 
                             mb: 1.5,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         Mayiladuthurai - 609 001
                     </Typography>
+
+
+                    {/* ================= DESCRIPTION ================= */}
 
                     <Typography
                         sx={{
                             color: "#BFC2D1",
 
                             fontSize: {
-                                xs: 17,
-                                sm: 15,
+                                xs: 15,
+                                sm: 14,
+                                md: 16,
                             },
 
                             lineHeight: 1.7,
+
+                            overflowWrap:
+                                "break-word",
                         }}
                     >
                         Completed HSC with Computer
                         Science stream with excellent
                         academic record.
                     </Typography>
+
                 </Box>
+
             </Box>
+
         </Box>
     );
 }
+
 
 export default Education;

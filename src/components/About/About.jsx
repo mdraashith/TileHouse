@@ -3,11 +3,12 @@ import React from "react";
 import {
     Box,
     Typography,
-    Button,
     LinearProgress,
 } from "@mui/material";
+
 import Education from "./Education";
 import SkillsExpertise from "./SkillsExpertise";
+
 import PersonIcon from "@mui/icons-material/Person";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
@@ -15,18 +16,22 @@ import CodeIcon from "@mui/icons-material/Code";
 import DownloadIcon from "@mui/icons-material/Download";
 import LayersIcon from "@mui/icons-material/Layers";
 
+
 function About() {
+
     const stats = [
         {
             icon: <RocketLaunchIcon />,
             number: "6+",
             title: "Projects Completed",
         },
+
         {
             icon: <CalendarMonthIcon />,
             number: "2+",
             title: "Years of Learning",
         },
+
         {
             icon: <CodeIcon />,
             number: "100%",
@@ -34,28 +39,34 @@ function About() {
         },
     ];
 
+
     const skills = [
         {
             name: "React.js",
             value: 90,
         },
+
         {
             name: "JavaScript",
             value: 85,
         },
+
         {
             name: "HTML & CSS",
             value: 95,
         },
+
         {
             name: "Material UI",
             value: 80,
         },
+
         {
             name: "Git & GitHub",
             value: 85,
         },
     ];
+
 
     return (
         <Box
@@ -64,35 +75,55 @@ function About() {
                 width: "100%",
                 minHeight: "100vh",
 
-                backgroundImage: "url('/img/aboutbg.png')",
+                backgroundImage:
+                    "url('/img/aboutbg.png')",
+
                 backgroundSize: "cover",
+
                 backgroundPosition: "center",
+
                 backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed",
+
+                /* Fixed background only on desktop */
+                backgroundAttachment: {
+                    xs: "scroll",
+                    sm: "scroll",
+                    md: "fixed",
+                },
 
                 color: "#fff",
 
                 px: {
-                    xs: 2,
-                    sm: 3,
+                    xs: 1.5,
+                    sm: 2.5,
                     md: 5,
                     lg: 7,
+                    xl: 9,
                 },
 
                 py: {
-                    xs: 7,
-                    sm: 8,
-                    md: 10,
+                    xs: 5,
+                    sm: 6,
+                    md: 8,
+                    lg: 10,
                 },
+
+                boxSizing: "border-box",
+
+                overflowX: "hidden",
             }}
         >
+
             {/* =====================================================
-                ABOUT TOP SECTION
+                            ABOUT TOP SECTION
             ===================================================== */}
 
             <Box
                 sx={{
+                    width: "100%",
+
                     maxWidth: "1200px",
+
                     mx: "auto",
 
                     display: "flex",
@@ -102,78 +133,108 @@ function About() {
                         md: "row",
                     },
 
-                    alignItems: "center",
+                    alignItems: {
+                        xs: "stretch",
+                        md: "center",
+                    },
 
                     gap: {
-                        xs: 5,
+                        xs: 4,
+                        sm: 5,
                         md: 7,
                         lg: 9,
                     },
+
+                    boxSizing: "border-box",
                 }}
             >
-                {/* ================= IMAGE ================= */}
+
+                {/* =================================================
+                                IMAGE
+                ================================================= */}
 
                 <Box
                     sx={{
                         width: {
                             xs: "100%",
-                            sm: "75%",
+                            sm: "100%",
                             md: "42%",
                         },
 
                         display: "flex",
+
                         justifyContent: "center",
 
+                        alignItems: "center",
+
                         position: "relative",
+
+                        flexShrink: 0,
+
+                        boxSizing: "border-box",
                     }}
                 >
-                    {/* Glow */}
+
+                    {/* ================= GLOW ================= */}
 
                     <Box
                         sx={{
                             position: "absolute",
 
                             width: {
-                                xs: "260px",
-                                sm: "330px",
+                                xs: "240px",
+                                sm: "300px",
                                 md: "400px",
                             },
 
                             height: {
-                                xs: "260px",
-                                sm: "330px",
+                                xs: "240px",
+                                sm: "300px",
                                 md: "400px",
                             },
+
+                            maxWidth: "90vw",
+
+                            maxHeight: "90vw",
 
                             borderRadius: "50%",
 
                             background:
                                 "radial-gradient(circle, rgba(131,45,255,0.45), transparent 70%)",
 
-                            filter: "blur(30px)",
+                            filter: {
+                                xs: "blur(20px)",
+                                md: "blur(30px)",
+                            },
 
                             zIndex: 0,
+
+                            pointerEvents: "none",
                         }}
                     />
 
-                    {/* Image Container */}
+
+                    {/* ================= IMAGE CONTAINER ================= */}
 
                     <Box
                         sx={{
                             width: {
-                                xs: "350px",
+                                xs: "min(100%, 300px)",
                                 sm: "310px",
                                 md: "360px",
                             },
 
                             height: {
-                                xs: "400px",
+                                xs: "360px",
                                 sm: "370px",
                                 md: "430px",
                             },
+                            mt: { xs: 10, md: 0 },
+                            maxWidth: "100%",
 
                             borderRadius: {
-                                xs: "22px",
+                                xs: "20px",
+                                sm: "22px",
                                 md: "28px",
                             },
 
@@ -193,36 +254,58 @@ function About() {
                                 "0 0 35px rgba(104,54,255,0.25)",
 
                             display: "flex",
+
                             justifyContent: "center",
+
                             alignItems: "flex-end",
+
+                            boxSizing: "border-box",
                         }}
                     >
+
                         <Box
                             component="img"
+
                             src="/img/Myppics.png"
+
                             alt="Mohamed Raashith"
+
                             sx={{
                                 width: "100%",
+
                                 height: "100%",
 
                                 objectFit: "cover",
 
-                                objectPosition: "center top",
+                                objectPosition:
+                                    "center top",
+
+                                display: "block",
                             }}
                         />
+
                     </Box>
+
                 </Box>
 
-                {/* ================= ABOUT CONTENT ================= */}
+
+                {/* =================================================
+                            ABOUT CONTENT
+                ================================================= */}
 
                 <Box
                     sx={{
                         flex: 1,
 
                         width: "100%",
+
+                        minWidth: 0,
+
+                        boxSizing: "border-box",
                     }}
                 >
-                    {/* Label */}
+
+                    {/* ================= LABEL ================= */}
 
                     <Box
                         sx={{
@@ -235,7 +318,12 @@ function About() {
                             px: 2,
 
                             py: 0.8,
-                            mt:2,
+
+                            mt: {
+                                xs: 1,
+                                md: 6,
+                            },
+
                             mb: 2,
 
                             borderRadius: "30px",
@@ -245,12 +333,23 @@ function About() {
 
                             background:
                                 "rgba(110,45,255,0.08)",
+
+                            maxWidth: "100%",
+
+                            boxSizing: "border-box",
                         }}
                     >
+
                         <PersonIcon
                             sx={{
-                                fontSize: 18,
+                                fontSize: {
+                                    xs: 18,
+                                    sm: 18,
+                                },
+
                                 color: "#A73DFF",
+
+                                flexShrink: 0,
                             }}
                         />
 
@@ -259,40 +358,62 @@ function About() {
                                 fontSize: {
                                     xs: 16,
                                     sm: 13,
+                                    md: 14,
                                 },
 
                                 color: "#D9A7FF",
 
                                 fontWeight: 600,
+
+                                whiteSpace: "nowrap",
                             }}
                         >
                             About Me
                         </Typography>
+
                     </Box>
 
-                    {/* Heading */}
+
+                    {/* ================= HEADING ================= */}
 
                     <Typography
                         component="h1"
+
                         sx={{
                             fontSize: {
-                                xs: "48px",
-                                sm: "48px",
+                                xs: "36px",
+                                sm: "42px",
                                 md: "54px",
+                                lg: "58px",
                             },
 
                             fontWeight: 800,
 
-                            lineHeight: 1.05,
+                            lineHeight: {
+                                xs: 1.1,
+                                sm: 1.05,
+                                md: 1.05,
+                            },
 
-                            letterSpacing: "-2px",
+                            letterSpacing: {
+                                xs: "-1px",
+                                sm: "-1.5px",
+                                md: "-2px",
+                            },
 
                             mb: 2,
+
+                            maxWidth: "100%",
+
+                            wordBreak: "normal",
                         }}
                     >
+
                         Let me introduce
+
                         <Box
                             component="span"
+
                             sx={{
                                 display: "block",
 
@@ -308,31 +429,50 @@ function About() {
                         >
                             myself
                         </Box>
+
                     </Typography>
 
-                    {/* Description */}
+
+                    {/* ================= DESCRIPTION ================= */}
 
                     <Typography
                         sx={{
+                            width: "100%",
+
                             maxWidth: "620px",
 
                             color: "#C7C9D8",
+
                             fontWeight: "bolder",
+
                             fontSize: {
-                                xs: 17,
+                                xs: 16,
                                 sm: 15,
                                 md: 16,
+                                lg: 17,
                             },
 
-                            lineHeight: 1.7,
+                            lineHeight: {
+                                xs: 1.7,
+                                sm: 1.7,
+                                md: 1.7,
+                            },
 
-                            mb: 4,
+                            mb: {
+                                xs: 3,
+                                md: 4,
+                            },
+
+                            wordBreak: "normal",
                         }}
                     >
                         I'm Mohamed Raashith, a passionate Frontend Developer who loves turning creative ideas into clean, modern, and engaging digital experiences. I enjoy building responsive web applications that not only look visually appealing but also feel smooth, intuitive, and easy to use across every device. With hands-on experience in HTML, CSS, JavaScript, React.js, and Material UI, I focus on creating interfaces that combine thoughtful design with well-structured code. I’m constantly exploring new technologies, improving my skills, and challenging myself through real-world projects, with the goal of growing into a skilled developer and creating web experiences that leave a lasting impression.
                     </Typography>
 
-                    {/* ================= STATS ================= */}
+
+                    {/* =================================================
+                                STATS
+                    ================================================= */}
 
                     <Box
                         sx={{
@@ -340,18 +480,24 @@ function About() {
 
                             gridTemplateColumns: {
                                 xs: "1fr",
-                                sm: "repeat(3, 1fr)",
+                                sm: "repeat(3, minmax(0, 1fr))",
                             },
 
                             gap: {
                                 xs: 1.5,
                                 sm: 2,
+                                md: 2.5,
                             },
+
+                            width: "100%",
                         }}
                     >
+
                         {stats.map((stat) => (
+
                             <Box
                                 key={stat.title}
+
                                 sx={{
                                     minHeight: {
                                         xs: 105,
@@ -379,12 +525,18 @@ function About() {
                                     justifyContent:
                                         "center",
 
-                                    alignItems: "center",
+                                    alignItems:
+                                        "center",
 
                                     textAlign: "center",
 
                                     transition:
                                         "0.3s ease",
+
+                                    boxSizing:
+                                        "border-box",
+
+                                    minWidth: 0,
 
                                     "&:hover": {
                                         transform:
@@ -398,12 +550,12 @@ function About() {
                                     },
                                 }}
                             >
+
                                 <Box
                                     sx={{
                                         color: "#A43DFF",
 
                                         display: "flex",
-
                                         mb: 0.5,
                                     }}
                                 >
@@ -415,9 +567,12 @@ function About() {
                                         fontSize: {
                                             xs: 30,
                                             sm: 28,
+                                            md: 30,
                                         },
 
                                         fontWeight: 700,
+
+                                        lineHeight: 1,
                                     }}
                                 >
                                     {stat.number}
@@ -426,44 +581,60 @@ function About() {
                                 <Typography
                                     sx={{
                                         color: "#AEB2C6",
+
                                         fontWeight: "bolder",
+
                                         fontSize: {
-                                            xs: 16,
+                                            xs: 17,
                                             sm: 12,
+                                            md: 15,
                                         },
+
+                                        mt: 0.5,
+
+                                        whiteSpace: "normal",
                                     }}
                                 >
                                     {stat.title}
                                 </Typography>
+
                             </Box>
+
                         ))}
+
                     </Box>
+
                 </Box>
+
             </Box>
 
+
             {/* =====================================================
-                JOURNEY + SKILLS
+                        JOURNEY + SKILLS
             ===================================================== */}
 
             <Box
                 sx={{
+                    width: "100%",
+
                     maxWidth: "1200px",
 
                     mx: "auto",
 
                     mt: {
-                        xs: 6,
+                        xs: 5,
+                        sm: 6,
                         md: 8,
                     },
 
                     p: {
-                        xs: 2,
+                        xs: 1.5,
                         sm: 3,
                         md: 4,
                     },
 
                     borderRadius: {
-                        xs: "20px",
+                        xs: "18px",
                         md: "24px",
                     },
 
@@ -484,11 +655,23 @@ function About() {
                         xs: 4,
                         md: 6,
                     },
+
+                    boxSizing: "border-box",
+
+                    minWidth: 0,
                 }}
             >
-                {/* ================= JOURNEY ================= */}
 
-                <Box>
+                {/* =================================================
+                            JOURNEY
+                ================================================= */}
+
+                <Box
+                    sx={{
+                        minWidth: 0,
+                    }}
+                >
+
                     <Box
                         sx={{
                             display: "flex",
@@ -500,10 +683,14 @@ function About() {
                             mb: 2,
                         }}
                     >
+
                         <Box
                             sx={{
                                 width: 25,
-                                height: 2,
+
+                                height: 3,
+
+                                flexShrink: 0,
 
                                 background:
                                     "linear-gradient(90deg, #B52CFF, #5B73FF)",
@@ -514,7 +701,8 @@ function About() {
                             sx={{
                                 fontSize: {
                                     xs: 25,
-                                    md: 22,
+                                    sm: 22,
+                                    md: 26,
                                 },
 
                                 fontWeight: 700,
@@ -522,17 +710,20 @@ function About() {
                         >
                             My Journey
                         </Typography>
+
                     </Box>
+
 
                     <Typography
                         sx={{
                             color: "#BFC2D1",
 
                             fontSize: {
-                                xs: 20,
-                                sm: 16,
+                                xs: 16,
+                                sm: 15,
+                                md: 16,
                             },
-
+                            fontWeight: 700,
                             lineHeight: 1.7,
 
                             mb: 2,
@@ -541,15 +732,17 @@ function About() {
                         My journey into web development started with a simple curiosity to understand how websites are built and how ideas can be transformed into something people can actually use. As I explored different technologies, I discovered my passion for Frontend Development and fell in love with creating modern, responsive, and interactive user interfaces. Along the way, I’ve worked on various real-world projects using HTML, CSS, JavaScript, React.js, and modern UI tools, continuously learning from every project and challenge.
                     </Typography>
 
+
                     <Typography
                         sx={{
                             color: "#BFC2D1",
 
                             fontSize: {
-                                xs: 20,
-                                sm: 16,
+                                xs: 16,
+                                sm: 15,
+                                md: 16,
                             },
-
+                            fontWeight: 700,
                             lineHeight: 1.7,
 
                             mb: 3,
@@ -558,44 +751,118 @@ function About() {
                         Today, I’m focused on sharpening my skills, exploring new technologies, building meaningful projects, and taking the next step toward becoming a professional Frontend Developer.
                     </Typography>
 
-                    {/* Resume Button */}
 
-                    <Button
-                        variant="contained"
-                        startIcon={<DownloadIcon />}
+                    {/* ================= RESUME BUTTON ================= */}
+
+                    <Box
+                        component="a"
+
+                        href="/itsMyResume.pdf"
+
+                        download="Mohamed-Raashith-Resume.pdf"
+
                         sx={{
-                            textTransform: "none",
-                            fontSize: {
-                                xs: 20,
-                                sm: 12,
-                            },
-                            borderRadius: "10px",
-                            height: {xs:"4rem",md:"2.5rem"},
-                            px: 2.5,
+                            textDecoration: "none",
 
-                            py: 1.2,
+                            display: "inline-block",
 
-                            fontWeight: 600,
-
-                            background:
-                                "linear-gradient(90deg, #A72CFF, #347DFF)",
-
-                            "&:hover": {
-                                background:
-                                    "linear-gradient(90deg, #9320EA, #286EF0)",
-                            },
+                            maxWidth: "100%",
                         }}
                     >
-                        Download Resume
-                    </Button>
+
+                        <Box
+                            component="button"
+
+                            sx={{
+                                display: "inline-flex",
+
+                                alignItems: "center",
+
+                                justifyContent:
+                                    "center",
+
+                                gap: 1,
+
+                                width: {
+                                    xs: "100%",
+                                    sm: "auto",
+                                },
+
+                                minWidth: {
+                                    sm: "170px",
+                                },
+
+                                height: {
+                                    xs: "50px",
+                                    sm: "48px",
+                                },
+
+                                px: {
+                                    xs: 2,
+                                    sm: 2.5,
+                                },
+
+                                border: "none",
+
+                                borderRadius: "10px",
+
+                                color: "#fff",
+
+                                fontFamily:
+                                    "inherit",
+
+                                fontSize: {
+                                    xs: 18,
+                                    sm: 13,
+                                    md: 16,
+                                },
+
+                                fontWeight: 600,
+
+                                cursor: "pointer",
+
+                                background:
+                                    "linear-gradient(90deg, #A72CFF, #347DFF)",
+
+                                transition:
+                                    "0.3s ease",
+
+                                "&:hover": {
+                                    background:
+                                        "linear-gradient(90deg, #9320EA, #286EF0)",
+
+                                    transform:
+                                        "translateY(-2px)",
+                                },
+                            }}
+                        >
+
+                            <DownloadIcon
+                                sx={{
+                                    fontSize: {
+                                        xs: 23,
+                                        sm: 21,
+                                    },
+                                }}
+                            />
+
+                            Download Resume
+
+                        </Box>
+
+                    </Box>
+
                 </Box>
 
-                {/* ================= SKILLS ================= */}
+
+                {/* =================================================
+                            SKILLS
+                ================================================= */}
 
                 <Box
                     sx={{
                         p: {
-                            xs: 2,
+                            xs: 1.5,
                             sm: 3,
                         },
 
@@ -606,8 +873,13 @@ function About() {
 
                         background:
                             "rgba(15,18,52,0.65)",
+
+                        minWidth: 0,
+
+                        boxSizing: "border-box",
                     }}
                 >
+
                     <Box
                         sx={{
                             display: "flex",
@@ -619,20 +891,25 @@ function About() {
                             mb: 3,
                         }}
                     >
+
                         <LayersIcon
                             sx={{
                                 color: "#A33DFF",
+
                                 fontSize: {
-                                    xs: 45,
-                                    md: 35,
+                                    xs: 37,
+                                    sm: 35,
                                 },
+
+                                flexShrink: 0,
                             }}
                         />
 
                         <Typography
                             sx={{
                                 fontSize: {
-                                    xs: 26,
+                                    xs: 25,
+                                    sm: 22,
                                     md: 22,
                                 },
 
@@ -641,15 +918,24 @@ function About() {
                         >
                             My Skills
                         </Typography>
+
                     </Box>
 
+
                     {skills.map((skill) => (
+
                         <Box
                             key={skill.name}
+
                             sx={{
                                 mb: 2,
+
+                                width: "100%",
+
+                                minWidth: 0,
                             }}
                         >
+
                             <Box
                                 sx={{
                                     display: "flex",
@@ -657,41 +943,70 @@ function About() {
                                     justifyContent:
                                         "space-between",
 
+                                    alignItems:
+                                        "center",
+
+                                    gap: 1,
+
                                     mb: 0.7,
+
+                                    minWidth: 0,
                                 }}
                             >
+
                                 <Typography
                                     sx={{
                                         color: "#D8D9E3",
-
+                                        fontWeight: 700,
                                         fontSize: {
                                             xs: 18,
                                             sm: 14,
+                                            md: 16,
                                         },
+
+                                        minWidth: 0,
+
+                                        overflow: "hidden",
+
+                                        textOverflow:
+                                            "ellipsis",
+
+                                        whiteSpace:
+                                            "nowrap",
                                     }}
                                 >
                                     {skill.name}
                                 </Typography>
 
+
                                 <Typography
                                     sx={{
                                         color: "#C7C9D8",
-
+                                        fontWeight: 700,
                                         fontSize: {
-                                            xs: 16,
+                                            xs: 18,
                                             sm: 13,
+                                            md: 16,
                                         },
+
+                                        flexShrink: 0,
                                     }}
                                 >
                                     {skill.value}%
                                 </Typography>
+
                             </Box>
+
 
                             <LinearProgress
                                 variant="determinate"
+
                                 value={skill.value}
+
                                 sx={{
-                                    height: 8.5,
+                                    height: 8,
+
+                                    width: "100%",
 
                                     borderRadius: 10,
 
@@ -707,15 +1022,32 @@ function About() {
                                     },
                                 }}
                             />
+
                         </Box>
+
                     ))}
+
                 </Box>
 
             </Box>
+
+
+            {/* =====================================================
+                            EDUCATION
+            ===================================================== */}
+
             <Education />
+
+
+            {/* =====================================================
+                            SKILLS EXPERTISE
+            ===================================================== */}
+
             <SkillsExpertise />
+
         </Box>
     );
 }
+
 
 export default About;

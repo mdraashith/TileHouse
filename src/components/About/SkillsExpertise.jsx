@@ -1,10 +1,13 @@
 import React from "react";
+
 import {
     Box,
     Typography,
 } from "@mui/material";
 
+
 function SkillsExpertise() {
+
     const skills = [
         {
             name: "React.js",
@@ -36,10 +39,14 @@ function SkillsExpertise() {
         },
     ];
 
+
     return (
         <Box
             sx={{
+                width: "100%",
+
                 maxWidth: "1200px",
+
                 mx: "auto",
 
                 mt: {
@@ -49,13 +56,14 @@ function SkillsExpertise() {
                 },
 
                 p: {
-                    xs: 2,
-                    sm: 3,
+                    xs: 1.5,
+                    sm: 2.5,
                     md: 4,
                 },
 
                 borderRadius: {
-                    xs: "18px",
+                    xs: "16px",
+                    sm: "20px",
                     md: "24px",
                 },
 
@@ -64,16 +72,25 @@ function SkillsExpertise() {
 
                 background:
                     "rgba(5,8,30,0.55)",
+
+                boxSizing: "border-box",
+
+                overflow: "hidden",
+
+                minWidth: 0,
             }}
         >
-            {/* ================= TITLE ================= */}
+
+            {/* =====================================================
+                            TITLE
+            ===================================================== */}
 
             <Typography
                 sx={{
                     color: "#fff",
 
                     fontSize: {
-                        xs: 25,
+                        xs: 23,
                         sm: 23,
                         md: 26,
                     },
@@ -86,13 +103,18 @@ function SkillsExpertise() {
 
                     width: "fit-content",
 
+                    maxWidth: "100%",
+
+                    lineHeight: 1.3,
+
                     "&::after": {
                         content: '""',
 
                         display: "block",
 
                         width: {
-                            xs: "42px",
+                            xs: "40px",
+                            sm: "44px",
                             md: "48px",
                         },
 
@@ -110,44 +132,75 @@ function SkillsExpertise() {
                 Skills & Expertise
             </Typography>
 
-            {/* ================= SKILLS ================= */}
+
+            {/* =====================================================
+                            SKILLS GRID
+            ===================================================== */}
 
             <Box
                 sx={{
+                    width: "100%",
+
                     display: "grid",
 
+                    /*
+                        Mobile      → 2 columns
+                        Small tablet → 3 columns
+                        Tablet       → 4 columns
+                        Desktop      → 7 columns
+                    */
+
                     gridTemplateColumns: {
-                        xs: "repeat(2, 1fr)",
-                        sm: "repeat(3, 1fr)",
-                        md: "repeat(4, 1fr)",
-                        lg: "repeat(7, 1fr)",
+                        xs: "repeat(2, minmax(0, 1fr))",
+                        sm: "repeat(3, minmax(0, 1fr))",
+                        md: "repeat(4, minmax(0, 1fr))",
+                        lg: "repeat(7, minmax(0, 1fr))",
                     },
 
                     gap: {
-                        xs: 1.5,
-                        sm: 2,
-                        md: 2.5,
+                        xs: 1.2,
+                        sm: 1.8,
+                        md: 2,
+                        lg: 1.5,
                     },
 
                     mt: {
-                        xs: 3,
-                        md: 4,
+                        xs: 2.5,
+                        sm: 3,
+                        md: 3.5,
                     },
+
+                    minWidth: 0,
                 }}
             >
+
                 {skills.map((skill) => (
+
                     <Box
                         key={skill.name}
+
                         sx={{
+                            width: "100%",
+
+                            minWidth: 0,
+
                             minHeight: {
-                                xs: 130,
-                                sm: 140,
-                                md: 150,
+                                xs: 115,
+                                sm: 125,
+                                md: 140,
+                                lg: 145,
+                            },
+
+                            p: {
+                                xs: 1,
+                                sm: 1.2,
+                                md: 1.5,
                             },
 
                             borderRadius: {
-                                xs: "14px",
-                                md: "18px",
+                                xs: "12px",
+                                sm: "14px",
+                                md: "17px",
                             },
 
                             border:
@@ -158,19 +211,27 @@ function SkillsExpertise() {
 
                             display: "flex",
 
-                            flexDirection: "column",
+                            flexDirection:
+                                "column",
 
-                            alignItems: "center",
+                            alignItems:
+                                "center",
 
-                            justifyContent: "center",
+                            justifyContent:
+                                "center",
 
                             gap: {
-                                xs: 1,
-                                md: 1.5,
+                                xs: 0.8,
+                                sm: 1,
+                                md: 1.3,
                             },
 
                             transition:
-                                "0.3s ease",
+                                "transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
+
+                            boxSizing: "border-box",
+
+                            overflow: "hidden",
 
                             "&:hover": {
                                 transform:
@@ -184,48 +245,92 @@ function SkillsExpertise() {
                             },
                         }}
                     >
+
+                        {/* =================================================
+                                    SKILL IMAGE
+                        ================================================= */}
+
                         <Box
                             component="img"
+
                             src={skill.image}
+
                             alt={skill.name}
+
                             sx={{
                                 width: {
                                     xs: 50,
-                                    sm: 55,
-                                    md: 68,
+                                    sm: 48,
+                                    md: 58,
+                                    lg: 62,
                                 },
 
                                 height: {
                                     xs: 50,
-                                    sm: 55,
-                                    md: 68,
+                                    sm: 48,
+                                    md: 58,
+                                    lg: 62,
                                 },
 
+                                maxWidth: "100%",
+
                                 objectFit: "contain",
+
+                                display: "block",
+
+                                flexShrink: 0,
                             }}
                         />
+
+
+                        {/* =================================================
+                                    SKILL NAME
+                        ================================================= */}
 
                         <Typography
                             sx={{
                                 color: "#fff",
 
                                 fontSize: {
-                                    xs: 18,
-                                    sm: 13,
+                                    xs: 16,
+                                    sm: 14,
                                     md: 15,
+                                    lg: 15,
                                 },
 
-                                fontWeight: 500,
+                                fontWeight: 700,
 
                                 textAlign: "center",
+
+                                lineHeight: 1.3,
+
+                                width: "100%",
+
+                                maxWidth: "100%",
+
+                                overflow: "hidden",
+
+                                textOverflow:
+                                    "ellipsis",
+
+                                whiteSpace:
+                                    "nowrap",
+
+                                minWidth: 0,
                             }}
                         >
                             {skill.name}
                         </Typography>
+
                     </Box>
+
                 ))}
+
             </Box>
+
         </Box>
     );
 }
+
+
 export default SkillsExpertise;
