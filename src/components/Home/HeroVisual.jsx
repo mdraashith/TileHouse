@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+
 import {
     Box,
     Typography,
@@ -7,14 +8,17 @@ import {
 import CodeIcon from "@mui/icons-material/Code";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 
+import { motion } from "framer-motion";
+
+
 function HeroVisual() {
+
     return (
         <>
 
-
             {/* =====================================================
-            RIGHT SIDE
-        ===================================================== */}
+                        RIGHT SIDE
+            ===================================================== */}
 
             <Box
                 sx={{
@@ -52,7 +56,9 @@ function HeroVisual() {
                         sm: 5,
                         md: 0,
                     },
-                    pt:"10rem",
+
+                    pt: "10rem",
+
                     zIndex: 4,
 
                     display: "flex",
@@ -62,548 +68,836 @@ function HeroVisual() {
                     alignItems: "flex-end",
 
                     maxWidth: "100%",
+
                     overflow: "visible",
                 }}
             >
 
-                {/* ================= PERSON ================= */}
+                {/* =====================================================
+                            PERSON IMAGE
+                ===================================================== */}
 
-                <Box
-                    component="img"
-                    src="/img/Myppics.png"
-                    alt="Mohamed Raashith"
-                    sx={{
-                        width: {
-                            xs: "68%",
-                            sm: "58%",
-                            md: "70%",
-                            lg: "72%",
-                        },
-                       
-                        
-                        maxWidth: {
-                            xs: "280px",
-                            sm: "360px",
-                            md: "440px",
-                        },
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: 120,
+                    }}
 
-                        height: "auto",
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                    }}
 
-                        objectFit: "contain",
+                    transition={{
+                        duration: 1,
+                        ease: "easeOut",
+                    }}
 
+                    style={{
                         position: "absolute",
 
                         bottom: 0,
 
                         zIndex: 2,
 
-                        filter:
-                            "drop-shadow(0 15px 35px rgba(0,0,0,0.45))",
-                    }}
-                />
-                {/* ================= CODE ICON ================= */}
-
-                <Box
-                    sx={{
-                        position: "absolute",
-                        left: {
-                            xs: "3%",
-                            sm: "6%",
-                            md: "8%",
-                        },
-                        top: {
-                            xs: "4%",
-                            sm: "6%",
-                            md: "10%",
-                        },
-                        width: {
-                            xs: 48,
-                            sm: 62,
-                            md: 80,
-                        },
-                        height: {
-                            xs: 48,
-                            sm: 62,
-                            md: 80,
-                        },
                         display: "flex",
-                        alignItems: "center",
+
                         justifyContent: "center",
-                        border:
-                            "1px solid rgba(255,255,255,0.2)",
-                        borderRadius: "16px",
-                        background:
-                            "rgba(8,10,28,0.65)",
-                        backdropFilter: "blur(12px)",
-                        zIndex: 5,
-                        boxShadow:
-                            "0 10px 30px rgba(0,0,0,0.25)",
-                        flexShrink: 0,
+
+                        width: "100%",
                     }}
                 >
-                    <CodeIcon
-                        sx={{
-                            fontSize: {
-                                xs: 35,
-                                sm: 38,
-                                md: 55,
-                            },
-                            color: "#239AFF",
-                        }}
-                    />
-                </Box>
-                {/* ================= 6+ PROJECTS ================= */}
-                <Box
-                    sx={{
-                        position: "absolute",
-                        right: {
-                            xs: "2%",
-                            sm: "3%",
-                            md: "4%",
-                        },
-                        top: {
-                            xs: "2%",
-                            sm: "3%",
-                            md: "3%",
-                        },
-                        width: {
-                            xs: 100,
-                            sm: 128,
-                            md: 170,
-                        },
-                        p: {
-                            xs: 1.2,
-                            sm: 1.8,
-                            md: 2.5,
-                        },
-                        border:
-                            "1px solid rgba(255,255,255,0.2)",
-                        borderRadius: {
-                            xs: "12px",
-                            md: "16px",
-                        },
-                        background:
-                            "rgba(8,10,28,0.65)",
-                        backdropFilter: "blur(12px)",
-                        zIndex: 5,
-                        boxSizing: "border-box",
-                    }}
-                >
-                    <RocketLaunchIcon
-                        sx={{
-                            fontSize: {
-                                xs: 35,
-                                sm: 26,
-                                md: 35,
-                            },
-                            color: "#00BFFF",
-                            mb: { xs: 0.5, md: 1 },
-                        }}
-                    />
 
-                    <Typography
-                        sx={{
-                            color: "#fff",
-                            fontSize: {
-                                xs: 25,
-                                sm: 26,
-                                md: 30,
-                            },
-                            fontWeight: 600,
-                            lineHeight: 1,
-                        }}
-                    >
-                        6+
-                    </Typography>
+                    <Box
+                        component="img"
 
-                    <Typography
+                        src="/img/Myppics.png"
+
+                        alt="Mohamed Raashith"
+
                         sx={{
-                            color: "#D0D0D0",
-                            fontSize: {
-                                xs: 14,
-                                sm: 14,
-                                md: 16,
-                            },
                             width: {
-                                xs: "auto",
-                                md: 155,
+                                xs: "68%",
+                                sm: "58%",
+                                md: "70%",
+                                lg: "72%",
                             },
-                            mt: { xs: 0.5, md: 1 },
-                            lineHeight: 1.4,
-                        }}
-                    >
-                        Projects Completed
-                    </Typography>
-                </Box>
-                {/* ================= 2+ YEARS ================= */}
 
-                <Box
-                    sx={{
-                        display: { xs: "none", sm: "block" },
-                        position: "absolute",
+                            maxWidth: {
+                                xs: "280px",
+                                sm: "360px",
+                                md: "440px",
+                            },
 
-                        right: {
-                            sm: "3%",
-                            md: "-3%",
-                        },
-                        top: {
-                            sm: "35%",
-                            md: "34%",
-                        },
-                        width: {
-                            sm: 128,
-                            md: 155,
-                        },
-                        p: {
-                            sm: 1.8,
-                            md: 2.5,
-                        },
-                        border:
-                            "1px solid rgba(255,255,255,0.2)",
-                        borderRadius: "16px",
-                        background:
-                            "rgba(8,10,28,0.65)",
-                        backdropFilter: "blur(12px)",
-                        zIndex: 5,
-                        boxSizing: "border-box",
-                    }}
-                >
-                    <CodeIcon
-                        sx={{
-                            fontSize: { sm: 26, md: 35 },
-                            color: "#00BFFF",
-                            mb: 1,
+                            height: "auto",
+
+                            objectFit: "contain",
+
+                            filter:
+                                "drop-shadow(0 15px 35px rgba(0,0,0,0.45))",
                         }}
                     />
-                    <Typography
-                        sx={{
-                            color: "#fff",
-                            fontSize: {
-                                sm: 18,
-                                md: 30,
-                            },
-                            fontWeight: 600,
-                            lineHeight: 1,
-                        }}
-                    >
-                        2+
-                    </Typography>
 
-                    <Typography
-                        sx={{
-                            color: "#D0D0D0",
-                            fontSize: {
-                                sm: 10,
-                                md: 16,
-                            },
-                            mt: 1,
-                            width: {
-                                sm: "auto",
-                                md: 155,
-                            },
-                            lineHeight: 1.4,
-                        }}
-                    >
-                        Years of Learning
-                    </Typography>
-                </Box>
+                </motion.div>
 
 
                 {/* =====================================================
-              CODE EDITOR CARD
-          ===================================================== */}
+                            CODE ICON - FLOATING
+                ===================================================== */}
 
-                <Box
-                    sx={{
+                <motion.div
+                    animate={{
+                        y: [0, -12, 0, 10, 0],
+                    }}
+
+                    transition={{
+                        duration: 4,
+
+                        repeat: Infinity,
+
+                        ease: "easeInOut",
+                    }}
+
+                    style={{
                         position: "absolute",
-                        left: {
-                            xs: "40%",
-                            sm: "50%",
-                            md: "8%",
-                        },
-                        transform: {
-                            xs: "translateX(-50%)",
-                            sm: "translateX(-50%)",
-                            md: "none",
-                        },
-                        bottom: {
-                            xs: "-1%",
-                            sm: "-3%",
-                            md: "1%",
-                        },
-                        width: {
-                            xs: "70%",
-                            sm: "82%",
-                            md: "390px",
-                            lg: "460px",
-                        },
-                        maxWidth: {
-                            xs: "340px",
-                            sm: "420px",
-                            md: "390px",
-                            lg: "460px",
-                        },
-                        minHeight: {
-                            xs: 165,
-                            sm: 210,
-                            md: 255,
-                        },
-                        border:
-                            "1px solid rgba(255,255,255,0.22)",
-                        borderRadius: "18px",
-                        background:
-                            "rgba(8,10,28,0.85)",
-                        backdropFilter: "blur(6px)",
-                        boxShadow:
-                            "0 20px 50px rgba(0,0,0,0.35)",
-                        zIndex: 6,
-                        overflow: "hidden",
-                        boxSizing: "border-box",
+
+                        left: "8%",
+
+                        top: "10%",
+
+                        zIndex: 5,
                     }}
                 >
-                    {/* Window Header */}
 
                     <Box
                         sx={{
+                            width: {
+                                xs: 48,
+                                sm: 62,
+                                md: 80,
+                            },
+
+                            height: {
+                                xs: 48,
+                                sm: 62,
+                                md: 80,
+                            },
+
                             display: "flex",
-                            gap: 1,
 
-                            px: 2,
+                            alignItems: "center",
 
-                            py: 1.5,
+                            justifyContent: "center",
 
-                            borderBottom:
-                                "1px solid rgba(255,255,255,0.08)",
+                            border:
+                                "1px solid rgba(255,255,255,0.2)",
+
+                            borderRadius: "16px",
+
+                            background:
+                                "rgba(8,10,28,0.65)",
+
+                            backdropFilter:
+                                "blur(12px)",
+
+                            boxShadow:
+                                "0 10px 30px rgba(0,0,0,0.25)",
+
+                            flexShrink: 0,
                         }}
                     >
-                        <Box
+
+                        <CodeIcon
                             sx={{
-                                width: {
-                                    xs: 12,
-                                    md: 13,
+                                fontSize: {
+                                    xs: 35,
+                                    sm: 38,
+                                    md: 55,
                                 },
-                                height: {
-                                    xs: 12,
-                                    md: 13,
-                                },
-                                borderRadius: "50%",
-                                background: "#C329FF",
+
+                                color: "#239AFF",
                             }}
                         />
 
-                        <Box
-                            sx={{
-                                width: {
-                                    xs: 12,
-                                    md: 13,
-                                },
-                                height: {
-                                    xs: 12,
-                                    md: 13,
-                                },
-                                borderRadius: "50%",
-                                background: "#7D4CFF",
-                            }}
-                        />
-
-                        <Box
-                            sx={{
-                                width: {
-                                    xs: 12,
-                                    md: 13,
-                                },
-                                height: {
-                                    xs: 12,
-                                    md: 13,
-                                },
-                                borderRadius: "50%",
-                                background: "#287EFF",
-                            }}
-                        />
                     </Box>
 
+                </motion.div>
 
-                    {/* Code */}
+
+                {/* =====================================================
+                            6+ PROJECTS - FLOATING
+                ===================================================== */}
+
+                <motion.div
+                    animate={{
+                        y: [0, 12, 0, -10, 0],
+                    }}
+
+                    transition={{
+                        duration: 4.5,
+
+                        repeat: Infinity,
+
+                        ease: "easeInOut",
+
+                        delay: 0.4,
+                    }}
+
+                    style={{
+                        position: "absolute",
+
+                        right: "4%",
+
+                        top: "3%",
+
+                        zIndex: 5,
+                    }}
+                >
 
                     <Box
                         sx={{
+                            width: {
+                                xs: 100,
+                                sm: 128,
+                                md: 170,
+                            },
+
                             p: {
                                 xs: 1.2,
                                 sm: 1.8,
                                 md: 2.5,
                             },
 
-                            fontFamily:
-                                "monospace",
+                            border:
+                                "1px solid rgba(255,255,255,0.2)",
 
-                            fontSize: {
-                                xs: 8.5,
-                                sm: 10,
-                                md: 13,
-                                lg: 14,
+                            borderRadius: {
+                                xs: "12px",
+                                md: "16px",
                             },
 
-                            lineHeight: 1.9,
+                            background:
+                                "rgba(8,10,28,0.65)",
 
-                            whiteSpace: "nowrap",
-                            overflowX: "auto",
+                            backdropFilter:
+                                "blur(12px)",
+
+                            boxSizing: "border-box",
                         }}
                     >
 
-                        <Typography
-                            component="div"
+                        <RocketLaunchIcon
                             sx={{
-                                color: "#777",
-                                fontFamily: "monospace",
-                                fontSize: {xs:"14px",md:"20px"},
-                            }}
-                        >
-                            01&nbsp;&nbsp;
-                            <Box
-                                component="span"
-                                sx={{ color: "#E05AFF" }}
-                            >
-                                const
-                            </Box>{" "}
-                            <Box
-                                component="span"
-                                sx={{ color: "#55D9FF" }}
-                            >
-                                developer
-                            </Box>{" "}
-                            = {"{"}
-                        </Typography>
+                                fontSize: {
+                                    xs: 35,
+                                    sm: 26,
+                                    md: 35,
+                                },
 
+                                color: "#00BFFF",
+
+                                mb: {
+                                    xs: 0.5,
+                                    md: 1,
+                                },
+                            }}
+                        />
 
                         <Typography
-                            component="div"
                             sx={{
-                                color: "#777",
-                                fontFamily: "monospace",
-                                fontSize: {xs:"14px",md:"20px"},
+                                color: "#fff",
+
+                                fontSize: {
+                                    xs: 25,
+                                    sm: 26,
+                                    md: 30,
+                                },
+
+                                fontWeight: 600,
+
+                                lineHeight: 1,
                             }}
                         >
-                            02&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Box
-                                component="span"
-                                sx={{ color: "#fff" }}
-                            >
-                                Name:
-                            </Box>{" "}
-                            <Box
-                                component="span"
-                                sx={{ color: "#54E66D" }}
-                            >
-                                "Mohamed Raashith",
-                            </Box>
+                            6+
                         </Typography>
-
 
                         <Typography
-                            component="div"
                             sx={{
-                                color: "#777",
-                                fontFamily: "monospace",
-                               fontSize: {xs:"14px",md:"20px"},
+                                color: "#D0D0D0",
+
+                                fontSize: {
+                                    xs: 14,
+                                    sm: 14,
+                                    md: 16,
+                                },
+
+                                width: {
+                                    xs: "auto",
+                                    md: 155,
+                                },
+
+                                mt: {
+                                    xs: 0.5,
+                                    md: 1,
+                                },
+
+                                lineHeight: 1.4,
                             }}
                         >
-                            03&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Box
-                                component="span"
-                                sx={{ color: "#fff" }}
-                            >
-                                Role:
-                            </Box>{" "}
-                            <Box
-                                component="span"
-                                sx={{ color: "#54E66D" }}
-                            >
-                                "Frontend Developer",
-                            </Box>
+                            Projects Completed
                         </Typography>
 
-
-                        <Typography
-                            component="div"
-                            sx={{
-                                color: "#777",
-                                fontFamily: "monospace",
-                               fontSize: {xs:"14px",md:"20px"},
-                            }}
-                        >
-                            04&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Box
-                                component="span"
-                                sx={{ color: "#fff" }}
-                            >
-                                Skills:
-                            </Box>{" "}
-                            <Box
-                                component="span"
-                                sx={{ color: "#54E66D" }}
-                            >
-                                ["Frontend", "React.js"]
-                            </Box>
-                        </Typography>
-
-
-                        <Typography
-                            component="div"
-                            sx={{
-                                color: "#777",
-                                fontFamily: "monospace",
-                                fontSize: {xs:"14px",md:"20px"},
-                            }}
-                        >
-                            05&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Box
-                                component="span"
-                                sx={{ color: "#fff" }}
-                            >
-                                passion:
-                            </Box>{" "}
-                            <Box
-                                component="span"
-                                sx={{ color: "#54E66D" }}
-                            >
-                                "Building amazing
-                            </Box>
-                        </Typography>
-
-
-                        <Typography
-                            component="div"
-                            sx={{
-                                color: "#777",
-                                fontFamily: "monospace",
-                                fontSize: {xs:"14px",md:"20px"},
-                            }}
-                        >
-                            06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Box
-                                component="span"
-                                sx={{ color: "#54E66D" }}
-                            >
-                                web experiences"
-                            </Box>
-                        </Typography>
-
-
-                        <Typography
-                            component="div"
-                            sx={{
-                                color: "#777",
-                                fontFamily: "monospace",
-                                fontSize: {xs:"14px",md:"20px"},
-                            }}
-                        >
-                            07&nbsp;&nbsp;{"};"}
-                        </Typography>
                     </Box>
-                </Box>
+
+                </motion.div>
+
+
+                {/* =====================================================
+                            2+ YEARS - FLOATING
+                ===================================================== */}
+
+                <motion.div
+                    animate={{
+                        y: [0, -10, 0, 12, 0],
+                    }}
+
+                    transition={{
+                        duration: 4.2,
+
+                        repeat: Infinity,
+
+                        ease: "easeInOut",
+
+                        delay: 0.8,
+                    }}
+
+                    style={{
+                        display: "block",
+
+                        position: "absolute",
+
+                        right: "-3%",
+
+                        top: "34%",
+
+                        zIndex: 5,
+                    }}
+                >
+
+                    <Box
+                        sx={{
+                            display: {
+                                xs: "none",
+                                sm: "block",
+                            },
+
+                            width: {
+                                sm: 128,
+                                md: 155,
+                            },
+
+                            p: {
+                                sm: 1.8,
+                                md: 2.5,
+                            },
+
+                            border:
+                                "1px solid rgba(255,255,255,0.2)",
+
+                            borderRadius: "16px",
+
+                            background:
+                                "rgba(8,10,28,0.65)",
+
+                            backdropFilter:
+                                "blur(12px)",
+
+                            boxSizing: "border-box",
+                        }}
+                    >
+
+                        <CodeIcon
+                            sx={{
+                                fontSize: {
+                                    sm: 26,
+                                    md: 35,
+                                },
+
+                                color: "#00BFFF",
+
+                                mb: 1,
+                            }}
+                        />
+
+                        <Typography
+                            sx={{
+                                color: "#fff",
+
+                                fontSize: {
+                                    sm: 18,
+                                    md: 30,
+                                },
+
+                                fontWeight: 600,
+
+                                lineHeight: 1,
+                            }}
+                        >
+                            2+
+                        </Typography>
+
+                        <Typography
+                            sx={{
+                                color: "#D0D0D0",
+
+                                fontSize: {
+                                    sm: 10,
+                                    md: 16,
+                                },
+
+                                mt: 1,
+
+                                width: {
+                                    sm: "auto",
+                                    md: 155,
+                                },
+
+                                lineHeight: 1.4,
+                            }}
+                        >
+                            Years of Learning
+                        </Typography>
+
+                    </Box>
+
+                </motion.div>
+
+
+                {/* =====================================================
+                            CODE EDITOR
+                            BOTTOM → TOP ONCE
+                ===================================================== */}
+
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: 120,
+                    }}
+
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+
+                    transition={{
+                        duration: 1,
+                        ease: "easeOut",
+                        delay: 0.5,
+                    }}
+
+                    style={{
+                        position: "absolute",
+
+                        left: "8%",
+
+                        bottom: "1%",
+
+                        width: "100%",
+
+                        maxWidth: "460px",
+
+                        zIndex: 6,
+                    }}
+                >
+
+                    <Box
+                        sx={{
+                            position: "relative",
+
+                            width: {
+                                xs: "70%",
+                                sm: "82%",
+                                md: "390px",
+                                lg: "460px",
+                            },
+
+                            maxWidth: {
+                                xs: "340px",
+                                sm: "420px",
+                                md: "390px",
+                                lg: "460px",
+                            },
+
+                            minHeight: {
+                                xs: 165,
+                                sm: 210,
+                                md: 255,
+                            },
+
+                            border:
+                                "1px solid rgba(255,255,255,0.22)",
+
+                            borderRadius: "18px",
+
+                            background:
+                                "rgba(8,10,28,0.85)",
+
+                            backdropFilter:
+                                "blur(6px)",
+
+                            boxShadow:
+                                "0 20px 50px rgba(0,0,0,0.35)",
+
+                            overflow: "hidden",
+
+                            boxSizing: "border-box",
+                        }}
+                    >
+
+                        {/* =================================================
+                                    WINDOW HEADER
+                        ================================================= */}
+
+                        <Box
+                            sx={{
+                                display: "flex",
+
+                                gap: 1,
+
+                                px: 2,
+
+                                py: 1.5,
+
+                                borderBottom:
+                                    "1px solid rgba(255,255,255,0.08)",
+                            }}
+                        >
+
+                            <Box
+                                sx={{
+                                    width: {
+                                        xs: 12,
+                                        md: 13,
+                                    },
+
+                                    height: {
+                                        xs: 12,
+                                        md: 13,
+                                    },
+
+                                    borderRadius: "50%",
+
+                                    background: "#C329FF",
+                                }}
+                            />
+
+                            <Box
+                                sx={{
+                                    width: {
+                                        xs: 12,
+                                        md: 13,
+                                    },
+
+                                    height: {
+                                        xs: 12,
+                                        md: 13,
+                                    },
+
+                                    borderRadius: "50%",
+
+                                    background: "#7D4CFF",
+                                }}
+                            />
+
+                            <Box
+                                sx={{
+                                    width: {
+                                        xs: 12,
+                                        md: 13,
+                                    },
+
+                                    height: {
+                                        xs: 12,
+                                        md: 13,
+                                    },
+
+                                    borderRadius: "50%",
+
+                                    background: "#287EFF",
+                                }}
+                            />
+
+                        </Box>
+
+
+                        {/* =================================================
+                                    CODE
+                        ================================================= */}
+
+                        <Box
+                            sx={{
+                                p: {
+                                    xs: 1.2,
+                                    sm: 1.8,
+                                    md: 2.5,
+                                },
+
+                                fontFamily:
+                                    "monospace",
+
+                                fontSize: {
+                                    xs: 8.5,
+                                    sm: 10,
+                                    md: 13,
+                                    lg: 14,
+                                },
+
+                                lineHeight: 1.9,
+
+                                whiteSpace:
+                                    "nowrap",
+
+                                overflowX:
+                                    "auto",
+                            }}
+                        >
+
+                            <Typography
+                                component="div"
+                                sx={{
+                                    color: "#777",
+
+                                    fontFamily:
+                                        "monospace",
+
+                                    fontSize: {
+                                        xs: "14px",
+                                        md: "20px",
+                                    },
+                                }}
+                            >
+                                01&nbsp;&nbsp;
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#E05AFF",
+                                    }}
+                                >
+                                    const
+                                </Box>{" "}
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#55D9FF",
+                                    }}
+                                >
+                                    developer
+                                </Box>{" "}
+                                = {"{"}
+                            </Typography>
+
+
+                            <Typography
+                                component="div"
+                                sx={{
+                                    color: "#777",
+
+                                    fontFamily:
+                                        "monospace",
+
+                                    fontSize: {
+                                        xs: "14px",
+                                        md: "20px",
+                                    },
+                                }}
+                            >
+                                02&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#fff",
+                                    }}
+                                >
+                                    Name:
+                                </Box>{" "}
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#54E66D",
+                                    }}
+                                >
+                                    "Mohamed Raashith",
+                                </Box>
+                            </Typography>
+
+
+                            <Typography
+                                component="div"
+                                sx={{
+                                    color: "#777",
+
+                                    fontFamily:
+                                        "monospace",
+
+                                    fontSize: {
+                                        xs: "14px",
+                                        md: "20px",
+                                    },
+                                }}
+                            >
+                                03&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#fff",
+                                    }}
+                                >
+                                    Role:
+                                </Box>{" "}
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#54E66D",
+                                    }}
+                                >
+                                    "Frontend Developer",
+                                </Box>
+                            </Typography>
+
+
+                            <Typography
+                                component="div"
+                                sx={{
+                                    color: "#777",
+
+                                    fontFamily:
+                                        "monospace",
+
+                                    fontSize: {
+                                        xs: "14px",
+                                        md: "20px",
+                                    },
+                                }}
+                            >
+                                04&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#fff",
+                                    }}
+                                >
+                                    Skills:
+                                </Box>{" "}
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#54E66D",
+                                    }}
+                                >
+                                    ["Frontend", "React.js"]
+                                </Box>
+                            </Typography>
+
+
+                            <Typography
+                                component="div"
+                                sx={{
+                                    color: "#777",
+
+                                    fontFamily:
+                                        "monospace",
+
+                                    fontSize: {
+                                        xs: "14px",
+                                        md: "20px",
+                                    },
+                                }}
+                            >
+                                05&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#fff",
+                                    }}
+                                >
+                                    passion:
+                                </Box>{" "}
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#54E66D",
+                                    }}
+                                >
+                                    "Building amazing
+                                </Box>
+                            </Typography>
+
+
+                            <Typography
+                                component="div"
+                                sx={{
+                                    color: "#777",
+
+                                    fontFamily:
+                                        "monospace",
+
+                                    fontSize: {
+                                        xs: "14px",
+                                        md: "20px",
+                                    },
+                                }}
+                            >
+                                06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        color: "#54E66D",
+                                    }}
+                                >
+                                    web experiences"
+                                </Box>
+                            </Typography>
+
+
+                            <Typography
+                                component="div"
+                                sx={{
+                                    color: "#777",
+
+                                    fontFamily:
+                                        "monospace",
+
+                                    fontSize: {
+                                        xs: "14px",
+                                        md: "20px",
+                                    },
+                                }}
+                            >
+                                07&nbsp;&nbsp;{"};"}
+                            </Typography>
+
+                        </Box>
+
+                    </Box>
+
+                </motion.div>
+
             </Box>
+
         </>
-    )
+    );
 }
 
-export default HeroVisual
+
+export default HeroVisual;
