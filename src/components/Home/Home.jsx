@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
     Box,
@@ -8,16 +8,25 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import TechStack from "./TechStack";
 import HeroVisual from "./HeroVisual";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import DownloadIcon from "@mui/icons-material/Download";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import ArrowForwardIcon
+    from "@mui/icons-material/ArrowForward";
+
+import DownloadIcon
+    from "@mui/icons-material/Download";
+
+import GitHubIcon
+    from "@mui/icons-material/GitHub";
+
+import LinkedInIcon
+    from "@mui/icons-material/LinkedIn";
+
+import InstagramIcon
+    from "@mui/icons-material/Instagram";
 
 
 // =====================================================
@@ -63,11 +72,48 @@ function Home() {
 
 
     // =====================================================
+    //              CHANGING ROLES
+    // =====================================================
+
+    const roles = [
+        "FRONTEND DEVELOPER",
+        "UI DESIGNER",
+        "WEB DEVELOPER",
+        "FREELANCER",
+    ];
+
+
+    const [currentRole, setCurrentRole] =
+        useState(0);
+
+
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+
+            setCurrentRole(
+                (prev) =>
+                    (prev + 1) % roles.length
+            );
+
+        }, 2500);
+
+
+        return () => {
+            clearInterval(interval);
+        };
+
+    }, []);
+
+
+    // =====================================================
     //              PROJECT PAGE
     // =====================================================
 
     const handleProjects = () => {
+
         navigate("/projects");
+
     };
 
 
@@ -77,7 +123,8 @@ function Home() {
 
     const downloadResume = () => {
 
-        const link = document.createElement("a");
+        const link =
+            document.createElement("a");
 
         link.href = "/raashith.pdf";
 
@@ -89,10 +136,12 @@ function Home() {
         link.click();
 
         document.body.removeChild(link);
+
     };
 
 
     return (
+
         <>
 
             {/* =====================================================
@@ -117,9 +166,11 @@ function Home() {
 
                     backgroundSize: "cover",
 
-                    backgroundPosition: "center",
+                    backgroundPosition:
+                        "center",
 
-                    backgroundRepeat: "no-repeat",
+                    backgroundRepeat:
+                        "no-repeat",
 
                     display: "flex",
 
@@ -166,8 +217,11 @@ function Home() {
                 ===================================================== */}
 
                 <motion.div
+
                     variants={contentContainer}
+
                     initial="hidden"
+
                     animate="visible"
 
                     style={{
@@ -205,28 +259,30 @@ function Home() {
                         ================================================= */}
 
                         <motion.div
+
                             animate={{
                                 y: [0, -7, 0, 7, 0],
                             }}
 
                             transition={{
                                 duration: 3,
-
                                 repeat: Infinity,
-
                                 ease: "easeInOut",
                             }}
 
                             style={{
-                                display: "inline-block",
+                                display:
+                                    "inline-block",
                             }}
                         >
 
                             <Box
                                 sx={{
-                                    display: "inline-flex",
+                                    display:
+                                        "inline-flex",
 
-                                    alignItems: "center",
+                                    alignItems:
+                                        "center",
 
                                     gap: 1,
 
@@ -240,7 +296,8 @@ function Home() {
                                     border:
                                         "1px solid rgba(255,255,255,0.25)",
 
-                                    borderRadius: "30px",
+                                    borderRadius:
+                                        "30px",
 
                                     background:
                                         "rgba(5,8,20,0.45)",
@@ -263,7 +320,8 @@ function Home() {
 
                                         height: 9,
 
-                                        borderRadius: "50%",
+                                        borderRadius:
+                                            "50%",
 
                                         background:
                                             "#48E87A",
@@ -274,6 +332,7 @@ function Home() {
                                         flexShrink: 0,
                                     }}
                                 />
+
 
                                 <Typography
                                     sx={{
@@ -288,7 +347,8 @@ function Home() {
 
                                         fontWeight: 600,
 
-                                        whiteSpace: "nowrap",
+                                        whiteSpace:
+                                            "nowrap",
                                     }}
                                 >
                                     AVAILABLE FOR WORK
@@ -359,7 +419,8 @@ function Home() {
                                         lg: "-3px",
                                     },
 
-                                    wordBreak: "break-word",
+                                    wordBreak:
+                                        "break-word",
                                 }}
                             >
                                 MOHAMED
@@ -396,7 +457,8 @@ function Home() {
                                         lg: "-3px",
                                     },
 
-                                    wordBreak: "break-word",
+                                    wordBreak:
+                                        "break-word",
 
                                     background:
                                         "linear-gradient(90deg, #C329FF, #237EFF)",
@@ -415,7 +477,7 @@ function Home() {
 
 
                         {/* =================================================
-                                    FRONTEND DEVELOPER
+                                    CHANGING ROLE
                         ================================================= */}
 
                         <motion.div
@@ -436,23 +498,80 @@ function Home() {
                                         lg: 33,
                                     },
 
-                                    wordBreak: "break-word",
-
                                     fontWeight: 600,
 
                                     color: "#fff",
+
+                                    minHeight: {
+                                        xs: "30px",
+                                        sm: "35px",
+                                        md: "42px",
+                                    },
+
+                                    display: "flex",
+
+                                    alignItems:
+                                        "center",
+
+                                    flexWrap:
+                                        "wrap",
+
+                                    overflow: "hidden",
                                 }}
                             >
 
-                                <Box
-                                    component="span"
-                                    sx={{
-                                        color: "#A83DFF",
-                                    }}
+                                <AnimatePresence
+                                    mode="wait"
                                 >
-                                    FRONTEND
-                                </Box>{" "}
-                                DEVELOPER
+
+                                    <motion.span
+
+                                        key={
+                                            roles[
+                                                currentRole
+                                            ]
+                                        }
+
+                                        initial={{
+                                            opacity: 0,
+                                            y: 25,
+                                        }}
+
+                                        animate={{
+                                            opacity: 1,
+                                            y: 0,
+                                        }}
+
+                                        exit={{
+                                            opacity: 0,
+                                            y: -25,
+                                        }}
+
+                                        transition={{
+                                            duration: 0.5,
+                                            ease: "easeOut",
+                                        }}
+
+                                        style={{
+                                            color:
+                                                "#A83DFF",
+
+                                            display:
+                                                "inline-block",
+
+                                            whiteSpace:
+                                                "normal",
+                                        }}
+                                    >
+                                        {
+                                            roles[
+                                                currentRole
+                                            ]
+                                        }
+
+                                    </motion.span>
+
+                                </AnimatePresence>
 
                             </Typography>
 
@@ -480,13 +599,15 @@ function Home() {
 
                                     width: "100%",
 
-                                    boxSizing: "border-box",
+                                    boxSizing:
+                                        "border-box",
                                 }}
                             >
 
                                 <Typography
                                     sx={{
-                                        color: "#BDBDBD",
+                                        color:
+                                            "#BDBDBD",
 
                                         fontSize: {
                                             xs: 16,
@@ -500,10 +621,11 @@ function Home() {
                                         lineHeight: 1.5,
                                     }}
                                 >
-                                    I build responsive, interactive
-                                    and user-friendly websites with
-                                    modern technologies and clean
-                                    code.
+                                    I build responsive,
+                                    interactive and
+                                    user-friendly websites
+                                    with modern technologies
+                                    and clean code.
                                 </Typography>
 
                             </Box>
@@ -573,7 +695,8 @@ function Home() {
                                             md: 3.5,
                                         },
 
-                                        borderRadius: "13px",
+                                        borderRadius:
+                                            "13px",
 
                                         color: "#fff",
 
@@ -586,7 +709,8 @@ function Home() {
 
                                         fontWeight: 600,
 
-                                        textTransform: "none",
+                                        textTransform:
+                                            "none",
 
                                         background:
                                             "linear-gradient(100deg, #A62CFF, #237EFF)",
@@ -638,7 +762,8 @@ function Home() {
                                             md: 3.5,
                                         },
 
-                                        borderRadius: "13px",
+                                        borderRadius:
+                                            "13px",
 
                                         color: "#fff",
 
@@ -973,7 +1098,9 @@ function Home() {
             <TechStack />
 
         </>
+
     );
+
 }
 
 
