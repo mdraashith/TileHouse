@@ -11,6 +11,45 @@ import CodeIcon from "@mui/icons-material/Code";
 import Tools from "./Tools";
 import Professional from "./Professional";
 
+import { motion } from "framer-motion";
+
+
+// =====================================================
+//                  ANIMATION
+// =====================================================
+
+const bottomToTop = {
+    hidden: {
+        opacity: 0,
+        y: 60,
+    },
+
+    visible: {
+        opacity: 1,
+        y: 0,
+
+        transition: {
+            duration: 0.7,
+            ease: "easeOut",
+        },
+    },
+};
+
+
+const staggerContainer = {
+    hidden: {},
+
+    visible: {
+        transition: {
+            staggerChildren: 0.16,
+        },
+    },
+};
+
+
+// =====================================================
+//                  SKILL
+// =====================================================
 
 function Skill() {
 
@@ -53,8 +92,10 @@ function Skill() {
 
         <Box
             id="skills"
+
             sx={{
                 width: "100%",
+
                 minHeight: "100vh",
 
                 color: "#fff",
@@ -63,7 +104,9 @@ function Skill() {
                     "url('/img/aboutbg.png')",
 
                 backgroundSize: "cover",
+
                 backgroundPosition: "center",
+
                 backgroundRepeat: "no-repeat",
 
                 px: {
@@ -84,175 +127,236 @@ function Skill() {
         >
 
             {/* =====================================================
-                    HEADER
+                            HEADER
             ===================================================== */}
 
-            <Box
-                sx={{
-                    textAlign: "center",
+            <motion.div
 
-                    maxWidth: "850px",
+                initial="hidden"
 
-                    mx: "auto",
+                whileInView="visible"
 
-                    mb: {
-                        xs: 5,
-                        md: 6,
-                    },
+                viewport={{
+                    once: true,
+                    amount: 0.2,
                 }}
-            >
 
-                {/* MY SKILLS */}
+                variants={staggerContainer}
+            >
 
                 <Box
                     sx={{
-                        display: "flex",
+                        textAlign: "center",
 
-                        justifyContent: "center",
+                        maxWidth: "850px",
 
-                        alignItems: "center",
+                        mx: "auto",
 
-                        gap: 1.5,
-                        mt:5,
-                        mb: 1.5,
+                        mb: {
+                            xs: 5,
+                            md: 6,
+                        },
                     }}
                 >
 
-                    <Box
-                        sx={{
-                            width: 8,
-                            height: 8,
+                    {/* =================================================
+                                MY SKILLS
+                    ================================================= */}
 
-                            borderRadius: "50%",
-
-                            background: "#A93DFF",
-
-                            boxShadow:
-                                "0 0 12px #A93DFF",
-                        }}
-                    />
-
-                    <Typography
-                        sx={{
-                            color: "#E2D4FF",
-
-                            fontSize: {
-                                xs: 18,
-                                sm: 25,
-                            },
-                            
-                            letterSpacing: "4px",
-
-                            fontWeight: 700,
-                        }}
+                    <motion.div
+                        variants={bottomToTop}
                     >
-                        MY SKILLS
-                    </Typography>
 
-                    <Box
-                        sx={{
-                            width: 8,
-                            height: 8,
+                        <Box
+                            sx={{
+                                display: "flex",
 
-                            borderRadius: "50%",
+                                justifyContent:
+                                    "center",
 
-                            background: "#A93DFF",
+                                alignItems: "center",
 
-                            boxShadow:
-                                "0 0 12px #A93DFF",
-                        }}
-                    />
+                                gap: 1.5,
+
+                                mt: 5,
+
+                                mb: 1.5,
+                            }}
+                        >
+
+                            <Box
+                                sx={{
+                                    width: 8,
+
+                                    height: 8,
+
+                                    borderRadius: "50%",
+
+                                    background: "#A93DFF",
+
+                                    boxShadow:
+                                        "0 0 12px #A93DFF",
+                                }}
+                            />
+
+
+                            <Typography
+                                sx={{
+                                    color: "#E2D4FF",
+
+                                    fontSize: {
+                                        xs: 18,
+                                        sm: 25,
+                                    },
+
+                                    letterSpacing: "4px",
+
+                                    fontWeight: 700,
+                                }}
+                            >
+                                MY SKILLS
+                            </Typography>
+
+
+                            <Box
+                                sx={{
+                                    width: 8,
+
+                                    height: 8,
+
+                                    borderRadius: "50%",
+
+                                    background: "#A93DFF",
+
+                                    boxShadow:
+                                        "0 0 12px #A93DFF",
+                                }}
+                            />
+
+                        </Box>
+
+                    </motion.div>
+
+
+                    {/* =================================================
+                                MAIN TITLE
+                    ================================================= */}
+
+                    <motion.div
+                        variants={bottomToTop}
+                    >
+
+                        <Typography
+                            component="h1"
+
+                            sx={{
+                                fontSize: {
+                                    xs: "41px",
+                                    sm: "50px",
+                                    md: "64px",
+                                    lg: "72px",
+                                },
+
+                                lineHeight: 1.05,
+
+                                fontWeight: 800,
+
+                                letterSpacing: "-2px",
+
+                                mb: 2,
+                            }}
+                        >
+
+                            Skills &{" "}
+
+                            <Box
+                                component="span"
+
+                                sx={{
+                                    background:
+                                        "linear-gradient(90deg,#C12CFF,#287FFF)",
+
+                                    WebkitBackgroundClip:
+                                        "text",
+
+                                    WebkitTextFillColor:
+                                        "transparent",
+                                }}
+                            >
+                                Expertise
+                            </Box>
+
+                        </Typography>
+
+                    </motion.div>
+
+
+                    {/* =================================================
+                                DESCRIPTION
+                    ================================================= */}
+
+                    <motion.div
+                        variants={bottomToTop}
+                    >
+
+                        <Typography
+                            sx={{
+                                color: "#C2C5D5",
+
+                                fontSize: {
+                                    xs: 18,
+                                    sm: 15,
+                                    md: 18,
+                                },
+
+                                lineHeight: 1.6,
+
+                                maxWidth: "700px",
+
+                                mx: "auto",
+                            }}
+                        >
+                            A passionate Frontend Developer with
+                            knowledge in modern web technologies
+                            and tools.
+                        </Typography>
+
+                    </motion.div>
+
+
+                    {/* =================================================
+                                LINE
+                    ================================================= */}
+
+                    <motion.div
+                        variants={bottomToTop}
+                    >
+
+                        <Box
+                            sx={{
+                                width: {
+                                    xs: 90,
+                                    md: 130,
+                                },
+
+                                height: 3,
+
+                                mx: "auto",
+
+                                mt: 3,
+
+                                borderRadius: 5,
+
+                                background:
+                                    "linear-gradient(90deg,#C12CFF,#287FFF)",
+                            }}
+                        />
+
+                    </motion.div>
 
                 </Box>
 
-
-                {/* MAIN TITLE */}
-
-                <Typography
-                    component="h1"
-                    sx={{
-                        fontSize: {
-                            xs: "41px",
-                            sm: "50px",
-                            md: "64px",
-                            lg: "72px",
-                        },
-
-                        lineHeight: 1.05,
-
-                        fontWeight: 800,
-
-                        letterSpacing: "-2px",
-
-                        mb: 2,
-                    }}
-                >
-                    Skills &{" "}
-
-                    <Box
-                        component="span"
-                        sx={{
-                            background:
-                                "linear-gradient(90deg,#C12CFF,#287FFF)",
-
-                            WebkitBackgroundClip:
-                                "text",
-
-                            WebkitTextFillColor:
-                                "transparent",
-                        }}
-                    >
-                        Expertise
-                    </Box>
-
-                </Typography>
-
-
-                {/* DESCRIPTION */}
-
-                <Typography
-                    sx={{
-                        color: "#C2C5D5",
-
-                        fontSize: {
-                            xs: 18,
-                            sm: 15,
-                            md: 18,
-                        },
-
-                        lineHeight: 1.6,
-
-                        maxWidth: "700px",
-
-                        mx: "auto",
-                    }}
-                >
-                    A passionate Frontend Developer with
-                    knowledge in modern web technologies
-                    and tools.
-                </Typography>
-
-
-                {/* LINE */}
-
-                <Box
-                    sx={{
-                        width:{xs:90,md:130},
-
-                        height: 3,
-
-                        mx: "auto",
-
-                        mt: 3,
-
-                        borderRadius: 5,
-
-                        background:
-                            "linear-gradient(90deg,#C12CFF,#287FFF)",
-                    }}
-                />
-
-            </Box>
+            </motion.div>
 
 
             {/* =====================================================
@@ -278,118 +382,54 @@ function Skill() {
                 }}
             >
 
-
                 {/* =================================================
                         TECHNICAL SKILLS
                 ================================================= */}
 
-                <Box
-                    sx={{
-                        width: "100%",
+                <motion.div
 
-                        p: {
-                            xs: 2,
-                            sm: 3,
-                            md: 4,
-                        },
+                    initial="hidden"
 
-                        borderRadius: "18px",
+                    whileInView="visible"
 
-                        border:
-                            "1px solid rgba(114,71,255,0.35)",
-
-                        background:
-                            "rgba(4,8,30,0.65)",
-
-                        backdropFilter:
-                            "blur(10px)",
+                    viewport={{
+                        once: true,
+                        amount: 0.15,
                     }}
-                >
 
-                    {/* TITLE */}
+                    variants={staggerContainer}
+                >
 
                     <Box
                         sx={{
-                            display: "flex",
+                            width: "100%",
 
-                            alignItems: "center",
+                            p: {
+                                xs: 2,
+                                sm: 3,
+                                md: 4,
+                            },
 
-                            gap: 1.5,
+                            borderRadius: "18px",
 
-                            mb: 4,
+                            border:
+                                "1px solid rgba(114,71,255,0.35)",
+
+                            background:
+                                "rgba(4,8,30,0.65)",
+
+                            backdropFilter:
+                                "blur(10px)",
                         }}
                     >
 
-                        <Box
-                            sx={{
-                                width: 50,
-                                height: 50,
+                        {/* =================================================
+                                    TITLE
+                        ================================================= */}
 
-                                borderRadius: "10px",
-
-                                display: "flex",
-
-                                alignItems: "center",
-
-                                justifyContent: "center",
-
-                                color: "#A43DFF",
-
-                                background:
-                                    "rgba(113,48,255,0.18)",
-
-                                border:
-                                    "1px solid rgba(130,65,255,0.35)",
-                            }}
+                        <motion.div
+                            variants={bottomToTop}
                         >
-                            <CodeIcon />
-                        </Box>
-
-
-                        <Typography
-                            sx={{
-                                fontSize: {
-                                    xs: 22,
-                                    sm: 24,
-                                    md: 27,
-                                },
-
-                                fontWeight: 700,
-                            }}
-                        >
-                            Technical Skills
-                        </Typography>
-
-                    </Box>
-
-
-                    {/* SKILLS */}
-
-                    {technicalSkills.map((skill) => (
-
-                        <Box
-                            key={skill.name}
-                            sx={{
-                                display: "grid",
-
-                                gridTemplateColumns: {
-                                    xs: "105px 1fr 40px",
-                                    sm: "145px 1fr 45px",
-                                    md: "145px 1fr 45px",
-                                },
-
-                                alignItems: "center",
-
-                                gap: {
-                                    xs: 1,
-                                    sm: 2,
-                                },
-
-                                mb: 2.8,
-                            }}
-                        >
-
-                            {/* IMAGE + NAME */}
 
                             <Box
                                 sx={{
@@ -397,149 +437,347 @@ function Skill() {
 
                                     alignItems: "center",
 
-                                    gap: 1,
+                                    gap: 1.5,
 
-                                    minWidth: 0,
+                                    mb: 4,
                                 }}
                             >
 
                                 <Box
                                     sx={{
+                                        width: 50,
+
+                                        height: 50,
+
+                                        borderRadius: "10px",
+
                                         display: "flex",
 
                                         alignItems: "center",
 
-                                        gap: 0.5,
+                                        justifyContent:
+                                            "center",
 
-                                        flexShrink: 0,
+                                        color: "#A43DFF",
+
+                                        background:
+                                            "rgba(113,48,255,0.18)",
+
+                                        border:
+                                            "1px solid rgba(130,65,255,0.35)",
                                     }}
                                 >
-
-                                    <Box
-                                        component="img"
-                                        src={skill.image}
-                                        alt={skill.name}
-                                        sx={{
-                                            width: {
-                                                xs: 30,
-                                                sm: 38,
-                                            },
-
-                                            height: {
-                                                xs: 30,
-                                                sm: 38,
-                                            },
-
-                                            objectFit: "contain",
-                                        }}
-                                    />
-
-
-                                    {skill.secondImage && (
-
-                                        <Box
-                                            component="img"
-                                            src={
-                                                skill.secondImage
-                                            }
-                                            alt=""
-                                            sx={{
-                                                width: {
-                                                    xs: 34,
-                                                    sm: 45,
-                                                },
-
-                                                height: {
-                                                    xs: 34,
-                                                    sm: 38,
-                                                },
-
-                                                objectFit:
-                                                    "contain",
-                                            }}
-                                        />
-
-                                    )}
-
+                                    <CodeIcon />
                                 </Box>
 
 
                                 <Typography
                                     sx={{
-                                        color: "#E2E3EA",
-
                                         fontSize: {
-                                            xs: 16,
-                                            sm: 14,
-                                            md: 16,
+                                            xs: 22,
+                                            sm: 24,
+                                            md: 27,
                                         },
 
-                                        whiteSpace:
-                                            "nowrap",
-                                       
+                                        fontWeight: 700,
                                     }}
                                 >
-                                    {skill.name}
+                                    Technical Skills
                                 </Typography>
 
                             </Box>
 
-
-                            {/* PROGRESS BAR */}
-
-                            <LinearProgress
-                                variant="determinate"
-                                value={skill.value}
-                                sx={{
-                                    height: 9,
-
-                                    borderRadius: 10,
-                                    ml:8,
-                                    backgroundColor:
-                                        "rgba(80,85,145,0.25)",
-
-                                    "& .MuiLinearProgress-bar":
-                                        {
-                                            borderRadius: 10,
-
-                                            background:
-                                                "linear-gradient(90deg,#B62CFF,#087EFF)",
-                                        },
-                                }}
-                            />
+                        </motion.div>
 
 
-                            {/* PERCENTAGE */}
+                        {/* =================================================
+                                SKILLS
+                        ================================================= */}
 
-                            <Typography
-                                sx={{
-                                    color: "#fff",
+                        <motion.div
+                            variants={staggerContainer}
+                        >
 
-                                    fontSize: {
-                                        xs: 16,
-                                        sm: 14,
-                                    },
+                            {technicalSkills.map(
+                                (skill) => (
 
-                                    fontWeight: 600,
+                                    <motion.div
+                                        key={skill.name}
 
-                                    textAlign: "right",
-                                }}
-                            >
-                                {skill.value}%
-                            </Typography>
+                                        variants={bottomToTop}
 
-                        </Box>
+                                        style={{
+                                            width: "100%",
+                                        }}
+                                    >
 
-                    ))}
+                                        <Box
+                                            sx={{
+                                                display: "grid",
 
-                </Box>
+                                                gridTemplateColumns: {
+                                                    xs: "105px 1fr 40px",
+                                                    sm: "145px 1fr 45px",
+                                                    md: "145px 1fr 45px",
+                                                },
+
+                                                alignItems:
+                                                    "center",
+
+                                                gap: {
+                                                    xs: 1,
+                                                    sm: 2,
+                                                },
+
+                                                mb: 2.8,
+                                            }}
+                                        >
+
+                                            {/* =================================
+                                                    IMAGE + NAME
+                                            ================================= */}
+
+                                            <Box
+                                                sx={{
+                                                    display: "flex",
+
+                                                    alignItems:
+                                                        "center",
+
+                                                    gap: 1,
+
+                                                    minWidth: 0,
+                                                }}
+                                            >
+
+                                                <Box
+                                                    sx={{
+                                                        display: "flex",
+
+                                                        alignItems:
+                                                            "center",
+
+                                                        gap: 0.5,
+
+                                                        flexShrink: 0,
+                                                    }}
+                                                >
+
+                                                    <Box
+                                                        component="img"
+
+                                                        src={
+                                                            skill.image
+                                                        }
+
+                                                        alt={
+                                                            skill.name
+                                                        }
+
+                                                        sx={{
+                                                            width: {
+                                                                xs: 30,
+                                                                sm: 38,
+                                                            },
+
+                                                            height: {
+                                                                xs: 30,
+                                                                sm: 38,
+                                                            },
+
+                                                            objectFit:
+                                                                "contain",
+                                                        }}
+                                                    />
+
+
+                                                    {skill.secondImage && (
+
+                                                        <Box
+                                                            component="img"
+
+                                                            src={
+                                                                skill.secondImage
+                                                            }
+
+                                                            alt=""
+
+                                                            sx={{
+                                                                width: {
+                                                                    xs: 34,
+                                                                    sm: 45,
+                                                                },
+
+                                                                height: {
+                                                                    xs: 34,
+                                                                    sm: 38,
+                                                                },
+
+                                                                objectFit:
+                                                                    "contain",
+                                                            }}
+                                                        />
+
+                                                    )}
+
+                                                </Box>
+
+
+                                                <Typography
+                                                    sx={{
+                                                        color:
+                                                            "#E2E3EA",
+
+                                                        fontSize: {
+                                                            xs: 16,
+                                                            sm: 14,
+                                                            md: 18,
+                                                        },
+
+                                                        whiteSpace:
+                                                            "nowrap",
+
+                                                       
+
+                                                        
+                                                    }}
+                                                >
+                                                    {skill.name}
+                                                </Typography>
+
+                                            </Box>
+
+
+                                            {/* =================================
+                                                    PROGRESS BAR
+                                            ================================= */}
+
+                                            <LinearProgress
+                                                variant="determinate"
+
+                                                value={
+                                                    skill.value
+                                                }
+
+                                                sx={{
+                                                    height: 9,
+
+                                                    borderRadius: 10,
+
+                                                    ml: 8,
+
+                                                    backgroundColor:
+                                                        "rgba(80,85,145,0.25)",
+
+                                                    overflow:
+                                                        "hidden",
+
+                                                    "& .MuiLinearProgress-bar":
+                                                        {
+                                                            borderRadius:
+                                                                10,
+
+                                                            background:
+                                                                "linear-gradient(90deg,#B62CFF,#087EFF)",
+
+                                                            transformOrigin:
+                                                                "left center",
+
+                                                            animation:
+                                                                "progressFill 1.2s ease-out",
+
+                                                            "@keyframes progressFill":
+                                                                {
+                                                                    "0%":
+                                                                        {
+                                                                            transform:
+                                                                                "scaleX(0)",
+                                                                        },
+
+                                                                    "100%":
+                                                                        {
+                                                                            transform:
+                                                                                "scaleX(1)",
+                                                                        },
+                                                                },
+                                                        },
+                                                }}
+                                            />
+
+
+                                            {/* =================================
+                                                    PERCENTAGE
+                                            ================================= */}
+
+                                            <Typography
+                                                sx={{
+                                                    color: "#fff",
+
+                                                    fontSize: {
+                                                        xs: 16,
+                                                        sm: 14,
+                                                    },
+
+                                                    fontWeight: 600,
+
+                                                    textAlign:
+                                                        "right",
+                                                }}
+                                            >
+                                                {skill.value}%
+                                            </Typography>
+
+                                        </Box>
+
+                                    </motion.div>
+
+                                )
+                            )}
+
+                        </motion.div>
+
+                    </Box>
+
+                </motion.div>
 
 
                 {/* =================================================
                         TOOLS & TECHNOLOGIES
                 ================================================= */}
 
-                <Tools />
+                <motion.div
+
+                    initial={{
+                        opacity: 0,
+                        y: 60,
+                    }}
+
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+
+                    viewport={{
+                        once: true,
+                        amount: 0.15,
+                    }}
+
+                    transition={{
+                        duration: 0.7,
+
+                        ease: "easeOut",
+
+                        delay: 0.15,
+                    }}
+
+                    style={{
+                        width: "100%",
+                    }}
+                >
+
+                    <Tools />
+
+                </motion.div>
 
             </Box>
 
@@ -548,10 +786,39 @@ function Skill() {
                     PROFESSIONAL SKILLS
             ===================================================== */}
 
-            <Professional />
+            <motion.div
+
+                initial={{
+                    opacity: 0,
+                    y: 60,
+                }}
+
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                }}
+
+                viewport={{
+                    once: true,
+                    amount: 0.15,
+                }}
+
+                transition={{
+                    duration: 0.7,
+
+                    ease: "easeOut",
+
+                    delay: 0.2,
+                }}
+            >
+
+                <Professional />
+
+            </motion.div>
 
         </Box>
     );
 }
+
 
 export default Skill;
