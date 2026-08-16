@@ -1481,7 +1481,7 @@ Thank you.
                             sx={{
                                 textAlign: "center",
                                 color: "#898FA5",
-                                fontSize: 14,
+                                fontSize: 13,
                             }}
                         >
                             Your information is safe with me.
