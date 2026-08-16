@@ -7,18 +7,44 @@ import {
 } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
+
 import VisibilityOutlinedIcon
     from "@mui/icons-material/VisibilityOutlined";
 
+import {
+    motion,
+} from "framer-motion";
+
+
+// =====================================================
+//                  ANIMATION
+// =====================================================
+
+const cardAnimation = {
+    hidden: {
+        opacity: 0,
+        scale: 0.94,
+    },
+
+    visible: {
+        opacity: 1,
+        scale: 1,
+
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
+
+
+// =====================================================
+//                  PROJECT CONTENT
+// =====================================================
 
 function ProjectContent({
     activeCategory,
 }) {
-
-
-    // =====================================================
-    // PROJECT DATA
-    // =====================================================
 
     const projects = [
         {
@@ -40,8 +66,12 @@ function ProjectContent({
             ],
 
             live: "#",
-            github: "https://github.com/mdraashith",
+
+            github:
+                "https://github.com/mdraashith",
         },
+
+
         {
             title: "Garden Website",
 
@@ -60,11 +90,17 @@ function ProjectContent({
                 "Responsive WebDesign",
             ],
 
-            live: "https://heavengarden-official.vercel.app/",
-            github: "https://github.com/mdraashith",
+            live:
+                "https://heavengarden-official.vercel.app/",
+
+            github:
+                "https://github.com/mdraashith",
         },
+
+
         {
             title: "Interior Design",
+
             category: "Web Sites",
 
             image: "/img/interiorproject.png",
@@ -82,9 +118,14 @@ function ProjectContent({
                 "Ideas",
             ],
 
-            live: "https://interiordesign-website.vercel.app/",
-            github: "https://github.com/mdraashith",
+            live:
+                "https://interiordesign-website.vercel.app/",
+
+            github:
+                "https://github.com/mdraashith",
         },
+
+
         {
             title: "Apple Mobile Store",
 
@@ -105,8 +146,11 @@ function ProjectContent({
                 "Responsive WebDesign",
             ],
 
-            live: "https://applemobiles-official.vercel.app/",
-            github: "https://github.com/mdraashith",
+            live:
+                "https://applemobiles-official.vercel.app/",
+
+            github:
+                "https://github.com/mdraashith",
         },
 
 
@@ -128,9 +172,13 @@ function ProjectContent({
                 "Responsive Design",
             ],
 
-            live: "https://haircraft-website.vercel.app/",
-            github: "https://github.com/mdraashith",
+            live:
+                "https://haircraft-website.vercel.app/",
+
+            github:
+                "https://github.com/mdraashith",
         },
+
 
         {
             title: "Rock Paper Scissors",
@@ -150,8 +198,11 @@ function ProjectContent({
                 "Random Choice",
             ],
 
-            live: "https://rockpapersiccors.vercel.app/",
-            github: "https://github.com/mdraashith",
+            live:
+                "https://rockpapersiccors.vercel.app/",
+
+            github:
+                "https://github.com/mdraashith",
         },
 
 
@@ -171,8 +222,11 @@ function ProjectContent({
                 "JavaScript",
             ],
 
-            live: "https://flamesgame-pi.vercel.app/",
-            github: "https://github.com/mdraashith",
+            live:
+                "https://flamesgame-pi.vercel.app/",
+
+            github:
+                "https://github.com/mdraashith",
         },
 
 
@@ -192,15 +246,17 @@ function ProjectContent({
                 "Local Storage",
             ],
 
-            live: "https://todosite-ochre.vercel.app/",
-            github: "https://github.com/mdraashith",
-        },
+            live:
+                "https://todosite-ochre.vercel.app/",
 
+            github:
+                "https://github.com/mdraashith",
+        },
     ];
 
 
     // =====================================================
-    // FILTER
+    //                  FILTER PROJECTS
     // =====================================================
 
     const filteredProjects =
@@ -208,12 +264,13 @@ function ProjectContent({
             ? projects
             : projects.filter(
                 (project) =>
-                    project.category === activeCategory
+                    project.category ===
+                    activeCategory
             );
 
 
     // =====================================================
-    // TECH BADGE
+    //                  TECH BADGE
     // =====================================================
 
     const TechBadge = ({
@@ -275,9 +332,9 @@ function ProjectContent({
         >
 
 
-            {/* =================================================
-                    FEATURED PROJECT
-            ================================================= */}
+            {/* =====================================================
+                        FEATURED PROJECT
+            ===================================================== */}
 
             <Box
                 sx={{
@@ -312,7 +369,9 @@ function ProjectContent({
             >
 
 
-                {/* IMAGE */}
+                {/* =================================================
+                            IMAGE
+                ================================================= */}
 
                 <Box
                     sx={{
@@ -344,7 +403,8 @@ function ProjectContent({
 
                             display: "block",
 
-                            transition: "0.5s ease",
+                            transition:
+                                "0.5s ease",
 
                             "&:hover": {
                                 transform:
@@ -356,15 +416,19 @@ function ProjectContent({
                 </Box>
 
 
-                {/* CONTENT */}
+                {/* =================================================
+                            CONTENT
+                ================================================= */}
 
                 <Box
                     sx={{
                         display: "flex",
 
-                        flexDirection: "column",
+                        flexDirection:
+                            "column",
 
-                        justifyContent: "center",
+                        justifyContent:
+                            "center",
 
                         px: {
                             xs: 1,
@@ -379,12 +443,12 @@ function ProjectContent({
                     }}
                 >
 
-
                     {/* FEATURED LABEL */}
 
                     <Box
                         sx={{
-                            display: "inline-flex",
+                            display:
+                                "inline-flex",
 
                             width: "fit-content",
 
@@ -490,43 +554,88 @@ function ProjectContent({
                         }}
                     >
 
-                        <TechBadge >
-
-                            <Typography sx={{ fontSize: { xs: "16px", md: "14px" } }}>
+                        <TechBadge>
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: "16px",
+                                        md: "14px",
+                                    },
+                                }}
+                            >
                                 React
                             </Typography>
                         </TechBadge>
 
+
                         <TechBadge>
-                            <Typography sx={{ fontSize: { xs: "16px", md: "14px" } }}>
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: "16px",
+                                        md: "14px",
+                                    },
+                                }}
+                            >
                                 Material UI
                             </Typography>
                         </TechBadge>
 
+
                         <TechBadge>
-                            <Typography sx={{ fontSize: { xs: "16px", md: "14px" } }}>
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: "16px",
+                                        md: "14px",
+                                    },
+                                }}
+                            >
                                 Framer Motion
                             </Typography>
                         </TechBadge>
 
+
                         <TechBadge>
-                            <Typography sx={{ fontSize: { xs: "16px", md: "14px" } }}>
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: "16px",
+                                        md: "14px",
+                                    },
+                                }}
+                            >
                                 React Route
                             </Typography>
                         </TechBadge>
 
+
                         <TechBadge>
-                            <Typography sx={{ fontSize: { xs: "16px", md: "14px" } }}>
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: "16px",
+                                        md: "14px",
+                                    },
+                                }}
+                            >
                                 Vite
                             </Typography>
                         </TechBadge>
 
+
                         <TechBadge>
-                            <Typography sx={{ fontSize: { xs: "16px", md: "14px" } }}>
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: "16px",
+                                        md: "14px",
+                                    },
+                                }}
+                            >
                                 SEO
                             </Typography>
                         </TechBadge>
-
 
                     </Box>
 
@@ -546,6 +655,10 @@ function ProjectContent({
                         <Button
                             href="https://nilaphysio.com/"
 
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
                             startIcon={
                                 <VisibilityOutlinedIcon />
                             }
@@ -553,9 +666,13 @@ function ProjectContent({
                             sx={{
                                 color: "#fff",
 
-                                textTransform: "none",
+                                textTransform:
+                                    "none",
 
-                                fontSize: { xs: 18, md: 16 },
+                                fontSize: {
+                                    xs: 18,
+                                    md: 16,
+                                },
 
                                 px: 2,
 
@@ -574,6 +691,10 @@ function ProjectContent({
                         <Button
                             href="https://github.com/mdraashith"
 
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
                             startIcon={
                                 <GitHubIcon />
                             }
@@ -581,9 +702,13 @@ function ProjectContent({
                             sx={{
                                 color: "#fff",
 
-                                textTransform: "none",
+                                textTransform:
+                                    "none",
 
-                                fontSize: { xs: 18, md: 16 },
+                                fontSize: {
+                                    xs: 18,
+                                    md: 16,
+                                },
 
                                 px: 2,
 
@@ -608,9 +733,9 @@ function ProjectContent({
             </Box>
 
 
-            {/* =================================================
-                    PROJECT GRID
-            ================================================= */}
+            {/* =====================================================
+                        PROJECT GRID
+            ===================================================== */}
 
             <Box
                 sx={{
@@ -627,270 +752,348 @@ function ProjectContent({
             >
 
                 {filteredProjects.map(
-                    (project) => (
+                    (project, index) => (
 
-                        <Box
-                            key={project.title}
+                        <motion.div
+                            key={
+                                project.title
+                            }
 
-                            sx={{
+                            initial={{
+                                opacity: 0,
+                                scale: 0.92,
+                            }}
+
+                            whileInView={{
+                                opacity: 1,
+                                scale: 1,
+                            }}
+
+                            viewport={{
+                                once: true,
+
+                                amount: 0.2,
+                            }}
+
+                            transition={{
+                                duration: 0.6,
+
+                                ease:
+                                    "easeOut",
+
+                                delay:
+                                    (index % 3) *
+                                    0.15,
+                            }}
+
+                            style={{
                                 minWidth: 0,
 
-                                borderRadius: "10px",
-
-                                overflow: "hidden",
-
-                                border:
-                                    "1px solid rgba(90,90,180,0.3)",
-
-                                background:
-                                    "rgba(7,11,35,0.72)",
-
-                                transition:
-                                    "0.3s ease",
-
-                                "&:hover": {
-                                    transform:
-                                        "translateY(-5px)",
-
-                                    borderColor:
-                                        "rgba(150,65,255,0.7)",
-
-                                    boxShadow:
-                                        "0 10px 30px rgba(70,40,200,0.18)",
-                                },
+                                height: "100%",
                             }}
                         >
 
-
-                            {/* IMAGE */}
-
                             <Box
                                 sx={{
-                                    width: "100%",
+                                    minWidth: 0,
 
-                                    aspectRatio: "16 / 9",
+                                    height: "100%",
 
-                                    overflow: "hidden",
+                                    borderRadius:
+                                        "10px",
+
+                                    overflow:
+                                        "hidden",
+
+                                    border:
+                                        "1px solid rgba(90,90,180,0.3)",
 
                                     background:
-                                        "#050817",
-                                }}
-                            >
+                                        "rgba(7,11,35,0.72)",
 
-                                <Box
-                                    component="img"
+                                    transition:
+                                        "0.3s ease",
 
-                                    src={
-                                        project.image
-                                    }
+                                    "&:hover": {
+                                        transform:
+                                            "translateY(-5px)",
 
-                                    alt={
-                                        project.title
-                                    }
+                                        borderColor:
+                                            "rgba(150,65,255,0.7)",
 
-                                    sx={{
-                                        width: "100%",
-
-                                        height: "100%",
-
-                                        objectFit:
-                                            "cover",
-
-                                        display:
-                                            "block",
-
-                                        transition:
-                                            "0.4s ease",
-
-                                        "&:hover": {
-                                            transform:
-                                                "scale(1.05)",
-                                        },
-                                    }}
-                                />
-
-                            </Box>
-
-
-                            {/* CARD CONTENT */}
-
-                            <Box
-                                sx={{
-                                    p: {
-                                        xs: 1.2,
-                                        sm: 1.3,
+                                        boxShadow:
+                                            "0 10px 30px rgba(70,40,200,0.18)",
                                     },
                                 }}
                             >
 
-                                <Typography
-                                    sx={{
-                                        color:
-                                            "#C13CFF",
-
-                                        fontSize: {
-                                            xs: 13,
-                                            sm: 19,
-                                        },
-
-                                        fontWeight: 700,
-
-                                        mb: 0.5,
-                                    }}
-                                >
-                                    {
-                                        project.title
-                                    }
-                                </Typography>
-
-
-                                <Typography
-                                    sx={{
-                                        color:
-                                            "#B9BED0",
-
-                                        fontSize: {
-                                            xs: 18,
-                                            sm: 14,
-                                        },
-
-                                        lineHeight: 1.5,
-
-                                        minHeight:
-                                            "30px",
-
-                                        mb: 1,
-                                    }}
-                                >
-                                    {
-                                        project.description
-                                    }
-                                </Typography>
-
-
-                                {/* TECH */}
+                                {/* =================================================
+                                            IMAGE
+                                ================================================= */}
 
                                 <Box
                                     sx={{
-                                        display:
-                                            "flex",
+                                        width: "100%",
 
-                                        flexWrap:
-                                            "wrap",
+                                        aspectRatio:
+                                            "16 / 9",
 
-                                        gap: 0.5,
+                                        overflow:
+                                            "hidden",
 
-                                        mb: 1.2,
+                                        background:
+                                            "#050817",
                                     }}
                                 >
 
-                                    {
-                                        project.technologies.map(
-                                            (tech) => (
+                                    <Box
+                                        component="img"
 
-                                                <TechBadge
-                                                    key={
-                                                        tech
-                                                    }
+                                        src={
+                                            project.image
+                                        }
 
-                                                >
-                                                    {
-                                                        tech
-                                                    }
-                                                </TechBadge>
+                                        alt={
+                                            project.title
+                                        }
 
-                                            )
-                                        )
-                                    }
+                                        sx={{
+                                            width:
+                                                "100%",
+
+                                            height:
+                                                "100%",
+
+                                            objectFit:
+                                                "cover",
+
+                                            display:
+                                                "block",
+
+                                            transition:
+                                                "0.4s ease",
+
+                                            "&:hover":
+                                                {
+                                                    transform:
+                                                        "scale(1.05)",
+                                                },
+                                        }}
+                                    />
 
                                 </Box>
 
 
-                                {/* BUTTONS */}
+                                {/* =================================================
+                                        CARD CONTENT
+                                ================================================= */}
 
                                 <Box
                                     sx={{
-                                        display:
-                                            "grid",
-
-                                        gridTemplateColumns:
-                                            "1fr 1fr",
-
-                                        gap: 0.7,
+                                        p: {
+                                            xs: 1.2,
+                                            sm: 1.3,
+                                        },
                                     }}
                                 >
 
-                                    <Button
-                                        href={
-                                            project.live
-                                        }
+                                    {/* TITLE */}
 
-                                        startIcon={
-                                            <VisibilityOutlinedIcon />
-                                        }
-
+                                    <Typography
                                         sx={{
-                                            minWidth: 10,
-                                            color: "#fff",
+                                            color:
+                                                "#C13CFF",
 
-                                            textTransform:
-                                                "none",
+                                            fontSize: {
+                                                xs: 13,
+                                                sm: 19,
+                                            },
 
-                                            fontSize: { xs: 16, md: 14 },
+                                            fontWeight:
+                                                700,
 
-                                            py: 0.5,
-
-                                            borderRadius:
-                                                "6px",
-
-                                            background:
-                                                "linear-gradient(90deg,#A72CFF,#287EFF)",
+                                            mb: 0.5,
                                         }}
                                     >
-                                        Live Demo
-                                    </Button>
-
-
-                                    <Button
-                                        href={
-                                            project.github
+                                        {
+                                            project.title
                                         }
+                                    </Typography>
 
-                                        startIcon={
-                                            <GitHubIcon />
-                                        }
 
+                                    {/* DESCRIPTION */}
+
+                                    <Typography
                                         sx={{
-                                            minWidth: 0,
+                                            color:
+                                                "#B9BED0",
 
-                                            color: "#fff",
+                                            fontSize: {
+                                                xs: 18,
+                                                sm: 14,
+                                            },
 
-                                            textTransform:
-                                                "none",
+                                            lineHeight:
+                                                1.5,
 
-                                            fontSize: { xs: 16, md: 14 },
+                                            minHeight:
+                                                "30px",
 
-
-                                            py: 0.5,
-
-                                            borderRadius:
-                                                "6px",
-
-                                            border:
-                                                "1px solid rgba(100,110,190,0.35)",
-
-                                            background:
-                                                "rgba(15,20,55,0.7)",
+                                            mb: 1,
                                         }}
                                     >
-                                        GitHub
-                                    </Button>
+                                        {
+                                            project.description
+                                        }
+                                    </Typography>
+
+
+                                    {/* TECHNOLOGIES */}
+
+                                    <Box
+                                        sx={{
+                                            display:
+                                                "flex",
+
+                                            flexWrap:
+                                                "wrap",
+
+                                            gap: 0.5,
+
+                                            mb: 1.2,
+                                        }}
+                                    >
+
+                                        {
+                                            project
+                                                .technologies
+                                                .map(
+                                                    (
+                                                        tech
+                                                    ) => (
+
+                                                        <TechBadge
+                                                            key={
+                                                                tech
+                                                            }
+                                                        >
+                                                            {
+                                                                tech
+                                                            }
+                                                        </TechBadge>
+
+                                                    )
+                                                )
+                                        }
+
+                                    </Box>
+
+
+                                    {/* BUTTONS */}
+
+                                    <Box
+                                        sx={{
+                                            display:
+                                                "grid",
+
+                                            gridTemplateColumns:
+                                                "1fr 1fr",
+
+                                            gap: 0.7,
+                                        }}
+                                    >
+
+                                        <Button
+                                            href={
+                                                project.live
+                                            }
+
+                                            target="_blank"
+
+                                            rel="noopener noreferrer"
+
+                                            startIcon={
+                                                <VisibilityOutlinedIcon />
+                                            }
+
+                                            sx={{
+                                                minWidth:
+                                                    10,
+
+                                                color:
+                                                    "#fff",
+
+                                                textTransform:
+                                                    "none",
+
+                                                fontSize: {
+                                                    xs: 16,
+                                                    md: 14,
+                                                },
+
+                                                py: 0.5,
+
+                                                borderRadius:
+                                                    "6px",
+
+                                                background:
+                                                    "linear-gradient(90deg,#A72CFF,#287EFF)",
+                                            }}
+                                        >
+                                            Live Demo
+                                        </Button>
+
+
+                                        <Button
+                                            href={
+                                                project.github
+                                            }
+
+                                            target="_blank"
+
+                                            rel="noopener noreferrer"
+
+                                            startIcon={
+                                                <GitHubIcon />
+                                            }
+
+                                            sx={{
+                                                minWidth:
+                                                    0,
+
+                                                color:
+                                                    "#fff",
+
+                                                textTransform:
+                                                    "none",
+
+                                                fontSize: {
+                                                    xs: 16,
+                                                    md: 14,
+                                                },
+
+                                                py: 0.5,
+
+                                                borderRadius:
+                                                    "6px",
+
+                                                border:
+                                                    "1px solid rgba(100,110,190,0.35)",
+
+                                                background:
+                                                    "rgba(15,20,55,0.7)",
+                                            }}
+                                        >
+                                            GitHub
+                                        </Button>
+
+                                    </Box>
 
                                 </Box>
 
                             </Box>
 
-                        </Box>
+                        </motion.div>
 
                     )
                 )}

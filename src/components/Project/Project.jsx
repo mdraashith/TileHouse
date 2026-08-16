@@ -9,6 +9,45 @@ import {
 import ProjectContent from "./ProjectContent";
 import ProjectStats from "./ProjectStats";
 
+import { motion } from "framer-motion";
+
+
+// =====================================================
+//                  ANIMATION
+// =====================================================
+
+const bottomToTop = {
+    hidden: {
+        opacity: 0,
+        y: 60,
+    },
+
+    visible: {
+        opacity: 1,
+        y: 0,
+
+        transition: {
+            duration: 0.7,
+            ease: "easeOut",
+        },
+    },
+};
+
+
+const staggerContainer = {
+    hidden: {},
+
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+
+// =====================================================
+//                  PROJECT
+// =====================================================
 
 function Project() {
 
@@ -26,8 +65,10 @@ function Project() {
 
 
     return (
+
         <Box
             id="projects"
+
             sx={{
                 width: "100%",
 
@@ -63,281 +104,427 @@ function Project() {
             }}
         >
 
-            {/* ================= HEADER ================= */}
+            {/* =====================================================
+                                HEADER
+            ===================================================== */}
 
-            <Box
-                sx={{
-                    maxWidth: "800px",
+            <motion.div
+                initial="hidden"
 
-                    mx: "auto",
+                whileInView="visible"
 
-                    textAlign: "center",
-
-                    mb: {
-                        xs: 3,
-                        md: 4,
-                    },
+                viewport={{
+                    once: true,
+                    amount: 0.2,
                 }}
-            >
 
-                {/* MY WORK */}
+                variants={staggerContainer}
+            >
 
                 <Box
                     sx={{
-                        display: "inline-flex",
+                        maxWidth: "800px",
 
-                        alignItems: "center",
+                        mx: "auto",
 
-                        gap: 1,
+                        textAlign: "center",
 
-                        px: 2,
-
-                        py: 0.6,
-                        mt:5,
-                        mb: 1.5,
-
-                        borderRadius: "20px",
-
-                        border:
-                            "1px solid rgba(160,70,255,0.45)",
-
-                        background:
-                            "rgba(100,40,180,0.15)",
-
-                        boxShadow:
-                            "0 0 20px rgba(120,50,255,0.15)",
+                        mb: {
+                            xs: 3,
+                            md: 4,
+                        },
                     }}
                 >
 
-                    <Box
-                        sx={{
-                            width: 5,
-                            height: 5,
+                    {/* =================================================
+                                MY WORK
+                    ================================================= */}
 
-                            borderRadius: "50%",
-
-                            background: "#B83DFF",
-
-                            boxShadow:
-                                "0 0 8px #B83DFF",
-                        }}
-                    />
-
-                    <Typography
-                        sx={{
-                            fontSize: {
-                                xs: 14,
-                                sm: 16,
-                            },
-                            
-                            fontWeight: 600,
-
-                            letterSpacing: "2px",
-
-                            color: "#E5D8FF",
-                        }}
+                    <motion.div
+                        variants={bottomToTop}
                     >
-                        MY WORK
-                    </Typography>
 
-                    <Box
-                        sx={{
-                            width: 5,
-                            height: 5,
+                        <Box
+                            sx={{
+                                display: "inline-flex",
 
-                            borderRadius: "50%",
+                                alignItems: "center",
 
-                            background: "#238DFF",
+                                gap: 1,
 
-                            boxShadow:
-                                "0 0 8px #238DFF",
-                        }}
-                    />
+                                px: 2,
+
+                                py: 0.6,
+
+                                mt: 5,
+
+                                mb: 1.5,
+
+                                borderRadius: "20px",
+
+                                border:
+                                    "1px solid rgba(160,70,255,0.45)",
+
+                                background:
+                                    "rgba(100,40,180,0.15)",
+
+                                boxShadow:
+                                    "0 0 20px rgba(120,50,255,0.15)",
+                            }}
+                        >
+
+                            <Box
+                                sx={{
+                                    width: 5,
+
+                                    height: 5,
+
+                                    borderRadius: "50%",
+
+                                    background: "#B83DFF",
+
+                                    boxShadow:
+                                        "0 0 8px #B83DFF",
+                                }}
+                            />
+
+
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: 14,
+                                        sm: 16,
+                                    },
+
+                                    fontWeight: 600,
+
+                                    letterSpacing: "2px",
+
+                                    color: "#E5D8FF",
+                                }}
+                            >
+                                MY WORK
+                            </Typography>
+
+
+                            <Box
+                                sx={{
+                                    width: 5,
+
+                                    height: 5,
+
+                                    borderRadius: "50%",
+
+                                    background: "#238DFF",
+
+                                    boxShadow:
+                                        "0 0 8px #238DFF",
+                                }}
+                            />
+
+                        </Box>
+
+                    </motion.div>
+
+
+                    {/* =================================================
+                                TITLE
+                    ================================================= */}
+
+                    <motion.div
+                        variants={bottomToTop}
+                    >
+
+                        <Typography
+                            component="h1"
+
+                            sx={{
+                                fontSize: {
+                                    xs: 38,
+                                    sm: 50,
+                                    md: 62,
+                                },
+
+                                lineHeight: 1.05,
+
+                                fontWeight: 800,
+
+                                letterSpacing: "-2px",
+
+                                mb: 1.5,
+                            }}
+                        >
+                            Projects &{" "}
+
+                            <Box
+                                component="span"
+
+                                sx={{
+                                    background:
+                                        "linear-gradient(90deg,#C329FF,#287EFF)",
+
+                                    WebkitBackgroundClip:
+                                        "text",
+
+                                    WebkitTextFillColor:
+                                        "transparent",
+                                }}
+                            >
+                                Creations
+                            </Box>
+
+                        </Typography>
+
+                    </motion.div>
+
+
+                    {/* =================================================
+                                DESCRIPTION
+                    ================================================= */}
+
+                    <motion.div
+                        variants={bottomToTop}
+                    >
+
+                        <Typography
+                            sx={{
+                                color: "#B9BED0",
+
+                                fontSize: {
+                                    xs: 13,
+                                    sm: 14,
+                                    md: 16,
+                                },
+
+                                lineHeight: 1.6,
+
+                                maxWidth: "600px",
+
+                                mx: "auto",
+                            }}
+                        >
+                            A collection of projects I've built
+                            using modern web technologies and
+                            tools.
+                        </Typography>
+
+                    </motion.div>
+
+
+                    {/* =================================================
+                                LINE
+                    ================================================= */}
+
+                    <motion.div
+                        variants={bottomToTop}
+                    >
+
+                        <Box
+                            sx={{
+                                width: 45,
+
+                                height: 3,
+
+                                mx: "auto",
+
+                                mt: 2,
+
+                                borderRadius: 5,
+
+                                background:
+                                    "linear-gradient(90deg,#C329FF,#287EFF)",
+
+                                boxShadow:
+                                    "0 0 12px rgba(150,50,255,0.7)",
+                            }}
+                        />
+
+                    </motion.div>
 
                 </Box>
 
-
-                {/* TITLE */}
-
-                <Typography
-                    component="h1"
-                    sx={{
-                        fontSize: {
-                            xs: 38,
-                            sm: 50,
-                            md: 62,
-                        },
-
-                        lineHeight: 1.05,
-
-                        fontWeight: 800,
-
-                        letterSpacing: "-2px",
-
-                        mb: 1.5,
-                    }}
-                >
-                    Projects &{" "}
-
-                    <Box
-                        component="span"
-                        sx={{
-                            background:
-                                "linear-gradient(90deg,#C329FF,#287EFF)",
-
-                            WebkitBackgroundClip:
-                                "text",
-
-                            WebkitTextFillColor:
-                                "transparent",
-                        }}
-                    >
-                        Creations
-                    </Box>
-
-                </Typography>
+            </motion.div>
 
 
-                {/* DESCRIPTION */}
+            {/* =====================================================
+                            CATEGORY BUTTONS
+            ===================================================== */}
 
-                <Typography
-                    sx={{
-                        color: "#B9BED0",
+            <motion.div
+                initial="hidden"
 
-                        fontSize: {
-                            xs: 13,
-                            sm: 14,
-                            md: 16,
-                        },
+                whileInView="visible"
 
-                        lineHeight: 1.6,
+                viewport={{
+                    once: true,
+                    amount: 0.2,
+                }}
 
-                        maxWidth: "600px",
-
-                        mx: "auto",
-                    }}
-                >
-                    A collection of projects I've built
-                    using modern web technologies and
-                    tools.
-                </Typography>
-
-
-                {/* LINE */}
+                variants={staggerContainer}
+            >
 
                 <Box
                     sx={{
-                        width: 45,
+                        display: "flex",
 
-                        height: 3,
+                        justifyContent: "center",
 
-                        mx: "auto",
+                        alignItems: "center",
 
-                        mt: 2,
+                        flexWrap: "wrap",
 
-                        borderRadius: 5,
+                        gap: 1,
 
-                        background:
-                            "linear-gradient(90deg,#C329FF,#287EFF)",
-
-                        boxShadow:
-                            "0 0 12px rgba(150,50,255,0.7)",
+                        mb: {
+                            xs: 3,
+                            md: 4,
+                        },
                     }}
-                />
+                >
 
-            </Box>
+                    {categories.map((category) => (
+
+                        <motion.div
+                            key={category}
+
+                            variants={bottomToTop}
+                        >
+
+                            <Button
+                                onClick={() =>
+                                    setActiveCategory(
+                                        category
+                                    )
+                                }
+
+                                sx={{
+                                    minWidth: "auto",
+
+                                    px: {
+                                        xs: 1.8,
+                                        sm: 2.2,
+                                    },
+
+                                    py: 0.6,
+
+                                    borderRadius: "20px",
+
+                                    color:
+                                        activeCategory ===
+                                        category
+                                            ? "#fff"
+                                            : "#AEB2C5",
+
+                                    fontSize: {
+                                        xs: 12,
+                                        sm: 14,
+                                    },
+
+                                    fontWeight: 700,
+
+                                    textTransform:
+                                        "none",
+
+                                    border:
+                                        activeCategory ===
+                                        category
+                                            ? "1px solid rgba(165,60,255,0.7)"
+                                            : "1px solid transparent",
+
+                                    background:
+                                        activeCategory ===
+                                        category
+                                            ? "linear-gradient(90deg,rgba(155,45,255,0.45),rgba(35,126,255,0.35))"
+                                            : "rgba(20,25,55,0.65)",
+
+                                    "&:hover": {
+                                        color: "#fff",
+
+                                        background:
+                                            "rgba(120,60,220,0.25)",
+                                    },
+                                }}
+                            >
+                                {category}
+                            </Button>
+
+                        </motion.div>
+
+                    ))}
+
+                </Box>
+
+            </motion.div>
 
 
-            {/* ================= CATEGORY ================= */}
+            {/* =====================================================
+                            PROJECT CONTENT
+            ===================================================== */}
 
-            <Box
-                sx={{
-                    display: "flex",
+            <motion.div
 
-                    justifyContent: "center",
+                initial={{
+                    opacity: 0,
+                    y: 70,
+                }}
 
-                    alignItems: "center",
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                }}
 
-                    flexWrap: "wrap",
+                viewport={{
+                    once: true,
+                    amount: 0.1,
+                }}
 
-                    gap: 1,
-
-                    mb: {
-                        xs: 3,
-                        md: 4,
-                    },
+                transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                    delay: 0.1,
                 }}
             >
 
-                {categories.map((category) => (
+                <ProjectContent
+                    activeCategory={
+                        activeCategory
+                    }
+                />
 
-                    <Button
-                        key={category}
-
-                        onClick={() =>
-                            setActiveCategory(category)
-                        }
-
-                        sx={{
-                            minWidth: "auto",
-
-                            px: {
-                                xs: 1.8,
-                                sm: 2.2,
-                            },
-
-                            py: 0.6,
-
-                            borderRadius: "20px",
-
-                            color:
-                                activeCategory === category
-                                    ? "#fff"
-                                    : "#AEB2C5",
-
-                            fontSize: {
-                                xs: 12,
-                                sm: 14,
-                            },
-                            fontWeight:700,
-                            textTransform: "none",
-
-                            border:
-                                activeCategory === category
-                                    ? "1px solid rgba(165,60,255,0.7)"
-                                    : "1px solid transparent",
-
-                            background:
-                                activeCategory === category
-                                    ? "linear-gradient(90deg,rgba(155,45,255,0.45),rgba(35,126,255,0.35))"
-                                    : "rgba(20,25,55,0.65)",
-
-                            "&:hover": {
-                                color: "#fff",
-
-                                background:
-                                    "rgba(120,60,220,0.25)",
-                            },
-                        }}
-                    >
-                        {category}
-                    </Button>
-
-                ))}
-
-            </Box>
+            </motion.div>
 
 
-            {/* ================= PROJECT CONTENT ================= */}
+            {/* =====================================================
+                                STATS
+            ===================================================== */}
 
-            <ProjectContent
-                activeCategory={activeCategory}
-            />
+            <motion.div
 
+                initial={{
+                    opacity: 0,
+                    y: 70,
+                }}
 
-            {/* ================= STATS ================= */}
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                }}
 
-            <ProjectStats />
+                viewport={{
+                    once: true,
+                    amount: 0.1,
+                }}
+
+                transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                    delay: 0.2,
+                }}
+            >
+
+                <ProjectStats />
+
+            </motion.div>
 
         </Box>
     );

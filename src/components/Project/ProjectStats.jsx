@@ -17,247 +17,273 @@ import StarBorderOutlinedIcon
 import EmojiEmotionsOutlinedIcon
     from "@mui/icons-material/EmojiEmotionsOutlined";
 
+import { motion } from "framer-motion";
+
+
+// =====================================================
+//                  ANIMATION
+// =====================================================
+
+const statAnimation = {
+    hidden: {
+        opacity: 0,
+        scale: 0.9,
+    },
+
+    visible: {
+        opacity: 1,
+        scale: 1,
+
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
+
+
+// =====================================================
+//                  PROJECT STATS
+// =====================================================
 
 function ProjectStats() {
 
+    const stats = [
+        {
+            value: "6+",
+
+            label: "Projects Completed",
+
+            icon: <CodeOutlinedIcon />,
+        },
+
+        {
+            value: "3+",
+
+            label: "Technologies Used",
+
+            icon: <RocketLaunchOutlinedIcon />,
+        },
+
+        {
+            value: "100%",
+
+            label: "Passion & Dedication",
+
+            icon: <StarBorderOutlinedIcon />,
+        },
+
+        {
+            value: "Always",
+
+            label: "Learning New Things",
+
+            icon: <EmojiEmotionsOutlinedIcon />,
+        },
+    ];
+
+
     return (
 
-        <Box
-            sx={{
-                maxWidth: "1180px",
+        <motion.div
 
-                mx: "auto",
+            initial="hidden"
 
-                mt: 2,
+            whileInView="visible"
 
-                display: "grid",
+            viewport={{
+                once: true,
+                amount: 0.25,
+            }}
 
-                gridTemplateColumns: {
-                    xs: "repeat(2,1fr)",
-                    sm: "repeat(4,1fr)",
-                },
-
-                borderRadius: "10px",
-
-                border:
-                    "1px solid rgba(90,75,180,0.3)",
-
-                background:
-                    "rgba(7,10,35,0.72)",
-
-                overflow: "hidden",
+            style={{
+                width: "100%",
             }}
         >
 
-            {/* ================= 6+ ================= */}
-
             <Box
                 sx={{
-                    py: 2,
+                    maxWidth: "1180px",
 
-                    textAlign: "center",
+                    mx: "auto",
 
-                    borderRight: {
-                        xs:
-                            "1px solid rgba(100,90,180,0.25)",
+                    mt: 2,
 
-                        sm:
-                            "1px solid rgba(100,90,180,0.25)",
+                    display: "grid",
+
+                    gridTemplateColumns: {
+                        xs: "repeat(2,1fr)",
+                        sm: "repeat(4,1fr)",
                     },
 
-                    borderBottom: {
-                        xs:
-                            "1px solid rgba(100,90,180,0.25)",
+                    borderRadius: "10px",
 
-                        sm: "none",
-                    },
+                    border:
+                        "1px solid rgba(90,75,180,0.3)",
+
+                    background:
+                        "rgba(7,10,35,0.72)",
+
+                    overflow: "hidden",
                 }}
             >
 
-                <CodeOutlinedIcon
-                    sx={{
-                        color: "#A83DFF",
+                {stats.map(
+                    (stat, index) => (
 
-                        fontSize: 35,
+                        <motion.div
+                            key={stat.label}
 
-                        mb: 0.3,
-                    }}
-                />
+                            variants={statAnimation}
 
-                <Typography
-                    sx={{
-                        fontSize: 18,
+                            transition={{
+                                duration: 0.6,
 
-                        fontWeight: 700,
-                    }}
-                >
-                    6+
-                </Typography>
+                                ease: "easeOut",
 
-                <Typography
-                    sx={{
-                        color: "#AEB3C5",
+                                delay:
+                                    index * 0.15,
+                            }}
 
-                        fontSize: 16,
-                    }}
-                >
-                    Projects Completed
-                </Typography>
+                            style={{
+                                minWidth: 0,
+                            }}
+                        >
 
-            </Box>
+                            <Box
+                                sx={{
+                                    py: 2,
 
+                                    textAlign:
+                                        "center",
 
-            {/* ================= 3+ ================= */}
+                                    borderRight: {
+                                        xs:
+                                            index % 2 === 0
+                                                ? "1px solid rgba(100,90,180,0.25)"
+                                                : "none",
 
-            <Box
-                sx={{
-                    py: 2,
+                                        sm:
+                                            index !== 3
+                                                ? "1px solid rgba(100,90,180,0.25)"
+                                                : "none",
+                                    },
 
-                    textAlign: "center",
+                                    borderBottom: {
+                                        xs:
+                                            index < 2
+                                                ? "1px solid rgba(100,90,180,0.25)"
+                                                : "none",
 
-                    borderRight: {
-                        xs: "none",
+                                        sm: "none",
+                                    },
 
-                        sm:
-                            "1px solid rgba(100,90,180,0.25)",
-                    },
+                                    minHeight: {
+                                        xs: 115,
+                                        sm: 125,
+                                    },
 
-                    borderBottom: {
-                        xs:
-                            "1px solid rgba(100,90,180,0.25)",
+                                    display: "flex",
 
-                        sm: "none",
-                    },
-                }}
-            >
+                                    flexDirection:
+                                        "column",
 
-                <RocketLaunchOutlinedIcon
-                    sx={{
-                        color: "#A83DFF",
+                                    alignItems:
+                                        "center",
 
-                        fontSize: 35,
+                                    justifyContent:
+                                        "center",
 
-                        mb: 0.3,
-                    }}
-                />
+                                    transition:
+                                        "0.3s ease",
 
-                <Typography
-                    sx={{
-                        fontSize: 18,
+                                    "&:hover": {
+                                        background:
+                                            "rgba(100,60,255,0.08)",
+                                    },
+                                }}
+                            >
 
-                        fontWeight: 700,
-                    }}
-                >
-                    3+
-                </Typography>
+                                {/* =================================================
+                                            ICON
+                                ================================================= */}
 
-                <Typography
-                    sx={{
-                        color: "#AEB3C5",
+                                <Box
+                                    sx={{
+                                        color:
+                                            "#A83DFF",
 
-                        fontSize: 16,
-                    }}
-                >
-                    Technologies Used
-                </Typography>
+                                        display:
+                                            "flex",
 
-            </Box>
+                                        alignItems:
+                                            "center",
 
+                                        justifyContent:
+                                            "center",
 
-            {/* ================= 100% ================= */}
+                                        "& svg": {
+                                            fontSize: 35,
+                                        },
 
-            <Box
-                sx={{
-                    py: 2,
-
-                    textAlign: "center",
-
-                    borderRight: {
-                        xs:
-                            "1px solid rgba(100,90,180,0.25)",
-
-                        sm:
-                            "1px solid rgba(100,90,180,0.25)",
-                    },
-                }}
-            >
-
-                <StarBorderOutlinedIcon
-                    sx={{
-                        color: "#A83DFF",
-
-                        fontSize: 35,
-
-                        mb: 0.3,
-                    }}
-                />
-
-                <Typography
-                    sx={{
-                        fontSize: 18,
-
-                        fontWeight: 700,
-                    }}
-                >
-                    100%
-                </Typography>
-
-                <Typography
-                    sx={{
-                        color: "#AEB3C5",
-
-                        fontSize: 16,
-                    }}
-                >
-                    Passion & Dedication
-                </Typography>
-
-            </Box>
+                                        mb: 0.3,
+                                    }}
+                                >
+                                    {stat.icon}
+                                </Box>
 
 
-            {/* ================= ALWAYS ================= */}
+                                {/* =================================================
+                                            VALUE
+                                ================================================= */}
 
-            <Box
-                sx={{
-                    py: 2,
+                                <Typography
+                                    sx={{
+                                        fontSize: 18,
 
-                    textAlign: "center",
-                }}
-            >
+                                        fontWeight: 700,
+                                    }}
+                                >
+                                    {stat.value}
+                                </Typography>
 
-                <EmojiEmotionsOutlinedIcon
-                    sx={{
-                        color: "#A83DFF",
 
-                        fontSize: 35,
+                                {/* =================================================
+                                            LABEL
+                                ================================================= */}
 
-                        mb: 0.3,
-                    }}
-                />
+                                <Typography
+                                    sx={{
+                                        color:
+                                            "#AEB3C5",
 
-                <Typography
-                    sx={{
-                        fontSize: 18,
+                                        fontSize: {
+                                            xs: 14,
+                                            sm: 16,
+                                        },
 
-                        fontWeight: 700,
-                    }}
-                >
-                    Always
-                </Typography>
+                                        textAlign:
+                                            "center",
 
-                <Typography
-                    sx={{
-                        color: "#AEB3C5",
+                                        lineHeight:
+                                            1.4,
 
-                        fontSize: 17,
-                    }}
-                >
-                    Learning New Things
-                </Typography>
+                                        px: 1,
+                                    }}
+                                >
+                                    {stat.label}
+                                </Typography>
+
+                            </Box>
+
+                        </motion.div>
+
+                    )
+                )}
 
             </Box>
 
-        </Box>
+        </motion.div>
     );
 }
 
