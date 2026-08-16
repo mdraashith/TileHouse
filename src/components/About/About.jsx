@@ -16,6 +16,45 @@ import CodeIcon from "@mui/icons-material/Code";
 import DownloadIcon from "@mui/icons-material/Download";
 import LayersIcon from "@mui/icons-material/Layers";
 
+import { motion } from "framer-motion";
+
+
+// =====================================================
+//                  ANIMATION VARIANTS
+// =====================================================
+
+const bottomToTop = {
+    hidden: {
+        opacity: 0,
+        y: 60,
+    },
+
+    visible: {
+        opacity: 1,
+        y: 0,
+
+        transition: {
+            duration: 0.7,
+            ease: "easeOut",
+        },
+    },
+};
+
+
+const staggerContainer = {
+    hidden: {},
+
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+
+// =====================================================
+//                  ABOUT
+// =====================================================
 
 function About() {
 
@@ -69,10 +108,13 @@ function About() {
 
 
     return (
+
         <Box
             id="about"
+
             sx={{
                 width: "100%",
+
                 minHeight: "100vh",
 
                 backgroundImage:
@@ -84,7 +126,6 @@ function About() {
 
                 backgroundRepeat: "no-repeat",
 
-                /* Fixed background only on desktop */
                 backgroundAttachment: {
                     xs: "scroll",
                     sm: "scroll",
@@ -229,7 +270,12 @@ function About() {
                                 sm: "370px",
                                 md: "430px",
                             },
-                            mt: { xs: 10, md: 0 },
+
+                            mt: {
+                                xs: 10,
+                                md: 0,
+                            },
+
                             maxWidth: "100%",
 
                             borderRadius: {
@@ -263,26 +309,49 @@ function About() {
                         }}
                     >
 
-                        <Box
-                            component="img"
+                        {/* ================= FLOATING IMAGE ================= */}
 
-                            src="/img/Myppics.png"
-
-                            alt="Mohamed Raashith"
-
-                            sx={{
-                                width: "100%",
-
-                                height: "100%",
-
-                                objectFit: "cover",
-
-                                objectPosition:
-                                    "center top",
-
-                                display: "block",
+                        <motion.div
+                            animate={{
+                                y: [0, -10, 0, 10, 0],
                             }}
-                        />
+
+                            transition={{
+                                duration: 4,
+
+                                repeat: Infinity,
+
+                                ease: "easeInOut",
+                            }}
+
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                            }}
+                        >
+
+                            <Box
+                                component="img"
+
+                                src="/img/Myppics.png"
+
+                                alt="Mohamed Raashith"
+
+                                sx={{
+                                    width: "100%",
+
+                                    height: "100%",
+
+                                    objectFit: "cover",
+
+                                    objectPosition:
+                                        "center top",
+
+                                    display: "block",
+                                }}
+                            />
+
+                        </motion.div>
 
                     </Box>
 
@@ -293,318 +362,363 @@ function About() {
                             ABOUT CONTENT
                 ================================================= */}
 
-                <Box
-                    sx={{
+                <motion.div
+                    variants={staggerContainer}
+
+                    initial="hidden"
+
+                    whileInView="visible"
+
+                    viewport={{
+                        once: true,
+                        amount: 0.2,
+                    }}
+
+                    style={{
                         flex: 1,
-
                         width: "100%",
-
                         minWidth: 0,
-
-                        boxSizing: "border-box",
                     }}
                 >
 
                     {/* ================= LABEL ================= */}
 
-                    <Box
-                        sx={{
-                            display: "inline-flex",
-
-                            alignItems: "center",
-
-                            gap: 1,
-
-                            px: 2,
-
-                            py: 0.8,
-
-                            mt: {
-                                xs: 1,
-                                md: 6,
-                            },
-
-                            mb: 2,
-
-                            borderRadius: "30px",
-
-                            border:
-                                "1px solid rgba(173,70,255,0.7)",
-
-                            background:
-                                "rgba(110,45,255,0.08)",
-
-                            maxWidth: "100%",
-
-                            boxSizing: "border-box",
-                        }}
+                    <motion.div
+                        variants={bottomToTop}
                     >
 
-                        <PersonIcon
+                        <Box
                             sx={{
-                                fontSize: {
-                                    xs: 18,
-                                    sm: 18,
+                                display: "inline-flex",
+
+                                alignItems: "center",
+
+                                gap: 1,
+
+                                px: 2,
+
+                                py: 0.8,
+
+                                mt: {
+                                    xs: 1,
+                                    md: 6,
                                 },
 
-                                color: "#A73DFF",
+                                mb: 2,
 
-                                flexShrink: 0,
-                            }}
-                        />
+                                borderRadius: "30px",
 
-                        <Typography
-                            sx={{
-                                fontSize: {
-                                    xs: 16,
-                                    sm: 13,
-                                    md: 14,
-                                },
+                                border:
+                                    "1px solid rgba(173,70,255,0.7)",
 
-                                color: "#D9A7FF",
+                                background:
+                                    "rgba(110,45,255,0.08)",
 
-                                fontWeight: 600,
+                                maxWidth: "100%",
 
-                                whiteSpace: "nowrap",
+                                boxSizing: "border-box",
                             }}
                         >
-                            About Me
-                        </Typography>
 
-                    </Box>
+                            <PersonIcon
+                                sx={{
+                                    fontSize: {
+                                        xs: 18,
+                                        sm: 18,
+                                    },
+
+                                    color: "#A73DFF",
+
+                                    flexShrink: 0,
+                                }}
+                            />
+
+                            <Typography
+                                sx={{
+                                    fontSize: {
+                                        xs: 16,
+                                        sm: 13,
+                                        md: 14,
+                                    },
+
+                                    color: "#D9A7FF",
+
+                                    fontWeight: 600,
+
+                                    whiteSpace: "nowrap",
+                                }}
+                            >
+                                About Me
+                            </Typography>
+
+                        </Box>
+
+                    </motion.div>
 
 
                     {/* ================= HEADING ================= */}
 
-                    <Typography
-                        component="h1"
-
-                        sx={{
-                            fontSize: {
-                                xs: "36px",
-                                sm: "42px",
-                                md: "54px",
-                                lg: "58px",
-                            },
-
-                            fontWeight: 800,
-
-                            lineHeight: {
-                                xs: 1.1,
-                                sm: 1.05,
-                                md: 1.05,
-                            },
-
-                            letterSpacing: {
-                                xs: "-1px",
-                                sm: "-1.5px",
-                                md: "-2px",
-                            },
-
-                            mb: 2,
-
-                            maxWidth: "100%",
-
-                            wordBreak: "normal",
-                        }}
+                    <motion.div
+                        variants={bottomToTop}
                     >
 
-                        Let me introduce
-
-                        <Box
-                            component="span"
+                        <Typography
+                            component="h1"
 
                             sx={{
-                                display: "block",
+                                fontSize: {
+                                    xs: "36px",
+                                    sm: "42px",
+                                    md: "54px",
+                                    lg: "58px",
+                                },
 
-                                background:
-                                    "linear-gradient(90deg, #B52CFF, #5B73FF)",
+                                fontWeight: 800,
 
-                                WebkitBackgroundClip:
-                                    "text",
+                                lineHeight: {
+                                    xs: 1.1,
+                                    sm: 1.05,
+                                    md: 1.05,
+                                },
 
-                                WebkitTextFillColor:
-                                    "transparent",
+                                letterSpacing: {
+                                    xs: "-1px",
+                                    sm: "-1.5px",
+                                    md: "-2px",
+                                },
+
+                                mb: 2,
+
+                                maxWidth: "100%",
+
+                                wordBreak: "normal",
                             }}
                         >
-                            myself
-                        </Box>
 
-                    </Typography>
+                            Let me introduce
+
+                            <Box
+                                component="span"
+
+                                sx={{
+                                    display: "block",
+
+                                    background:
+                                        "linear-gradient(90deg, #B52CFF, #5B73FF)",
+
+                                    WebkitBackgroundClip:
+                                        "text",
+
+                                    WebkitTextFillColor:
+                                        "transparent",
+                                }}
+                            >
+                                myself
+                            </Box>
+
+                        </Typography>
+
+                    </motion.div>
 
 
                     {/* ================= DESCRIPTION ================= */}
 
-                    <Typography
-                        sx={{
-                            width: "100%",
-
-                            maxWidth: "620px",
-
-                            color: "#C7C9D8",
-
-                            fontWeight: "bolder",
-
-                            fontSize: {
-                                xs: 16,
-                                sm: 15,
-                                md: 16,
-                                lg: 17,
-                            },
-
-                            lineHeight: {
-                                xs: 1.7,
-                                sm: 1.7,
-                                md: 1.7,
-                            },
-
-                            mb: {
-                                xs: 3,
-                                md: 4,
-                            },
-
-                            wordBreak: "normal",
-                        }}
+                    <motion.div
+                        variants={bottomToTop}
                     >
-                        I'm Mohamed Raashith, a passionate Frontend Developer who loves turning creative ideas into clean, modern, and engaging digital experiences. I enjoy building responsive web applications that not only look visually appealing but also feel smooth, intuitive, and easy to use across every device. With hands-on experience in HTML, CSS, JavaScript, React.js, and Material UI, I focus on creating interfaces that combine thoughtful design with well-structured code. I’m constantly exploring new technologies, improving my skills, and challenging myself through real-world projects, with the goal of growing into a skilled developer and creating web experiences that leave a lasting impression.
-                    </Typography>
+
+                        <Typography
+                            sx={{
+                                width: "100%",
+
+                                maxWidth: "620px",
+
+                                color: "#C7C9D8",
+
+                                fontWeight: "bolder",
+
+                                fontSize: {
+                                    xs: 16,
+                                    sm: 15,
+                                    md: 16,
+                                    lg: 17,
+                                },
+
+                                lineHeight: {
+                                    xs: 1.7,
+                                    sm: 1.7,
+                                    md: 1.7,
+                                },
+
+                                mb: {
+                                    xs: 3,
+                                    md: 4,
+                                },
+
+                                wordBreak: "normal",
+                            }}
+                        >
+                            I'm Mohamed Raashith, a passionate Frontend Developer who loves turning creative ideas into clean, modern, and engaging digital experiences. I enjoy building responsive web applications that not only look visually appealing but also feel smooth, intuitive, and easy to use across every device. With hands-on experience in HTML, CSS, JavaScript, React.js, and Material UI, I focus on creating interfaces that combine thoughtful design with well-structured code. I’m constantly exploring new technologies, improving my skills, and challenging myself through real-world projects, with the goal of growing into a skilled developer and creating web experiences that leave a lasting impression.
+                        </Typography>
+
+                    </motion.div>
 
 
                     {/* =================================================
                                 STATS
                     ================================================= */}
 
-                    <Box
-                        sx={{
-                            display: "grid",
+                    <motion.div
+                        variants={staggerContainer}
 
-                            gridTemplateColumns: {
-                                xs: "1fr",
-                                sm: "repeat(3, minmax(0, 1fr))",
-                            },
-
-                            gap: {
-                                xs: 1.5,
-                                sm: 2,
-                                md: 2.5,
-                            },
-
+                        style={{
                             width: "100%",
                         }}
                     >
 
-                        {stats.map((stat) => (
+                        <Box
+                            sx={{
+                                display: "grid",
 
-                            <Box
-                                key={stat.title}
+                                gridTemplateColumns: {
+                                    xs: "1fr",
+                                    sm: "repeat(3, minmax(0, 1fr))",
+                                },
 
-                                sx={{
-                                    minHeight: {
-                                        xs: 105,
-                                        sm: 120,
-                                    },
+                                gap: {
+                                    xs: 1.5,
+                                    sm: 2,
+                                    md: 2.5,
+                                },
 
-                                    p: {
-                                        xs: 1.5,
-                                        sm: 2,
-                                    },
+                                width: "100%",
+                            }}
+                        >
 
-                                    borderRadius: "18px",
+                            {stats.map((stat) => (
 
-                                    border:
-                                        "1px solid rgba(132,77,255,0.45)",
+                                <motion.div
+                                    key={stat.title}
 
-                                    background:
-                                        "rgba(8,12,42,0.65)",
-
-                                    display: "flex",
-
-                                    flexDirection:
-                                        "column",
-
-                                    justifyContent:
-                                        "center",
-
-                                    alignItems:
-                                        "center",
-
-                                    textAlign: "center",
-
-                                    transition:
-                                        "0.3s ease",
-
-                                    boxSizing:
-                                        "border-box",
-
-                                    minWidth: 0,
-
-                                    "&:hover": {
-                                        transform:
-                                            "translateY(-5px)",
-
-                                        borderColor:
-                                            "#9D4DFF",
-
-                                        boxShadow:
-                                            "0 0 25px rgba(132,60,255,0.2)",
-                                    },
-                                }}
-                            >
-
-                                <Box
-                                    sx={{
-                                        color: "#A43DFF",
-
-                                        display: "flex",
-                                        mb: 0.5,
-                                    }}
+                                    variants={bottomToTop}
                                 >
-                                    {stat.icon}
-                                </Box>
 
-                                <Typography
-                                    sx={{
-                                        fontSize: {
-                                            xs: 30,
-                                            sm: 28,
-                                            md: 30,
-                                        },
+                                    <Box
+                                        sx={{
+                                            minHeight: {
+                                                xs: 105,
+                                                sm: 120,
+                                            },
 
-                                        fontWeight: 700,
+                                            p: {
+                                                xs: 1.5,
+                                                sm: 2,
+                                            },
 
-                                        lineHeight: 1,
-                                    }}
-                                >
-                                    {stat.number}
-                                </Typography>
+                                            borderRadius: "18px",
 
-                                <Typography
-                                    sx={{
-                                        color: "#AEB2C6",
+                                            border:
+                                                "1px solid rgba(132,77,255,0.45)",
 
-                                        fontWeight: "bolder",
+                                            background:
+                                                "rgba(8,12,42,0.65)",
 
-                                        fontSize: {
-                                            xs: 17,
-                                            sm: 12,
-                                            md: 15,
-                                        },
+                                            display: "flex",
 
-                                        mt: 0.5,
+                                            flexDirection:
+                                                "column",
 
-                                        whiteSpace: "normal",
-                                    }}
-                                >
-                                    {stat.title}
-                                </Typography>
+                                            justifyContent:
+                                                "center",
 
-                            </Box>
+                                            alignItems:
+                                                "center",
 
-                        ))}
+                                            textAlign: "center",
 
-                    </Box>
+                                            transition:
+                                                "0.3s ease",
 
-                </Box>
+                                            boxSizing:
+                                                "border-box",
+
+                                            minWidth: 0,
+
+                                            "&:hover": {
+                                                transform:
+                                                    "translateY(-5px)",
+
+                                                borderColor:
+                                                    "#9D4DFF",
+
+                                                boxShadow:
+                                                    "0 0 25px rgba(132,60,255,0.2)",
+                                            },
+                                        }}
+                                    >
+
+                                        <Box
+                                            sx={{
+                                                color: "#A43DFF",
+
+                                                display: "flex",
+
+                                                mb: 0.5,
+                                            }}
+                                        >
+                                            {stat.icon}
+                                        </Box>
+
+
+                                        <Typography
+                                            sx={{
+                                                fontSize: {
+                                                    xs: 30,
+                                                    sm: 28,
+                                                    md: 30,
+                                                },
+
+                                                fontWeight: 700,
+
+                                                lineHeight: 1,
+                                            }}
+                                        >
+                                            {stat.number}
+                                        </Typography>
+
+
+                                        <Typography
+                                            sx={{
+                                                color: "#AEB2C6",
+
+                                                fontWeight: "bolder",
+
+                                                fontSize: {
+                                                    xs: 17,
+                                                    sm: 12,
+                                                    md: 15,
+                                                },
+
+                                                mt: 0.5,
+
+                                                whiteSpace:
+                                                    "normal",
+                                            }}
+                                        >
+                                            {stat.title}
+                                        </Typography>
+
+                                    </Box>
+
+                                </motion.div>
+
+                            ))}
+
+                        </Box>
+
+                    </motion.div>
+
+                </motion.div>
 
             </Box>
 
@@ -613,325 +727,78 @@ function About() {
                         JOURNEY + SKILLS
             ===================================================== */}
 
-            <Box
-                sx={{
-                    width: "100%",
+            <motion.div
+                initial="hidden"
 
-                    maxWidth: "1200px",
+                whileInView="visible"
 
-                    mx: "auto",
-
-                    mt: {
-                        xs: 5,
-                        sm: 6,
-                        md: 8,
-                    },
-
-                    p: {
-                        xs: 1.5,
-                        sm: 3,
-                        md: 4,
-                    },
-
-                    borderRadius: {
-                        xs: "18px",
-                        md: "24px",
-                    },
-
-                    border:
-                        "1px solid rgba(104,77,190,0.35)",
-
-                    background:
-                        "rgba(5,8,30,0.55)",
-
-                    display: "grid",
-
-                    gridTemplateColumns: {
-                        xs: "1fr",
-                        md: "1fr 1fr",
-                    },
-
-                    gap: {
-                        xs: 4,
-                        md: 6,
-                    },
-
-                    boxSizing: "border-box",
-
-                    minWidth: 0,
+                viewport={{
+                    once: true,
+                    amount: 0.15,
                 }}
+
+                variants={staggerContainer}
             >
 
-                {/* =================================================
-                            JOURNEY
-                ================================================= */}
-
                 <Box
                     sx={{
-                        minWidth: 0,
-                    }}
-                >
+                        width: "100%",
 
-                    <Box
-                        sx={{
-                            display: "flex",
+                        maxWidth: "1200px",
 
-                            alignItems: "center",
+                        mx: "auto",
 
-                            gap: 1.5,
+                        mt: {
+                            xs: 5,
+                            sm: 6,
+                            md: 8,
+                        },
 
-                            mb: 2,
-                        }}
-                    >
-
-                        <Box
-                            sx={{
-                                width: 25,
-
-                                height: 3,
-
-                                flexShrink: 0,
-
-                                background:
-                                    "linear-gradient(90deg, #B52CFF, #5B73FF)",
-                            }}
-                        />
-
-                        <Typography
-                            sx={{
-                                fontSize: {
-                                    xs: 25,
-                                    sm: 22,
-                                    md: 26,
-                                },
-
-                                fontWeight: 700,
-                            }}
-                        >
-                            My Journey
-                        </Typography>
-
-                    </Box>
-
-
-                    <Typography
-                        sx={{
-                            color: "#BFC2D1",
-
-                            fontSize: {
-                                xs: 16,
-                                sm: 15,
-                                md: 16,
-                            },
-                            fontWeight: 700,
-                            lineHeight: 1.7,
-
-                            mb: 2,
-                        }}
-                    >
-                        My journey into web development started with a simple curiosity to understand how websites are built and how ideas can be transformed into something people can actually use. As I explored different technologies, I discovered my passion for Frontend Development and fell in love with creating modern, responsive, and interactive user interfaces. Along the way, I’ve worked on various real-world projects using HTML, CSS, JavaScript, React.js, and modern UI tools, continuously learning from every project and challenge.
-                    </Typography>
-
-
-                    <Typography
-                        sx={{
-                            color: "#BFC2D1",
-
-                            fontSize: {
-                                xs: 16,
-                                sm: 15,
-                                md: 16,
-                            },
-                            fontWeight: 700,
-                            lineHeight: 1.7,
-
-                            mb: 3,
-                        }}
-                    >
-                        Today, I’m focused on sharpening my skills, exploring new technologies, building meaningful projects, and taking the next step toward becoming a professional Frontend Developer.
-                    </Typography>
-
-
-                    {/* ================= RESUME BUTTON ================= */}
-
-                    <Box
-                        component="a"
-
-                        href="/itsMyResume.pdf"
-
-                        download="Mohamed-Raashith-Resume.pdf"
-
-                        sx={{
-                            textDecoration: "none",
-
-                            display: "inline-block",
-
-                            maxWidth: "100%",
-                        }}
-                    >
-
-                        <Box
-                            component="button"
-
-                            sx={{
-                                display: "inline-flex",
-
-                                alignItems: "center",
-
-                                justifyContent:
-                                    "center",
-
-                                gap: 1,
-
-                                width: {
-                                    xs: "100%",
-                                    sm: "auto",
-                                },
-
-                                minWidth: {
-                                    sm: "170px",
-                                },
-
-                                height: {
-                                    xs: "50px",
-                                    sm: "48px",
-                                },
-
-                                px: {
-                                    xs: 2,
-                                    sm: 2.5,
-                                },
-
-                                border: "none",
-
-                                borderRadius: "10px",
-
-                                color: "#fff",
-
-                                fontFamily:
-                                    "inherit",
-
-                                fontSize: {
-                                    xs: 18,
-                                    sm: 13,
-                                    md: 16,
-                                },
-
-                                fontWeight: 600,
-
-                                cursor: "pointer",
-
-                                background:
-                                    "linear-gradient(90deg, #A72CFF, #347DFF)",
-
-                                transition:
-                                    "0.3s ease",
-
-                                "&:hover": {
-                                    background:
-                                        "linear-gradient(90deg, #9320EA, #286EF0)",
-
-                                    transform:
-                                        "translateY(-2px)",
-                                },
-                            }}
-                        >
-
-                            <DownloadIcon
-                                sx={{
-                                    fontSize: {
-                                        xs: 23,
-                                        sm: 21,
-                                    },
-                                }}
-                            />
-
-                            Download Resume
-
-                        </Box>
-
-                    </Box>
-
-                </Box>
-
-
-                {/* =================================================
-                            SKILLS
-                ================================================= */}
-
-                <Box
-                    sx={{
                         p: {
                             xs: 1.5,
                             sm: 3,
+                            md: 4,
                         },
 
-                        borderRadius: "18px",
+                        borderRadius: {
+                            xs: "18px",
+                            md: "24px",
+                        },
 
                         border:
-                            "1px solid rgba(105,79,200,0.3)",
+                            "1px solid rgba(104,77,190,0.35)",
 
                         background:
-                            "rgba(15,18,52,0.65)",
+                            "rgba(5,8,30,0.55)",
 
-                        minWidth: 0,
+                        display: "grid",
+
+                        gridTemplateColumns: {
+                            xs: "1fr",
+                            md: "1fr 1fr",
+                        },
+
+                        gap: {
+                            xs: 4,
+                            md: 6,
+                        },
 
                         boxSizing: "border-box",
+
+                        minWidth: 0,
                     }}
                 >
 
-                    <Box
-                        sx={{
-                            display: "flex",
+                    {/* =================================================
+                                JOURNEY
+                    ================================================= */}
 
-                            alignItems: "center",
-
-                            gap: 1.5,
-
-                            mb: 3,
-                        }}
+                    <motion.div
+                        variants={bottomToTop}
                     >
 
-                        <LayersIcon
-                            sx={{
-                                color: "#A33DFF",
-
-                                fontSize: {
-                                    xs: 37,
-                                    sm: 35,
-                                },
-
-                                flexShrink: 0,
-                            }}
-                        />
-
-                        <Typography
-                            sx={{
-                                fontSize: {
-                                    xs: 25,
-                                    sm: 22,
-                                    md: 22,
-                                },
-
-                                fontWeight: 700,
-                            }}
-                        >
-                            My Skills
-                        </Typography>
-
-                    </Box>
-
-
-                    {skills.map((skill) => (
-
                         <Box
-                            key={skill.name}
-
                             sx={{
-                                mb: 2,
-
-                                width: "100%",
-
                                 minWidth: 0,
                             }}
                         >
@@ -940,110 +807,487 @@ function About() {
                                 sx={{
                                     display: "flex",
 
-                                    justifyContent:
-                                        "space-between",
+                                    alignItems: "center",
 
-                                    alignItems:
-                                        "center",
+                                    gap: 1.5,
 
-                                    gap: 1,
-
-                                    mb: 0.7,
-
-                                    minWidth: 0,
+                                    mb: 2,
                                 }}
                             >
 
+                                <Box
+                                    sx={{
+                                        width: 25,
+
+                                        height: 3,
+
+                                        flexShrink: 0,
+
+                                        background:
+                                            "linear-gradient(90deg, #B52CFF, #5B73FF)",
+                                    }}
+                                />
+
                                 <Typography
                                     sx={{
-                                        color: "#D8D9E3",
-                                        fontWeight: 700,
                                         fontSize: {
-                                            xs: 18,
-                                            sm: 14,
-                                            md: 16,
+                                            xs: 25,
+                                            sm: 22,
+                                            md: 26,
                                         },
 
-                                        minWidth: 0,
-
-                                        overflow: "hidden",
-
-                                        textOverflow:
-                                            "ellipsis",
-
-                                        whiteSpace:
-                                            "nowrap",
+                                        fontWeight: 700,
                                     }}
                                 >
-                                    {skill.name}
+                                    My Journey
                                 </Typography>
 
+                            </Box>
 
-                                <Typography
+
+                            <Typography
+                                sx={{
+                                    color: "#BFC2D1",
+
+                                    fontSize: {
+                                        xs: 16,
+                                        sm: 15,
+                                        md: 16,
+                                    },
+
+                                    fontWeight: 700,
+
+                                    lineHeight: 1.7,
+
+                                    mb: 2,
+                                }}
+                            >
+                                My journey into web development started with a simple curiosity to understand how websites are built and how ideas can be transformed into something people can actually use. As I explored different technologies, I discovered my passion for Frontend Development and fell in love with creating modern, responsive, and interactive user interfaces. Along the way, I’ve worked on various real-world projects using HTML, CSS, JavaScript, React.js, and modern UI tools, continuously learning from every project and challenge.
+                            </Typography>
+
+
+                            <Typography
+                                sx={{
+                                    color: "#BFC2D1",
+
+                                    fontSize: {
+                                        xs: 16,
+                                        sm: 15,
+                                        md: 16,
+                                    },
+
+                                    fontWeight: 700,
+
+                                    lineHeight: 1.7,
+
+                                    mb: 3,
+                                }}
+                            >
+                                Today, I’m focused on sharpening my skills, exploring new technologies, building meaningful projects, and taking the next step toward becoming a professional Frontend Developer.
+                            </Typography>
+
+
+                            {/* ================= RESUME ================= */}
+
+                            <Box
+                                component="a"
+
+                                href="/itsMyResume.pdf"
+
+                                download="Mohamed-Raashith-Resume.pdf"
+
+                                sx={{
+                                    textDecoration: "none",
+
+                                    display: "inline-block",
+
+                                    maxWidth: "100%",
+                                }}
+                            >
+
+                                <Box
+                                    component="button"
+
                                     sx={{
-                                        color: "#C7C9D8",
-                                        fontWeight: 700,
+                                        display: "inline-flex",
+
+                                        alignItems: "center",
+
+                                        justifyContent:
+                                            "center",
+
+                                        gap: 1,
+
+                                        width: {
+                                            xs: "100%",
+                                            sm: "auto",
+                                        },
+
+                                        minWidth: {
+                                            sm: "170px",
+                                        },
+
+                                        height: {
+                                            xs: "50px",
+                                            sm: "48px",
+                                        },
+
+                                        px: {
+                                            xs: 2,
+                                            sm: 2.5,
+                                        },
+
+                                        border: "none",
+
+                                        borderRadius: "10px",
+
+                                        color: "#fff",
+
+                                        fontFamily:
+                                            "inherit",
+
                                         fontSize: {
                                             xs: 18,
                                             sm: 13,
                                             md: 16,
                                         },
 
-                                        flexShrink: 0,
+                                        fontWeight: 600,
+
+                                        cursor: "pointer",
+
+                                        background:
+                                            "linear-gradient(90deg, #A72CFF, #347DFF)",
+
+                                        transition:
+                                            "0.3s ease",
+
+                                        "&:hover": {
+                                            background:
+                                                "linear-gradient(90deg, #9320EA, #286EF0)",
+
+                                            transform:
+                                                "translateY(-2px)",
+                                        },
                                     }}
                                 >
-                                    {skill.value}%
+
+                                    <DownloadIcon
+                                        sx={{
+                                            fontSize: {
+                                                xs: 23,
+                                                sm: 21,
+                                            },
+                                        }}
+                                    />
+
+                                    Download Resume
+
+                                </Box>
+
+                            </Box>
+
+                        </Box>
+
+                    </motion.div>
+
+
+                    {/* =================================================
+                                SKILLS
+                    ================================================= */}
+
+                    <motion.div
+                        variants={bottomToTop}
+                    >
+
+                        <Box
+                            sx={{
+                                p: {
+                                    xs: 1.5,
+                                    sm: 3,
+                                },
+
+                                borderRadius: "18px",
+
+                                border:
+                                    "1px solid rgba(105,79,200,0.3)",
+
+                                background:
+                                    "rgba(15,18,52,0.65)",
+
+                                minWidth: 0,
+
+                                boxSizing: "border-box",
+                            }}
+                        >
+
+                            <Box
+                                sx={{
+                                    display: "flex",
+
+                                    alignItems: "center",
+
+                                    gap: 1.5,
+
+                                    mb: 3,
+                                }}
+                            >
+
+                                <LayersIcon
+                                    sx={{
+                                        color: "#A33DFF",
+
+                                        fontSize: {
+                                            xs: 37,
+                                            sm: 35,
+                                        },
+
+                                        flexShrink: 0,
+                                    }}
+                                />
+
+                                <Typography
+                                    sx={{
+                                        fontSize: {
+                                            xs: 25,
+                                            sm: 22,
+                                            md: 22,
+                                        },
+
+                                        fontWeight: 700,
+                                    }}
+                                >
+                                    My Skills
                                 </Typography>
 
                             </Box>
 
 
-                            <LinearProgress
-                                variant="determinate"
+                            {/* =================================================
+                                        SKILL LIST
+                            ================================================= */}
 
-                                value={skill.value}
+                            <motion.div
+                                variants={staggerContainer}
+                            >
 
-                                sx={{
-                                    height: 8,
+                                {skills.map((skill) => (
 
-                                    width: "100%",
+                                    <motion.div
+                                        key={skill.name}
 
-                                    borderRadius: 10,
+                                        variants={bottomToTop}
+                                    >
 
-                                    backgroundColor:
-                                        "rgba(255,255,255,0.1)",
+                                        <Box
+                                            sx={{
+                                                mb: 2,
 
-                                    "& .MuiLinearProgress-bar":
-                                    {
-                                        borderRadius: 10,
+                                                width: "100%",
 
-                                        background:
-                                            "linear-gradient(90deg, #A42CFF, #3B8CFF)",
-                                    },
-                                }}
-                            />
+                                                minWidth: 0,
+                                            }}
+                                        >
+
+                                            <Box
+                                                sx={{
+                                                    display: "flex",
+
+                                                    justifyContent:
+                                                        "space-between",
+
+                                                    alignItems:
+                                                        "center",
+
+                                                    gap: 1,
+
+                                                    mb: 0.7,
+
+                                                    minWidth: 0,
+                                                }}
+                                            >
+
+                                                <Typography
+                                                    sx={{
+                                                        color:
+                                                            "#D8D9E3",
+
+                                                        fontWeight: 700,
+
+                                                        fontSize: {
+                                                            xs: 18,
+                                                            sm: 14,
+                                                            md: 16,
+                                                        },
+
+                                                        minWidth: 0,
+
+                                                        overflow:
+                                                            "hidden",
+
+                                                        textOverflow:
+                                                            "ellipsis",
+
+                                                        whiteSpace:
+                                                            "nowrap",
+                                                    }}
+                                                >
+                                                    {skill.name}
+                                                </Typography>
+
+
+                                                <Typography
+                                                    sx={{
+                                                        color:
+                                                            "#C7C9D8",
+
+                                                        fontWeight: 700,
+
+                                                        fontSize: {
+                                                            xs: 18,
+                                                            sm: 13,
+                                                            md: 16,
+                                                        },
+
+                                                        flexShrink: 0,
+                                                    }}
+                                                >
+                                                    {skill.value}%
+                                                </Typography>
+
+                                            </Box>
+
+
+                                            {/* =============================
+                                                    PROGRESS BAR
+                                            ============================== */}
+
+                                            <Box
+                                                sx={{
+                                                    height: 8,
+
+                                                    width: "100%",
+
+                                                    borderRadius: 10,
+
+                                                    backgroundColor:
+                                                        "rgba(255,255,255,0.1)",
+
+                                                    overflow: "hidden",
+                                                }}
+                                            >
+
+                                                <motion.div
+                                                    initial={{
+                                                        width: 0,
+                                                    }}
+
+                                                    whileInView={{
+                                                        width:
+                                                            `${skill.value}%`,
+                                                    }}
+
+                                                    viewport={{
+                                                        once: true,
+                                                    }}
+
+                                                    transition={{
+                                                        duration: 1,
+
+                                                        ease: "easeOut",
+                                                    }}
+
+                                                    style={{
+                                                        height:
+                                                            "100%",
+
+                                                        borderRadius:
+                                                            "10px",
+
+                                                        background:
+                                                            "linear-gradient(90deg, #A42CFF, #3B8CFF)",
+                                                    }}
+                                                />
+
+                                            </Box>
+
+                                        </Box>
+
+                                    </motion.div>
+
+                                ))}
+
+                            </motion.div>
 
                         </Box>
 
-                    ))}
+                    </motion.div>
 
                 </Box>
 
-            </Box>
+            </motion.div>
 
 
             {/* =====================================================
                             EDUCATION
             ===================================================== */}
 
-            <Education />
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    y: 60,
+                }}
+
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                }}
+
+                viewport={{
+                    once: true,
+                    amount: 0.15,
+                }}
+
+                transition={{
+                    duration: 0.7,
+                    ease: "easeOut",
+                }}
+            >
+
+                <Education />
+
+            </motion.div>
 
 
             {/* =====================================================
                             SKILLS EXPERTISE
             ===================================================== */}
 
-            <SkillsExpertise />
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    y: 60,
+                }}
+
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                }}
+
+                viewport={{
+                    once: true,
+                    amount: 0.15,
+                }}
+
+                transition={{
+                    duration: 0.7,
+                    ease: "easeOut",
+                }}
+            >
+
+                <SkillsExpertise />
+
+            </motion.div>
 
         </Box>
     );
