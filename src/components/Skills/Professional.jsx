@@ -128,7 +128,7 @@ function Professional() {
                 <Typography
                     sx={{
                         fontSize: {
-                            xs: 25,
+                            xs: 24,
                             sm: 27,
                         },
 
@@ -214,7 +214,7 @@ function Professional() {
 
                                     "& svg": {
                                         fontSize: {
-                                            xs: 48,
+                                            xs: 44,
                                             md: 45,
                                         },
                                     },
@@ -231,7 +231,7 @@ function Professional() {
                                     color: "#fff",
 
                                     fontSize: {
-                                        xs: 16,
+                                        xs: 17,
                                         sm: 15,
                                     },
 

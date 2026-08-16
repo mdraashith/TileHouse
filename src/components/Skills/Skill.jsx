@@ -113,7 +113,7 @@ function Skill() {
                         alignItems: "center",
 
                         gap: 1.5,
-                        mt:2,
+                        mt:5,
                         mb: 1.5,
                     }}
                 >
@@ -137,13 +137,13 @@ function Skill() {
                             color: "#E2D4FF",
 
                             fontSize: {
-                                xs: 13,
+                                xs: 18,
                                 sm: 25,
                             },
-
+                            
                             letterSpacing: "4px",
 
-                            fontWeight: 600,
+                            fontWeight: 700,
                         }}
                     >
                         MY SKILLS
@@ -172,7 +172,7 @@ function Skill() {
                     component="h1"
                     sx={{
                         fontSize: {
-                            xs: "40px",
+                            xs: "41px",
                             sm: "50px",
                             md: "64px",
                             lg: "72px",
@@ -215,9 +215,9 @@ function Skill() {
                         color: "#C2C5D5",
 
                         fontSize: {
-                            xs: 16,
+                            xs: 18,
                             sm: 15,
-                            md: 17,
+                            md: 18,
                         },
 
                         lineHeight: 1.6,
@@ -237,7 +237,7 @@ function Skill() {
 
                 <Box
                     sx={{
-                        width: 130,
+                        width:{xs:90,md:130},
 
                         height: 3,
 

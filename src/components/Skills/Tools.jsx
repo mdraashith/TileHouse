@@ -104,7 +104,7 @@ function Tools() {
                 <Typography
                     sx={{
                         fontSize: {
-                            xs: 25,
+                            xs: 24,
                             sm: 27,
                         },
                         fontWeight: 700,
@@ -180,12 +180,12 @@ function Tools() {
                                 alt={tool.name}
                                 sx={{
                                     width: {
-                                        xs: 70,
+                                        xs: 50,
                                         sm: 58,
                                     },
 
                                     height: {
-                                        xs: 70,
+                                        xs: 50,
                                         sm: 58,
                                     },
 
@@ -195,7 +195,7 @@ function Tools() {
                         ) : (
                             <Typography
                                 sx={{
-                                    fontSize: 45,
+                                    fontSize: 40,
                                     color: "#168BFF",
                                     fontWeight: 700,
                                 }}
@@ -209,11 +209,11 @@ function Tools() {
                                 color: "#E3E4EC",
 
                                 fontSize: {
-                                    xs: 18,
+                                    xs: 17,
                                     sm: 13,
                                 },
 
-                                fontWeight: 500,
+                                fontWeight: 600,
                                 textAlign: "center",
                             }}
                         >
