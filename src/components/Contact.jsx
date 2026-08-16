@@ -7,7 +7,7 @@ import {
     Button,
     IconButton,
 } from "@mui/material";
-
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import AccountCircleOutlinedIcon
     from "@mui/icons-material/AccountCircleOutlined";
 
@@ -164,7 +164,6 @@ Thank you.
                         xs: 1,
                         sm: 1.2,
                     },
-
                     py: 1.3,
 
                     borderBottom:
@@ -177,12 +176,12 @@ Thank you.
                 <Box
                     sx={{
                         width: {
-                            xs: 42,
+                            xs: 45,
                             sm: 46,
                         },
 
                         height: {
-                            xs: 42,
+                            xs: 45,
                             sm: 46,
                         },
 
@@ -218,14 +217,14 @@ Thank you.
 
                     target={
                         href &&
-                        href.startsWith("http")
+                            href.startsWith("http")
                             ? "_blank"
                             : undefined
                     }
 
                     rel={
                         href &&
-                        href.startsWith("http")
+                            href.startsWith("http")
                             ? "noopener noreferrer"
                             : undefined
                     }
@@ -244,10 +243,10 @@ Thank you.
                                 : "default",
 
                         "&:hover .contact-value":
-                            {
-                                color:
-                                    "#C35CFF",
-                            },
+                        {
+                            color:
+                                "#C35CFF",
+                        },
                     }}
                 >
 
@@ -258,7 +257,7 @@ Thank you.
                             color: "#fff",
 
                             fontSize: {
-                                xs: 12,
+                                xs: 17,
                                 sm: 13,
                                 md: 14,
                             },
@@ -476,36 +475,36 @@ Thank you.
 
                     sx={{
                         "& .MuiOutlinedInput-root":
-                            {
-                                height: 62,
+                        {
+                            height: 62,
 
-                                color: "#fff",
+                            color: "#fff",
 
-                                borderRadius:
-                                    "12px",
+                            borderRadius:
+                                "12px",
 
-                                background:
-                                    "rgba(8,13,38,0.7)",
+                            background:
+                                "rgba(8,13,38,0.7)",
 
-                                pl: 6,
+                            pl: 6,
 
-                                "& fieldset": {
-                                    borderColor:
-                                        "rgba(100,110,180,0.35)",
-                                },
-
-                                "&:hover fieldset":
-                                    {
-                                        borderColor:
-                                            "#7D4CFF",
-                                    },
-
-                                "&.Mui-focused fieldset":
-                                    {
-                                        borderColor:
-                                            "#8A45FF",
-                                    },
+                            "& fieldset": {
+                                borderColor:
+                                    "rgba(100,110,180,0.35)",
                             },
+
+                            "&:hover fieldset":
+                            {
+                                borderColor:
+                                    "#7D4CFF",
+                            },
+
+                            "&.Mui-focused fieldset":
+                            {
+                                borderColor:
+                                    "#8A45FF",
+                            },
+                        },
 
                         "& input": {
                             color: "#fff",
@@ -517,12 +516,12 @@ Thank you.
                             },
 
                             "&::placeholder":
-                                {
-                                    color:
-                                        "#9DA3B5",
+                            {
+                                color:
+                                    "#9DA3B5",
 
-                                    opacity: 1,
-                                },
+                                opacity: 1,
+                            },
                         },
                     }}
                 />
@@ -612,7 +611,7 @@ Thank you.
                         px: 2,
 
                         py: 0.7,
-                        mt:2,
+                        mt: 5.5,
                         mb: 1.5,
 
                         borderRadius:
@@ -627,7 +626,7 @@ Thank you.
                         color:
                             "#C98AFF",
 
-                        fontSize: 11,
+                        fontSize: 14,
 
                         fontWeight: 600,
 
@@ -638,7 +637,7 @@ Thank you.
 
                     <SendIcon
                         sx={{
-                            fontSize: 13,
+                            fontSize: 15,
                         }}
                     />
 
@@ -652,7 +651,7 @@ Thank you.
                 <Typography
                     sx={{
                         fontSize: {
-                            xs: 34,
+                            xs: 35,
                             sm: 45,
                             md: 55,
                         },
@@ -694,7 +693,7 @@ Thank you.
                     sx={{
                         width: 90,
 
-                        height: 3,
+                        height: 3.5,
 
                         mx: "auto",
 
@@ -720,11 +719,11 @@ Thank you.
                         color: "#B8BDCE",
 
                         fontSize: {
-                            xs: 13,
+                            xs: 15,
                             sm: 14,
-                            md: 16,
+                            md: 17,
                         },
-
+                        fontWeight: 700,
                         lineHeight: 1.7,
                     }}
                 >
@@ -821,15 +820,15 @@ Thank you.
 
                             sx={{
                                 width: {
-                                    xs: 190,
+                                    xs: 250,
                                     sm: 230,
-                                    md: 260,
+                                    md: 280,
                                 },
 
                                 height: {
-                                    xs: 190,
+                                    xs: 250,
                                     sm: 230,
-                                    md: 260,
+                                    md: 280,
                                 },
 
                                 objectFit:
@@ -865,7 +864,7 @@ Thank you.
                                 mt: 1.5,
 
                                 fontSize: {
-                                    xs: 28,
+                                    xs: 30,
                                     sm: 32,
                                     md: 34,
                                 },
@@ -894,11 +893,11 @@ Thank you.
                                     "#D0D3DF",
 
                                 fontSize: {
-                                    xs: 16,
+                                    xs: 17,
                                     sm: 17,
                                     md: 18,
                                 },
-
+                                fontWeight: 700,
                                 mt: 0.3,
                             }}
                         >
@@ -936,7 +935,7 @@ Thank you.
                                 background:
                                     "rgba(30,160,80,0.08)",
 
-                                fontSize: 13,
+                                fontSize: 15,
 
                                 fontWeight: 600,
                             }}
@@ -944,9 +943,9 @@ Thank you.
 
                             <Box
                                 sx={{
-                                    width: 6,
+                                    width: 7,
 
-                                    height: 6,
+                                    height: 7,
 
                                     borderRadius:
                                         "50%",
@@ -980,7 +979,7 @@ Thank you.
                                 "#B94CFF",
 
                             fontSize: {
-                                xs: 17,
+                                xs: 19,
                                 sm: 18,
                             },
 
@@ -997,7 +996,7 @@ Thank you.
                         icon={
                             <EmailOutlinedIcon
                                 sx={{
-                                    fontSize: 25,
+                                    fontSize: 30,
                                 }}
                             />
                         }
@@ -1005,10 +1004,10 @@ Thank you.
                         title="Email"
 
                         value=
-                            "mdraashith653@gmail.com"
+                        "mdraashith653@gmail.com"
 
                         href=
-                            "mailto:mdraashith653@gmail.com"
+                        "mailto:mdraashith653@gmail.com"
                     />
 
 
@@ -1018,7 +1017,7 @@ Thank you.
                         icon={
                             <PhoneOutlinedIcon
                                 sx={{
-                                    fontSize: 25,
+                                    fontSize: 30,
                                 }}
                             />
                         }
@@ -1026,10 +1025,10 @@ Thank you.
                         title="Phone"
 
                         value=
-                            "+91 95972 12376"
+                        "+91 95972 12376"
 
                         href=
-                            "tel:+919597212376"
+                        "tel:+919597212376"
                     />
 
 
@@ -1039,7 +1038,7 @@ Thank you.
                         icon={
                             <LocationOnOutlinedIcon
                                 sx={{
-                                    fontSize: 25,
+                                    fontSize: 30,
                                 }}
                             />
                         }
@@ -1047,10 +1046,10 @@ Thank you.
                         title="Location"
 
                         value=
-                            "Mayiladuthurai, Tamil Nadu"
+                        "Mayiladuthurai, Tamil Nadu"
 
                         href=
-                            "https://www.google.com/maps/search/?api=1&query=Mayiladuthurai,Tamil+Nadu"
+                        "https://www.google.com/maps/search/?api=1&query=Mayiladuthurai,Tamil+Nadu"
                     />
 
 
@@ -1068,7 +1067,7 @@ Thank you.
                                 "#B94CFF",
 
                             fontSize: {
-                                xs: 17,
+                                xs: 19,
                                 sm: 18,
                             },
 
@@ -1099,13 +1098,13 @@ Thank you.
                             icon={
                                 <GitHubIcon
                                     sx={{
-                                        fontSize: 30,
+                                        fontSize: 35,
                                     }}
                                 />
                             }
 
                             href=
-                                "https://github.com/"
+                            "https://github.com/"
                         />
 
 
@@ -1117,13 +1116,13 @@ Thank you.
                             icon={
                                 <LinkedInIcon
                                     sx={{
-                                        fontSize: 30,
+                                        fontSize: 35,
                                     }}
                                 />
                             }
 
                             href=
-                                "https://www.linkedin.com/"
+                            "https://www.linkedin.com/"
                         />
 
 
@@ -1135,13 +1134,13 @@ Thank you.
                             icon={
                                 <InstagramIcon
                                     sx={{
-                                        fontSize: 30,
+                                        fontSize: 35,
                                     }}
                                 />
                             }
 
                             href=
-                                "https://www.instagram.com/"
+                            "https://www.instagram.com/"
                         />
 
 
@@ -1153,13 +1152,13 @@ Thank you.
                             icon={
                                 <WhatsAppIcon
                                     sx={{
-                                        fontSize: 30,
+                                        fontSize: 35,
                                     }}
                                 />
                             }
 
                             href=
-                                "https://wa.me/919597212376"
+                            "https://wa.me/919597212376"
                         />
 
                     </Box>
@@ -1199,7 +1198,7 @@ Thank you.
                     <Typography
                         sx={{
                             fontSize: {
-                                xs: 25,
+                                xs: 20,
                                 sm: 27,
                             },
 
@@ -1227,13 +1226,13 @@ Thank you.
                         icon={
                             <AccountCircleOutlinedIcon
                                 sx={{
-                                    fontSize: 30,
+                                    fontSize: 35,
                                 }}
                             />
                         }
 
                         placeholder=
-                            "Enter your name"
+                        "Enter your name"
 
                         value={name}
 
@@ -1249,13 +1248,13 @@ Thank you.
                         icon={
                             <EmailOutlinedIcon
                                 sx={{
-                                    fontSize: 30,
+                                    fontSize: 35,
                                 }}
                             />
                         }
 
                         placeholder=
-                            "Enter your email"
+                        "Enter your email"
 
                         value={email}
 
@@ -1271,13 +1270,13 @@ Thank you.
                         icon={
                             <LocalOfferOutlinedIcon
                                 sx={{
-                                    fontSize: 30,
+                                    fontSize: 35,
                                 }}
                             />
                         }
 
                         placeholder=
-                            "What is this about?"
+                        "What is this about?"
 
                         value={subject}
 
@@ -1300,34 +1299,17 @@ Thank you.
                         }}
                     >
 
-                        <MessageOutlinedIcon
-                            sx={{
-                                position:
-                                    "absolute",
 
-                                left: 16,
-
-                                top: 20,
-
-                                color:
-                                    "#DADDE9",
-
-                                fontSize: 20,
-
-                                zIndex: 2,
-                            }}
-                        />
 
 
                         <TextField
                             fullWidth
 
                             multiline
-
-                            rows={6}
+                            rows={8}
 
                             placeholder=
-                                "Tell me about your project..."
+                            "Tell me about your project..."
 
                             value={message}
 
@@ -1342,57 +1324,57 @@ Thank you.
 
                             sx={{
                                 "& .MuiOutlinedInput-root":
+                                {
+                                    color:
+                                        "#fff",
+
+                                    borderRadius:
+                                        "12px",
+
+                                    background:
+                                        "rgba(8,13,38,0.7)",
+
+                                    pl: 4,
+
+                                    "& fieldset":
                                     {
-                                        color:
-                                            "#fff",
-
-                                        borderRadius:
-                                            "12px",
-
-                                        background:
-                                            "rgba(8,13,38,0.7)",
-
-                                        pl: 4,
-
-                                        "& fieldset":
-                                            {
-                                                borderColor:
-                                                    "rgba(100,110,180,0.35)",
-                                            },
-
-                                        "&:hover fieldset":
-                                            {
-                                                borderColor:
-                                                    "#7D4CFF",
-                                            },
-
-                                        "&.Mui-focused fieldset":
-                                            {
-                                                borderColor:
-                                                    "#8A45FF",
-                                            },
+                                        borderColor:
+                                            "rgba(100,110,180,0.35)",
                                     },
+
+                                    "&:hover fieldset":
+                                    {
+                                        borderColor:
+                                            "#7D4CFF",
+                                    },
+
+                                    "&.Mui-focused fieldset":
+                                    {
+                                        borderColor:
+                                            "#8A45FF",
+                                    },
+                                },
 
                                 "& textarea":
-                                    {
-                                        color:
-                                            "#fff",
+                                {
+                                    color:
+                                        "#fff",
 
-                                        fontSize:
-                                            {
-                                                xs: 13,
-                                                sm: 14,
-                                                md: 15,
-                                            },
+                                    fontSize:
+                                    {
+                                        xs: 13,
+                                        sm: 14,
+                                        md: 15,
                                     },
+                                },
 
                                 "& textarea::placeholder":
-                                    {
-                                        color:
-                                            "#9DA3B5",
+                                {
+                                    color:
+                                        "#9DA3B5",
 
-                                        opacity: 1,
-                                    },
+                                    opacity: 1,
+                                },
                             }}
                         />
 
@@ -1411,7 +1393,7 @@ Thank you.
                                 color:
                                     "#8D92A6",
 
-                                fontSize: 10,
+                                fontSize: 15,
                             }}
                         >
                             {message.length}/500
@@ -1436,19 +1418,17 @@ Thank you.
                         }
 
                         sx={{
-                            height: 55,
+                            height: 60,
 
-                            borderRadius:
-                                "9px",
+                            borderRadius: "9px",
 
                             color: "#fff",
 
-                            fontSize: 15,
+                            fontSize: 20,
 
                             fontWeight: 600,
 
-                            textTransform:
-                                "none",
+                            textTransform: "none",
 
                             background:
                                 "linear-gradient(100deg,#A92CFF,#287EFF)",
@@ -1456,14 +1436,21 @@ Thank you.
                             boxShadow:
                                 "0 8px 25px rgba(100,40,255,0.25)",
 
-                            "&:hover":
-                                {
-                                    background:
-                                        "linear-gradient(100deg,#B83CFF,#368CFF)",
+                            "& .MuiButton-startIcon": {
+                                marginRight: "10px",
 
-                                    transform:
-                                        "translateY(-2px)",
+                                "& svg": {
+                                    fontSize: "32px",
                                 },
+                            },
+
+                            "&:hover": {
+                                background:
+                                    "linear-gradient(100deg,#B83CFF,#368CFF)",
+
+                                transform:
+                                    "translateY(-2px)",
+                            },
 
                             transition:
                                 "0.3s ease",
@@ -1472,25 +1459,35 @@ Thank you.
                         Send Message
                     </Button>
 
-
                     {/* PRIVACY */}
 
-                    <Typography
+                    <Box
                         sx={{
-                            textAlign:
-                                "center",
-
-                            color:
-                                "#898FA5",
-
-                            fontSize: 10,
-
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            gap: 0.5,
                             mt: 2,
                         }}
                     >
-                        🔒 Your information is safe with me.
-                        I'll never share it.
-                    </Typography>
+                        <LockOutlinedIcon
+                            sx={{
+                                fontSize: 15,
+                                color: "#898FA5",
+                            }}
+                        />
+
+                        <Typography
+                            sx={{
+                                textAlign: "center",
+                                color: "#898FA5",
+                                fontSize: 14,
+                            }}
+                        >
+                            Your information is safe with me.
+                            I'll never share it.
+                        </Typography>
+                    </Box>
 
                 </Box>
 

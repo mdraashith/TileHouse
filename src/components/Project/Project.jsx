@@ -93,7 +93,7 @@ function Project() {
                         px: 2,
 
                         py: 0.6,
-                        mt:2,
+                        mt:5,
                         mb: 1.5,
 
                         borderRadius: "20px",
@@ -299,7 +299,7 @@ function Project() {
                                 xs: 12,
                                 sm: 14,
                             },
-
+                            fontWeight:700,
                             textTransform: "none",
 
                             border:
