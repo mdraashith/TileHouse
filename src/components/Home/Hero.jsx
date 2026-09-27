@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Box,
   Container,
@@ -47,8 +46,6 @@ const stats = [
 ];
 
 const Hero = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       {/* ================= HERO ================= */}
@@ -250,54 +247,6 @@ const Hero = () => {
                 flexWrap: "wrap",
               }}
             >
-              {/* EXPLORE COLLECTIONS */}
-
-              <Button
-                endIcon={<ArrowForward />}
-                onClick={() => navigate("/gallery")}
-                sx={{
-                  background:
-                    "linear-gradient(90deg, #d9a441, #f1cc72)",
-
-                  color: "#111",
-
-                  borderRadius: "30px",
-
-                  px: {
-                    xs: 2.5,
-                    sm: 3,
-                  },
-
-                  py: 1.2,
-
-                  fontSize: {
-                    xs: 11,
-                    sm: 12,
-                  },
-
-                  fontWeight: 600,
-
-                  textTransform: "none",
-
-                  fontFamily: "Poppins, sans-serif",
-
-                  boxShadow:
-                    "0 7px 22px rgba(0,0,0,0.35)",
-
-                  "&:hover": {
-                    background:
-                      "linear-gradient(90deg, #f1cc72, #d9a441)",
-
-                    transform: "translateY(-2px)",
-                  },
-
-                  transition: "all 0.3s ease",
-                }}
-              >
-                Explore Collections
-              </Button>
-
-              {/* VISIT SHOWROOM */}
 
               <Button
                 endIcon={<ArrowForward />}
