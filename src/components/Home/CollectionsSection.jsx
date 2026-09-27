@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
     Box,
     Container,
@@ -71,6 +73,8 @@ const brands = [
 ];
 
 const CollectionsSection = () => {
+    const navigate = useNavigate();
+
     const [brandIndex, setBrandIndex] = React.useState(0);
 
     const nextBrand = () => {
@@ -87,6 +91,7 @@ const CollectionsSection = () => {
         <Box sx={{ background: "#fff" }}>
 
             {/* ================= FEATURED COLLECTIONS ================= */}
+
             <Box
                 sx={{
                     py: { xs: 5, md: 7 },
@@ -108,6 +113,7 @@ const CollectionsSection = () => {
                     >
 
                         {/* LEFT CONTENT */}
+
                         <MotionBox
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -153,9 +159,12 @@ const CollectionsSection = () => {
                                 match every lifestyle.
                             </Typography>
 
+                            {/* VIEW ALL COLLECTIONS */}
+
                             <Button
                                 variant="contained"
                                 endIcon={<ArrowForward />}
+                                onClick={() => navigate("/tiles")}
                                 sx={{
                                     background:
                                         "linear-gradient(135deg, #d7a43b, #b67d19)",
@@ -165,7 +174,8 @@ const CollectionsSection = () => {
                                     px: 3,
                                     py: 1.3,
                                     textTransform: "none",
-                                    boxShadow: "0 8px 20px rgba(180,130,40,.25)",
+                                    boxShadow:
+                                        "0 8px 20px rgba(180,130,40,.25)",
                                     "&:hover": {
                                         background:
                                             "linear-gradient(135deg, #e3b653, #c58c25)",
@@ -179,6 +189,7 @@ const CollectionsSection = () => {
                         </MotionBox>
 
                         {/* COLLECTION CARDS */}
+
                         <Box
                             sx={{
                                 display: "grid",
@@ -205,11 +216,13 @@ const CollectionsSection = () => {
                                             borderRadius: 1.5,
                                             overflow: "hidden",
                                             border: "1px solid #e5e5e5",
-                                            boxShadow: "0 5px 18px rgba(0,0,0,.06)",
+                                            boxShadow:
+                                                "0 5px 18px rgba(0,0,0,.06)",
                                             transition: "0.35s",
                                             "&:hover": {
                                                 transform: "translateY(-6px)",
-                                                boxShadow: "0 15px 30px rgba(0,0,0,.12)",
+                                                boxShadow:
+                                                    "0 15px 30px rgba(0,0,0,.12)",
                                             },
                                         }}
                                     >
@@ -218,7 +231,11 @@ const CollectionsSection = () => {
                                             image={item.image}
                                             alt={item.title}
                                             sx={{
-                                                height: { xs: 125, sm: 145, md: 155 },
+                                                height: {
+                                                    xs: 125,
+                                                    sm: 145,
+                                                    md: 155,
+                                                },
                                                 objectFit: "cover",
                                             }}
                                         />
@@ -235,7 +252,10 @@ const CollectionsSection = () => {
                                             <Box>
                                                 <Typography
                                                     sx={{
-                                                        fontSize: { xs: 12, md: 14 },
+                                                        fontSize: {
+                                                            xs: 12,
+                                                            md: 14,
+                                                        },
                                                         fontWeight: 700,
                                                         color: "#171717",
                                                     }}
@@ -245,7 +265,10 @@ const CollectionsSection = () => {
 
                                                 <Typography
                                                     sx={{
-                                                        fontSize: { xs: 10, md: 11 },
+                                                        fontSize: {
+                                                            xs: 10,
+                                                            md: 11,
+                                                        },
                                                         color: "#888",
                                                         mt: 0.3,
                                                     }}
@@ -263,20 +286,21 @@ const CollectionsSection = () => {
                                                     color: "#b27d20",
                                                 }}
                                             >
-                                                <ArrowForward sx={{ fontSize: 18 }} />
+                                                <ArrowForward
+                                                    sx={{ fontSize: 18 }}
+                                                />
                                             </IconButton>
                                         </Box>
                                     </Card>
                                 </MotionBox>
                             ))}
                         </Box>
-
                     </Box>
                 </Container>
             </Box>
 
-
             {/* ================= 360 SHOWROOM ================= */}
+
             <Box sx={{ background: "#080b0d" }}>
                 <Box
                     sx={{
@@ -290,6 +314,7 @@ const CollectionsSection = () => {
                 >
 
                     {/* LEFT */}
+
                     <MotionBox
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -345,8 +370,11 @@ const CollectionsSection = () => {
                             of collections from the comfort of your home.
                         </Typography>
 
+                        {/* EXPLORE 360° SHOWROOM */}
+
                         <Button
                             endIcon={<ArrowForward />}
+                            onClick={() => navigate("/contact")}
                             sx={{
                                 alignSelf: "flex-start",
                                 background:
@@ -367,8 +395,8 @@ const CollectionsSection = () => {
                         </Button>
                     </MotionBox>
 
-
                     {/* SHOWROOM IMAGE */}
+
                     <Box
                         sx={{
                             position: "relative",
@@ -396,8 +424,8 @@ const CollectionsSection = () => {
                 </Box>
             </Box>
 
-
             {/* ================= BRANDS ================= */}
+
             <Box
                 sx={{
                     py: { xs: 5, md: 6 },
@@ -451,6 +479,7 @@ const CollectionsSection = () => {
                     >
 
                         {/* LEFT ARROW */}
+
                         <IconButton
                             onClick={prevBrand}
                             sx={{
@@ -459,7 +488,8 @@ const CollectionsSection = () => {
                                 flexShrink: 0,
                                 background: "#fff",
                                 border: "1px solid #eee",
-                                boxShadow: "0 4px 12px rgba(0,0,0,.08)",
+                                boxShadow:
+                                    "0 4px 12px rgba(0,0,0,.08)",
                                 "&:hover": {
                                     background: "#d7a43b",
                                 },
@@ -468,8 +498,8 @@ const CollectionsSection = () => {
                             <ChevronLeft />
                         </IconButton>
 
-
                         {/* BRAND CARDS */}
+
                         <Box
                             sx={{
                                 flex: 1,
@@ -487,7 +517,10 @@ const CollectionsSection = () => {
                                 <MotionBox
                                     key={brand.name}
                                     initial={{ opacity: 0, y: 15 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
                                     viewport={{ once: false }}
                                     transition={{
                                         duration: 0.5,
@@ -497,14 +530,17 @@ const CollectionsSection = () => {
                                         display: {
                                             xs:
                                                 index === brandIndex ||
-                                                    index === (brandIndex + 1) % 6
+                                                index ===
+                                                    (brandIndex + 1) % 6
                                                     ? "flex"
                                                     : "none",
+
                                             sm:
                                                 index >= brandIndex &&
-                                                    index < brandIndex + 3
+                                                index < brandIndex + 3
                                                     ? "flex"
                                                     : "none",
+
                                             md: "flex",
                                         },
                                     }}
@@ -512,7 +548,11 @@ const CollectionsSection = () => {
                                     <Box
                                         sx={{
                                             width: "100%",
-                                            height: { xs: 82, sm: 95, md: 105 },
+                                            height: {
+                                                xs: 82,
+                                                sm: 95,
+                                                md: 105,
+                                            },
                                             background: "#fff",
                                             border: "1px solid #e7e7e7",
                                             borderRadius: 1.5,
@@ -522,7 +562,8 @@ const CollectionsSection = () => {
                                             px: 2,
                                             transition: "0.3s",
                                             "&:hover": {
-                                                transform: "translateY(-4px)",
+                                                transform:
+                                                    "translateY(-4px)",
                                                 boxShadow:
                                                     "0 10px 25px rgba(0,0,0,.08)",
                                             },
@@ -551,8 +592,8 @@ const CollectionsSection = () => {
                             ))}
                         </Box>
 
-
                         {/* RIGHT ARROW */}
+
                         <IconButton
                             onClick={nextBrand}
                             sx={{
@@ -561,7 +602,8 @@ const CollectionsSection = () => {
                                 flexShrink: 0,
                                 background: "#fff",
                                 border: "1px solid #eee",
-                                boxShadow: "0 4px 12px rgba(0,0,0,.08)",
+                                boxShadow:
+                                    "0 4px 12px rgba(0,0,0,.08)",
                                 "&:hover": {
                                     background: "#d7a43b",
                                 },
@@ -573,7 +615,6 @@ const CollectionsSection = () => {
                     </Box>
                 </Container>
             </Box>
-
         </Box>
     );
 };
