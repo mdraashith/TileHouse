@@ -378,7 +378,7 @@ const CollectionsSection = () => {
                     >
                         <Box
                             component="video"
-                            src="/img/showroom-video.mp4"
+                            src="/img/showroom.mp4"
                             autoPlay
                             muted
                             loop
