@@ -102,31 +102,6 @@ const About = () => {
               innovation to create spaces you'll love, today
               and for years to come.
             </Typography>
-
-            <Button
-              variant="contained"
-              endIcon={<ArrowForward />}
-              sx={{
-                background:
-                  "linear-gradient(135deg, #e5b653, #b98220)",
-                color: "#111",
-                fontWeight: 700,
-                textTransform: "none",
-                borderRadius: 5,
-                px: 3,
-                py: 1.4,
-                boxShadow:
-                  "0 8px 25px rgba(0,0,0,.3)",
-                "&:hover": {
-                  background:
-                    "linear-gradient(135deg, #f0c666, #ca9130)",
-                  transform: "translateY(-2px)",
-                },
-                transition: ".3s",
-              }}
-            >
-              Discover Our Story
-            </Button>
           </MotionBox>
         </Container>
       </Box>

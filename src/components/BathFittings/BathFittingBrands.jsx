@@ -71,31 +71,6 @@ const BathFittingBrands = () => {
               Trusted Bath Fittings Brands
             </Typography>
           </Box>
-
-          {/* VIEW ALL BRANDS */}
-          <Button
-            component={Link}
-            to="/brands"
-            endIcon={<ArrowForward />}
-            sx={{
-              flexShrink: 0,
-              textTransform: "none",
-              border: "1px solid #C59A62",
-              borderRadius: "30px",
-              px: { xs: 2.5, md: 3 },
-              py: 1.2,
-              color: "#222",
-              fontSize: { xs: 13, md: 14 },
-              fontWeight: 600,
-              background: "transparent",
-              "&:hover": {
-                background: "#C59A62",
-                color: "#fff",
-              },
-            }}
-          >
-            View All Brands
-          </Button>
         </Box>
 
         {/* BRAND TRAIN */}

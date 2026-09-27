@@ -381,38 +381,6 @@ function WhyChoose() {
                 />
               ))}
             </Box>
-
-            {/* BUTTON */}
-
-            <Button
-              endIcon={<ArrowForward />}
-              sx={{
-                textTransform: "none",
-                color: "#111",
-                background:
-                  "linear-gradient(135deg,#f0c96b,#c89535)",
-                borderRadius: 5,
-                px: 2.7,
-                py: 1,
-                fontSize: {
-                  xs: 13,
-                  md: 16,
-                },
-                fontWeight: 700,
-                minWidth: 115,
-                boxShadow:
-                  "0 6px 18px rgba(0,0,0,.35)",
-                "&:hover": {
-                  background:
-                    "linear-gradient(135deg,#f5d47c,#d5a13f)",
-                  transform: "translateY(-2px)",
-                },
-                transition: ".3s",
-              }}
-            >
-              Learn More
-            </Button>
-
           </FadeIn>
 
         </Container>
