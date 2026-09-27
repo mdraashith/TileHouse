@@ -316,11 +316,14 @@ const Footer = () => {
 
               {/* PHONE */}
               <Box
+                component="a"
+                href="tel:+918072006215"
                 sx={{
                   display: "flex",
                   alignItems: "center",
                   gap: 1.3,
                   mb: 1.5,
+                  textDecoration: "none",
                 }}
               >
                 <Phone
@@ -415,8 +418,10 @@ const Footer = () => {
                 </Typography>
               </Box>
 
-              {/* ENQUIRY BUTTON */}
+              {/* ENQUIRY - PHONE DIALER */}
               <Button
+                component="a"
+                href="tel:+918072006215"
                 endIcon={<ArrowForward />}
                 sx={{
                   mt: 2.5,
@@ -437,7 +442,9 @@ const Footer = () => {
                   fontWeight: 600,
                   fontFamily: "Poppins, sans-serif",
                   textTransform: "none",
-                  boxShadow: "0 5px 20px rgba(217,164,65,0.18)",
+                  textDecoration: "none",
+                  boxShadow:
+                    "0 5px 20px rgba(217,164,65,0.18)",
                   transition: "all 0.3s ease",
 
                   "&:hover": {
