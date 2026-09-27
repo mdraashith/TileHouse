@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Container,
@@ -6,7 +7,6 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-
 import {
   ArrowForward,
   WorkspacePremiumOutlined,
@@ -14,522 +14,253 @@ import {
   GroupsOutlined,
   VerifiedOutlined,
 } from "@mui/icons-material";
-
 import { motion } from "framer-motion";
 
 import CategoriesSection from "./CategoriesSection";
 import CollectionsSection from "./CollectionsSection";
 
-const MotionBox = motion(Box);
-
-const stats = [
-  {
-    value: "6+",
-    title: "Leading Brands",
-    icon: <WorkspacePremiumOutlined />,
-  },
-  {
-    value: "1000+",
-    title: "Product Designs",
-    icon: <GridView />,
-  },
-  {
-    value: "5000+",
-    title: "Happy Customers",
-    icon: <GroupsOutlined />,
-  },
-  {
-    value: "10+",
-    title: "Years of Trust",
-    icon: <VerifiedOutlined />,
-  },
-];
-
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      {/* ================= HERO ================= */}
-
+      {/* ================= HERO SECTION ================= */}
       <Box
         sx={{
-          position: "relative",
-          minHeight: {
-            xs: 560,
-            sm: 620,
-            md: 600,
-          },
+          minHeight: { xs: "85vh", md: "90vh" },
           display: "flex",
           alignItems: "center",
-          overflow: "hidden",
-
+          position: "relative",
           backgroundImage: `
             linear-gradient(
               90deg,
-              rgba(0,0,0,0.88) 0%,
-              rgba(0,0,0,0.72) 24%,
-              rgba(0,0,0,0.42) 46%,
-              rgba(0,0,0,0.12) 70%,
-              rgba(0,0,0,0) 100%
+              rgba(0,0,0,0.78) 0%,
+              rgba(0,0,0,0.58) 45%,
+              rgba(0,0,0,0.15) 100%
             ),
             url("/img/homebanners.png")
           `,
-
           backgroundSize: "cover",
-
-          backgroundPosition: {
-            xs: "62% center",
-            sm: "center center",
-            md: "center center",
-          },
-
-          backgroundRepeat: "no-repeat",
-
-          "&::after": {
-            content: '""',
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.12), transparent 45%, rgba(0,0,0,0.25))",
-            pointerEvents: "none",
-          },
+          backgroundPosition: { xs: "65% center", md: "center" },
+          overflow: "hidden",
         }}
       >
-        <Container
-          maxWidth="xl"
-          sx={{
-            position: "relative",
-            zIndex: 2,
-
-            px: {
-              xs: 3,
-              sm: 5,
-              md: 7,
-              lg: 8,
-            },
-          }}
-        >
-          <MotionBox
-            initial={{
-              opacity: 0,
-              x: -50,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 1,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            sx={{
-              width: {
-                xs: "100%",
-                sm: "75%",
-                md: "48%",
-                lg: "43%",
-              },
-
-              pt: {
-                xs: 4,
-                md: 0,
-              },
-            }}
-          >
-            {/* SMALL TITLE */}
-
-            <Typography
-              sx={{
-                color: "#d9a441",
-
-                fontSize: {
-                  xs: 11,
-                  sm: 12,
-                  md: 13,
-                },
-
-                fontWeight: 600,
-
-                letterSpacing: {
-                  xs: 2,
-                  md: 2.5,
-                },
-
-                textTransform: "uppercase",
-
-                mb: 1.5,
-
-                fontFamily: "Poppins, sans-serif",
-
-                textShadow: `
-                  1px 1px 0 rgba(0,0,0,0.9),
-                  0 2px 5px rgba(0,0,0,0.8)
-                `,
-              }}
-            >
-              Premium Tiles & Bathware
-            </Typography>
-
-            {/* MAIN TITLE */}
-
-            <Typography
-              component="h1"
-              sx={{
-                color: "#fff",
-
-                fontFamily:
-                  "Georgia, 'Times New Roman', serif",
-
-                fontWeight: 400,
-
-                fontSize: {
-                  xs: 42,
-                  sm: 52,
-                  md: 64,
-                  lg: 70,
-                },
-
-                lineHeight: 1.02,
-
-                letterSpacing: "-1px",
-
-                mb: 2.5,
-
-                textShadow: `
-                  2px 2px 0 rgba(0,0,0,0.95),
-                  3px 4px 10px rgba(0,0,0,0.9),
-                  0 8px 25px rgba(0,0,0,0.65)
-                `,
-              }}
-            >
-              Spaces
-              <br />
-              That Inspire
-            </Typography>
-
-            {/* DESCRIPTION */}
-
-            <Typography
-              sx={{
-                color: "#fff",
-
-                fontFamily: "Poppins, sans-serif",
-
-                fontSize: {
-                  xs: 12,
-                  sm: 13,
-                  md: 14,
-                },
-
-                lineHeight: 1.7,
-
-                maxWidth: 390,
-
-                mb: 3,
-
-                textShadow: `
-                  1px 1px 0 #000,
-                  2px 2px 6px rgba(0,0,0,0.9),
-                  0 4px 12px rgba(0,0,0,0.75)
-                `,
-              }}
-            >
-              Explore a world of premium tiles, sanitaryware and
-              bath fittings from trusted global brands. Design your
-              dream space with Tile House 360.
-            </Typography>
-
-            {/* BUTTONS */}
-
-            <Box
-              sx={{
-                display: "flex",
-                gap: 1.5,
-                flexWrap: "wrap",
-              }}
-            >
-              <Button
-                endIcon={<ArrowForward />}
-                sx={{
-                  background:
-                    "linear-gradient(90deg, #d9a441, #f1cc72)",
-
-                  color: "#111",
-
-                  borderRadius: "30px",
-
-                  px: {
-                    xs: 2.5,
-                    sm: 3,
-                  },
-
-                  py: 1.2,
-
-                  fontSize: {
-                    xs: 11,
-                    sm: 12,
-                  },
-
-                  fontWeight: 600,
-
-                  textTransform: "none",
-
-                  fontFamily: "Poppins, sans-serif",
-
-                  boxShadow:
-                    "0 7px 22px rgba(0,0,0,0.35)",
-
-                  "&:hover": {
-                    background:
-                      "linear-gradient(90deg, #f1cc72, #d9a441)",
-
-                    transform: "translateY(-2px)",
-                  },
-
-                  transition: "all 0.3s ease",
-                }}
+        <Container maxWidth="xl">
+          <Grid container>
+            <Grid item xs={12} md={8} lg={7}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
               >
-                Explore Collections
-              </Button>
+                <Typography
+                  sx={{
+                    color: "#D9A34A",
+                    fontSize: { xs: "13px", md: "16px" },
+                    fontWeight: 600,
+                    letterSpacing: "4px",
+                    mb: 2,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Premium Tiles & Bathware
+                </Typography>
 
-              <Button
-                endIcon={<ArrowForward />}
-                onClick={() =>
-                  window.open(
-                    "https://share.google/jTjaHUeGx8wyE20sG",
-                    "_blank"
-                  )
-                }
-                sx={{
-                  color: "#fff",
-
-                  border:
-                    "1px solid rgba(255,255,255,0.8)",
-
-                  borderRadius: "30px",
-
-                  px: {
-                    xs: 2.5,
-                    sm: 3,
-                  },
-
-                  py: 1.15,
-
-                  fontSize: {
-                    xs: 11,
-                    sm: 12,
-                  },
-
-                  fontWeight: 500,
-
-                  textTransform: "none",
-
-                  fontFamily: "Poppins, sans-serif",
-
-                  background:
-                    "rgba(0,0,0,0.28)",
-
-                  backdropFilter: "blur(6px)",
-
-                  textShadow:
-                    "1px 1px 3px rgba(0,0,0,0.8)",
-
-                  "&:hover": {
-                    background:
-                      "rgba(255,255,255,0.14)",
-
-                    borderColor: "#d9a441",
-
+                <Typography
+                  sx={{
                     color: "#fff",
-                  },
-                }}
-              >
-                Visit Our Showroom
-              </Button>
-            </Box>
-          </MotionBox>
+                    fontSize: {
+                      xs: "42px",
+                      sm: "52px",
+                      md: "70px",
+                      lg: "82px",
+                    },
+                    lineHeight: 1.05,
+                    fontWeight: 500,
+                    fontFamily: "'Cormorant Garamond', serif",
+                    mb: 3,
+                    textShadow: `
+                      2px 2px 0 #000,
+                      -1px -1px 0 rgba(255,255,255,0.15),
+                      4px 4px 10px rgba(0,0,0,0.8)
+                    `,
+                  }}
+                >
+                  Spaces That
+                  <br />
+                  Inspire
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#fff",
+                    maxWidth: "650px",
+                    fontSize: { xs: "15px", md: "18px" },
+                    lineHeight: 1.8,
+                    mb: 4,
+                    textShadow: `
+                      1px 1px 0 #000,
+                      -1px -1px 0 #fff,
+                      2px 2px 6px rgba(0,0,0,0.8)
+                    `,
+                  }}
+                >
+                  Explore a world of premium tiles, sanitaryware and bath
+                  fittings from trusted global brands. Design your dream
+                  space with Tile House 360.
+                </Typography>
+
+                {/* BUTTONS */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 2,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {/* EXPLORE COLLECTIONS */}
+                  <Button
+                    endIcon={<ArrowForward />}
+                    onClick={() => navigate("/gallery")}
+                    sx={{
+                      background: "#D9A34A",
+                      color: "#fff",
+                      px: { xs: 3, md: 4 },
+                      py: 1.6,
+                      borderRadius: 0,
+                      fontWeight: 600,
+                      letterSpacing: "1px",
+                      "&:hover": {
+                        background: "#b8832f",
+                        transform: "translateY(-3px)",
+                      },
+                      transition: "0.3s",
+                    }}
+                  >
+                    Explore Collections
+                  </Button>
+
+                  {/* VISIT SHOWROOM */}
+                  <Button
+                    onClick={() =>
+                      window.open(
+                        "https://share.google/jTjaHUeGx8wyE20sG",
+                        "_blank"
+                      )
+                    }
+                    sx={{
+                      border: "1px solid rgba(255,255,255,0.8)",
+                      color: "#fff",
+                      px: { xs: 3, md: 4 },
+                      py: 1.6,
+                      borderRadius: 0,
+                      fontWeight: 600,
+                      letterSpacing: "1px",
+                      "&:hover": {
+                        background: "#fff",
+                        color: "#222",
+                      },
+                    }}
+                  >
+                    Visit Our Showroom
+                  </Button>
+                </Box>
+              </motion.div>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
 
       {/* ================= STATS ================= */}
-
       <Box
         sx={{
-          background:
-            "linear-gradient(90deg, #080b0d, #111517, #080b0d)",
-
-          color: "#fff",
+          background: "#171717",
+          py: { xs: 4, md: 5 },
         }}
       >
-        <Container
-          maxWidth="xl"
-          sx={{
-            px: {
-              xs: 2,
-              sm: 4,
-              md: 6,
-            },
-          }}
-        >
-          <Grid
-            container
-            sx={{
-              minHeight: {
-                xs: 110,
-                sm: 115,
-                md: 125,
+        <Container maxWidth="xl">
+          <Grid container spacing={3}>
+            {[
+              {
+                icon: <WorkspacePremiumOutlined />,
+                number: "6+",
+                text: "Leading Brands",
               },
-            }}
-          >
-            {stats.map((stat, index) => (
-              <Grid
-                size={{
-                  xs: 6,
-                  md: 3,
-                }}
-                key={stat.title}
-              >
-                <MotionBox
-                  initial={{
-                    opacity: 0,
-                    y: 20,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: false,
-                    amount: 0.3,
-                  }}
+              {
+                icon: <GridView />,
+                number: "1000+",
+                text: "Product Designs",
+              },
+              {
+                icon: <GroupsOutlined />,
+                number: "5000+",
+                text: "Happy Customers",
+              },
+              {
+                icon: <VerifiedOutlined />,
+                number: "10+",
+                text: "Years of Trust",
+              },
+            ].map((item, index) => (
+              <Grid item xs={6} md={3} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{
-                    duration: 0.7,
+                    duration: 0.5,
                     delay: index * 0.1,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-
-                    gap: {
-                      xs: 1,
-                      sm: 1.5,
-                      md: 2,
-                    },
-
-                    borderRight:
-                      index !== 3
-                        ? {
-                            xs:
-                              index === 1
-                                ? "none"
-                                : "1px solid rgba(255,255,255,0.10)",
-                            md:
-                              "1px solid rgba(255,255,255,0.10)",
-                          }
-                        : "none",
-
-                    borderBottom: {
-                      xs:
-                        index < 2
-                          ? "1px solid rgba(255,255,255,0.10)"
-                          : "none",
-
-                      md: "none",
-                    },
                   }}
                 >
                   <Box
                     sx={{
-                      width: {
-                        xs: 34,
-                        sm: 40,
-                        md: 45,
-                      },
-
-                      height: {
-                        xs: 34,
-                        sm: 40,
-                        md: 45,
-                      },
-
-                      border:
-                        "1px solid #b88a32",
-
-                      borderRadius: "50%",
-
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-
-                      color: "#d9a441",
-
-                      flexShrink: 0,
-
-                      "& svg": {
-                        fontSize: {
-                          xs: 18,
-                          sm: 21,
-                          md: 24,
-                        },
-                      },
+                      textAlign: "center",
+                      color: "#fff",
                     }}
                   >
-                    {stat.icon}
-                  </Box>
+                    <Box
+                      sx={{
+                        color: "#D9A34A",
+                        mb: 1,
+                        "& svg": {
+                          fontSize: { xs: 28, md: 34 },
+                        },
+                      }}
+                    >
+                      {item.icon}
+                    </Box>
 
-                  <Box>
                     <Typography
                       sx={{
+                        fontSize: { xs: 24, md: 32 },
+                        fontWeight: 700,
                         color: "#fff",
-
-                        fontSize: {
-                          xs: 16,
-                          sm: 18,
-                          md: 20,
-                        },
-
-                        fontWeight: 600,
-
-                        lineHeight: 1.1,
-
-                        fontFamily:
-                          "Poppins, sans-serif",
                       }}
                     >
-                      {stat.value}
+                      {item.number}
                     </Typography>
 
                     <Typography
                       sx={{
-                        color:
-                          "rgba(255,255,255,0.62)",
-
-                        fontSize: {
-                          xs: 9,
-                          sm: 10,
-                          md: 11,
-                        },
-
-                        mt: 0.5,
-
-                        fontFamily:
-                          "Poppins, sans-serif",
+                        fontSize: { xs: 12, md: 14 },
+                        color: "rgba(255,255,255,0.7)",
+                        letterSpacing: "1px",
                       }}
                     >
-                      {stat.title}
+                      {item.text}
                     </Typography>
                   </Box>
-                </MotionBox>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
         </Container>
       </Box>
 
+      {/* ================= CATEGORIES ================= */}
       <CategoriesSection />
 
+      {/* ================= COLLECTIONS ================= */}
       <CollectionsSection />
     </>
   );
