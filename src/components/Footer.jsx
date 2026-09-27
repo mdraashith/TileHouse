@@ -10,9 +10,6 @@ import {
 } from "@mui/material";
 
 import {
-  Facebook,
-  Instagram,
-  YouTube,
   WhatsApp,
   Phone,
   Email,
@@ -139,60 +136,35 @@ const Footer = () => {
                 Style, quality and trust – all under one roof.
               </Typography>
 
-              {/* SOCIAL ICONS */}
+              {/* WHATSAPP */}
               <Box
                 sx={{
                   display: "flex",
-                  gap: 1.2,
                   mt: 2.5,
                 }}
               >
-                {[
-                  {
-                    icon: <Facebook />,
-                    link: "#",
-                  },
-                  {
-                    icon: <Instagram />,
-                    link: "#",
-                  },
-                  {
-                    icon: <YouTube />,
-                    link: "#",
-                  },
-                  {
-                    icon: <WhatsApp />,
-                    link: "#",
-                  },
-                ].map((item, index) => (
-                  <IconButton
-                    key={index}
-                    component="a"
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                      width: 40,
-                      height: 40,
-                      border: "1px solid rgba(255,255,255,0.15)",
-                      color: "rgba(255,255,255,0.8)",
-                      transition: "all 0.3s ease",
+                <IconButton
+                  component="a"
+                  href="https://wa.me/918072006215"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    width: 42,
+                    height: 42,
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    color: "rgba(255,255,255,0.8)",
+                    transition: "all 0.3s ease",
 
-                      "&:hover": {
-                        color: "#d9a441",
-                        borderColor: "#d9a441",
-                        transform: "translateY(-4px)",
-                        backgroundColor: "rgba(217,164,65,0.08)",
-                      },
-                    }}
-                  >
-                    {React.cloneElement(item.icon, {
-                      sx: {
-                        fontSize: 21,
-                      },
-                    })}
-                  </IconButton>
-                ))}
+                    "&:hover": {
+                      color: "#25D366",
+                      borderColor: "#25D366",
+                      transform: "translateY(-4px)",
+                      backgroundColor: "rgba(37,211,102,0.08)",
+                    },
+                  }}
+                >
+                  <WhatsApp sx={{ fontSize: 22 }} />
+                </IconButton>
               </Box>
             </MotionBox>
           </Grid>
@@ -398,7 +370,7 @@ const Footer = () => {
                     },
                   }}
                 >
-                tilehouse360@gmail.com.com
+                  tilehouse360@gmail.com.com
                 </Typography>
               </Box>
 
@@ -418,6 +390,10 @@ const Footer = () => {
                 />
 
                 <Typography
+                  component="a"
+                  href="https://share.google/jTjaHUeGx8wyE20sG"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
                     color: "rgba(255,255,255,0.72)",
                     fontSize: {
@@ -426,6 +402,11 @@ const Footer = () => {
                       md: 14,
                     },
                     lineHeight: 1.5,
+                    textDecoration: "none",
+
+                    "&:hover": {
+                      color: "#d9a441",
+                    },
                   }}
                 >
                   Chennai,
