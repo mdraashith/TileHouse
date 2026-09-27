@@ -18,17 +18,18 @@ import {
 } from "@mui/icons-material";
 
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const MotionBox = motion(Box);
 
 const quickLinks = [
-  "Home",
-  "About Us",
-  "Tiles",
-  "Sanitaryware",
-  "Bath Fittings",
-  "Gallery",
-  "Contact",
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+  { name: "Tiles", path: "/tiles" },
+  { name: "Sanitaryware", path: "/sanitaryware" },
+  { name: "Bath Fittings", path: "/bath-fittings" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const brands = [
@@ -41,6 +42,8 @@ const brands = [
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       component="footer"
@@ -53,6 +56,7 @@ const Footer = () => {
       }}
     >
       {/* GOLD TOP LINE */}
+
       <Box
         sx={{
           height: "2px",
@@ -73,6 +77,7 @@ const Footer = () => {
         }}
       >
         {/* MAIN FOOTER */}
+
         <Grid
           container
           spacing={{
@@ -89,6 +94,7 @@ const Footer = () => {
           }}
         >
           {/* COMPANY */}
+
           <Grid size={{ xs: 12, sm: 12, md: 4 }}>
             <MotionBox
               initial={{ opacity: 0, y: 30 }}
@@ -100,6 +106,7 @@ const Footer = () => {
               }}
             >
               {/* LOGO */}
+
               <Box
                 component="img"
                 src="/img/log.png"
@@ -137,6 +144,7 @@ const Footer = () => {
               </Typography>
 
               {/* WHATSAPP */}
+
               <Box
                 sx={{
                   display: "flex",
@@ -170,6 +178,7 @@ const Footer = () => {
           </Grid>
 
           {/* QUICK LINKS */}
+
           <Grid size={{ xs: 6, sm: 6, md: 2.5 }}>
             <MotionBox
               initial={{ opacity: 0, y: 30 }}
@@ -200,8 +209,8 @@ const Footer = () => {
                 {quickLinks.map((item, index) => (
                   <Typography
                     key={index}
-                    component="a"
-                    href="#"
+                    component="button"
+                    onClick={() => navigate(item.path)}
                     sx={{
                       display: "block",
                       width: "fit-content",
@@ -215,6 +224,11 @@ const Footer = () => {
                       mb: 1,
                       fontFamily: "Poppins, sans-serif",
                       transition: "all 0.25s ease",
+                      background: "none",
+                      border: "none",
+                      padding: 0,
+                      cursor: "pointer",
+                      textAlign: "left",
 
                       "&:hover": {
                         color: "#d9a441",
@@ -222,7 +236,7 @@ const Footer = () => {
                       },
                     }}
                   >
-                    {item}
+                    {item.name}
                   </Typography>
                 ))}
               </Box>
@@ -230,6 +244,7 @@ const Footer = () => {
           </Grid>
 
           {/* BRANDS */}
+
           <Grid size={{ xs: 6, sm: 6, md: 2.5 }}>
             <MotionBox
               initial={{ opacity: 0, y: 30 }}
@@ -288,6 +303,7 @@ const Footer = () => {
           </Grid>
 
           {/* CONTACT */}
+
           <Grid size={{ xs: 12, sm: 12, md: 3 }}>
             <MotionBox
               initial={{ opacity: 0, y: 30 }}
@@ -315,6 +331,7 @@ const Footer = () => {
               </Typography>
 
               {/* PHONE */}
+
               <Box
                 component="a"
                 href="tel:+918072006215"
@@ -348,6 +365,7 @@ const Footer = () => {
               </Box>
 
               {/* EMAIL */}
+
               <Box
                 sx={{
                   display: "flex",
@@ -378,6 +396,7 @@ const Footer = () => {
               </Box>
 
               {/* LOCATION */}
+
               <Box
                 sx={{
                   display: "flex",
@@ -419,6 +438,7 @@ const Footer = () => {
               </Box>
 
               {/* ENQUIRY - PHONE DIALER */}
+
               <Button
                 component="a"
                 href="tel:+918072006215"
@@ -463,6 +483,7 @@ const Footer = () => {
         </Grid>
 
         {/* DIVIDER */}
+
         <Divider
           sx={{
             borderColor: "rgba(255,255,255,0.10)",
@@ -470,6 +491,7 @@ const Footer = () => {
         />
 
         {/* BOTTOM FOOTER */}
+
         <Box
           sx={{
             minHeight: {
@@ -491,6 +513,7 @@ const Footer = () => {
           }}
         >
           {/* COPYRIGHT */}
+
           <Typography
             sx={{
               color: "rgba(255,255,255,0.48)",
@@ -510,6 +533,7 @@ const Footer = () => {
           </Typography>
 
           {/* TAGLINE */}
+
           <Typography
             sx={{
               color: "rgba(255,255,255,0.48)",
@@ -523,6 +547,7 @@ const Footer = () => {
             }}
           >
             Design Better Spaces
+
             <Box
               component="span"
               sx={{
@@ -532,6 +557,7 @@ const Footer = () => {
             >
               |
             </Box>
+
             Live Better
           </Typography>
         </Box>
