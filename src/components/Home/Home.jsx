@@ -126,10 +126,10 @@ function Home() {
         const link =
             document.createElement("a");
 
-        link.href = "/raashith.pdf";
+        link.href = "/Md_Raashith_Resume_Updated.pdf";
 
         link.download =
-            "Mohamed-Raashith-Resume.pdf";
+            "MdRaashith-Resume.pdf";
 
         document.body.appendChild(link);
 

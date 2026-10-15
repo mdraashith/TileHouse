@@ -894,7 +894,7 @@ function About() {
 
                                 href="/Md_Raashith_Resume_Updated.pdf"
 
-                                download="Mohamed-Raashith-Resume.pdf"
+                                download="MdRaashith-Resume.pdf"
 
                                 sx={{
                                     textDecoration: "none",
