@@ -192,15 +192,16 @@ function Education() {
 
                             gridTemplateColumns: {
                                 xs: "1fr",
-                                sm: "1fr",
+                                sm: "repeat(2, minmax(0, 1fr))",
                                 md: "repeat(2, minmax(0, 1fr))",
                             },
 
                             gap: {
                                 xs: 3,
-                                sm: 3.5,
-                                md: 8,
+                                sm: 4,
+                                md: 6,
                             },
+                            alignItems: "stretch",
 
                             px: {
                                 xs: 0,
@@ -244,6 +245,112 @@ function Education() {
                     >
 
                         {/* =================================================
+                                    CURRENT DEGREE - M.SC
+                         ================================================= */}
+
+                        <motion.div variants={bottomToTop}>
+                            <Box
+                                sx={{
+                                    position: "relative",
+                                    width: "100%",
+                                    height: "100%",
+                                    boxSizing: "border-box",
+                                    p: { xs: 2, sm: 2.5, md: 3 },
+                                    pt: { xs: 2.5, sm: 2.5, md: 3 },
+                                    borderRadius: "18px",
+                                    border: "1px solid rgba(125,70,255,0.65)",
+                                    background: "rgba(10,13,45,0.82)",
+                                    zIndex: 1,
+                                    transition: "0.3s ease",
+                                    boxSizing: "border-box",
+                                    minWidth: 0,
+                                    "&:hover": {
+                                        borderColor: "#8D4DFF",
+                                        boxShadow: "0 0 25px rgba(110,60,255,0.22)",
+                                    },
+                                }}
+                            >
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        top: "-9px",
+                                        left: { xs: "25px", sm: "25px", md: "50%" },
+                                        transform: { xs: "none", sm: "none", md: "translateX(-50%)" },
+                                        width: 16,
+                                        height: 16,
+                                        borderRadius: "50%",
+                                        background: "linear-gradient(135deg,#B52CFF,#477CFF)",
+                                        border: "3px solid #11143D",
+                                        boxShadow: "0 0 12px rgba(144,60,255,0.8)",
+                                        zIndex: 2,
+                                    }}
+                                />
+
+                                <Typography
+                                    sx={{
+                                        color: "#fff",
+                                        fontSize: { xs: 21, sm: 19, md: 23 },
+                                        fontWeight: 700,
+                                        lineHeight: 1.35,
+                                        mb: 1,
+                                        overflowWrap: "break-word",
+                                    }}
+                                >
+                                    M.Sc.,Data Science and Business Analytics
+                                </Typography>
+
+                                <Typography
+                                    sx={{
+                                        color: "#756CFF",
+                                        fontSize: { xs: 17, sm: 15, md: 18 },
+                                        fontWeight: 600,
+                                        mb: 1,
+                                    }}
+                                >
+                                    2026 - Present
+                                </Typography>
+
+                                <Typography
+                                    sx={{
+                                        color: "#D6D8E5",
+                                        fontSize: { xs: 17, sm: 15, md: 18 },
+                                        fontWeight: 500,
+                                        lineHeight: 1.6,
+                                        mb: 1,
+                                        overflowWrap: "break-word",
+                                    }}
+                                >
+                                    Vels Institute of Science, Technology & Advanced Studies (VISTAS)
+                                </Typography>
+
+                                <Typography
+                                    sx={{
+                                        color: "#D6D8E5",
+                                        fontSize: { xs: 15, sm: 15, md: 17 },
+                                        fontWeight: 500,
+                                        lineHeight: 1.6,
+                                        mb: 1.5,
+                                        overflowWrap: "break-word",
+                                    }}
+                                >
+                                    Pallavaram, Chennai
+                                </Typography>
+
+                                <Typography
+                                    sx={{
+                                        color: "#BFC2D1",
+                                        fontSize: { xs: 15, sm: 14, md: 16 },
+                                        lineHeight: 1.7,
+                                        overflowWrap: "break-word",
+                                    }}
+                                >
+                                    Currently pursuing postgraduate studies in data science, business analytics, data analysis, and related technologies.
+                                </Typography>
+                            </Box>
+                        </motion.div>
+
+
+                        {/* =================================================
                                     B.SC
                         ================================================= */}
 
@@ -256,6 +363,8 @@ function Education() {
                                     position: "relative",
 
                                     width: "100%",
+
+                                    height: "100%",
 
                                     p: {
                                         xs: 2,
@@ -357,7 +466,7 @@ function Education() {
                                             "break-word",
                                     }}
                                 >
-                                    B.Sc., Computer Science
+                                    B.Sc.,Computer Science
                                 </Typography>
 
 
@@ -461,228 +570,333 @@ function Education() {
                             </Box>
 
                         </motion.div>
-
-
-                        {/* =================================================
+                                                        {/* =================================================
                                     HSC
                         ================================================= */}
 
-                        <motion.div
-                            variants={bottomToTop}
-                        >
-
-                            <Box
-                                sx={{
-                                    position: "relative",
-
-                                    width: "100%",
-
-                                    p: {
-                                        xs: 2,
-                                        sm: 2.5,
-                                        md: 3,
-                                    },
-
-                                    pt: {
-                                        xs: 2.5,
-                                        sm: 2.5,
-                                        md: 3,
-                                    },
-
-                                    borderRadius: "18px",
-
-                                    border:
-                                        "1px solid rgba(125,70,255,0.45)",
-
-                                    background:
-                                        "rgba(10,13,45,0.72)",
-
-                                    zIndex: 1,
-
-                                    transition: "0.3s ease",
-
-                                    boxSizing: "border-box",
-
-                                    minWidth: 0,
-
-                                    "&:hover": {
-                                        borderColor:
-                                            "#8D4DFF",
-
-                                        boxShadow:
-                                            "0 0 25px rgba(110,60,255,0.18)",
-                                    },
-                                }}
-                            >
-
-                                {/* ================= DOT ================= */}
-
-                                <Box
-                                    sx={{
-                                        position: "absolute",
-
-                                        top: "-9px",
-
-                                        left: {
-                                            xs: "25px",
-                                            sm: "25px",
-                                            md: "50%",
-                                        },
-
-                                        transform: {
-                                            xs: "none",
-                                            sm: "none",
-                                            md: "translateX(-50%)",
-                                        },
-
-                                        width: 16,
-
-                                        height: 16,
-
-                                        borderRadius: "50%",
-
-                                        background:
-                                            "linear-gradient(135deg,#B52CFF,#477CFF)",
-
-                                        border:
-                                            "3px solid #11143D",
-
-                                        boxShadow:
-                                            "0 0 12px rgba(144,60,255,0.8)",
-
-                                        zIndex: 2,
-                                    }}
-                                />
-
-
-                                {/* ================= TITLE ================= */}
-
-                                <Typography
-                                    sx={{
-                                        color: "#fff",
-
-                                        fontSize: {
-                                            xs: 21,
-                                            sm: 19,
-                                            md: 22,
-                                        },
-
-                                        fontWeight: 700,
-
-                                        lineHeight: 1.35,
-
-                                        mb: 1,
-
-                                        overflowWrap:
-                                            "break-word",
-                                    }}
+                                <motion.div
+                                    variants={bottomToTop}
                                 >
-                                    Higher Secondary Education
-                                </Typography>
+
+                                    <Box
+                                        sx={{
+                                            position: "relative",
+
+                                            width: "100%",
+
+                                            height: "100%",
+
+                                            p: {
+                                                xs: 2,
+                                                sm: 2.5,
+                                                md: 3,
+                                            },
+
+                                            pt: {
+                                                xs: 2.5,
+                                                sm: 2.5,
+                                                md: 3,
+                                            },
+
+                                            borderRadius: "18px",
+
+                                            border:
+                                                "1px solid rgba(125,70,255,0.45)",
+
+                                            background:
+                                                "rgba(10,13,45,0.72)",
+
+                                            zIndex: 1,
+
+                                            transition: "0.3s ease",
+
+                                            boxSizing: "border-box",
+
+                                            minWidth: 0,
+
+                                            "&:hover": {
+                                                borderColor:
+                                                    "#8D4DFF",
+
+                                                boxShadow:
+                                                    "0 0 25px rgba(110,60,255,0.18)",
+                                            },
+                                        }}
+                                    >
+
+                                        {/* ================= DOT ================= */}
+
+                                        <Box
+                                            sx={{
+                                                position: "absolute",
+
+                                                top: "-9px",
+
+                                                left: {
+                                                    xs: "25px",
+                                                    sm: "25px",
+                                                    md: "50%",
+                                                },
+
+                                                transform: {
+                                                    xs: "none",
+                                                    sm: "none",
+                                                    md: "translateX(-50%)",
+                                                },
+
+                                                width: 16,
+
+                                                height: 16,
+
+                                                borderRadius: "50%",
+
+                                                background:
+                                                    "linear-gradient(135deg,#B52CFF,#477CFF)",
+
+                                                border:
+                                                    "3px solid #11143D",
+
+                                                boxShadow:
+                                                    "0 0 12px rgba(144,60,255,0.8)",
+
+                                                zIndex: 2,
+                                            }}
+                                        />
 
 
-                                {/* ================= YEAR ================= */}
+                                        {/* ================= TITLE ================= */}
 
-                                <Typography
-                                    sx={{
-                                        color: "#756CFF",
+                                        <Typography
+                                            sx={{
+                                                color: "#fff",
 
-                                        fontSize: {
-                                            xs: 17,
-                                            sm: 15,
-                                            md: 17,
-                                        },
+                                                fontSize: {
+                                                    xs: 21,
+                                                    sm: 19,
+                                                    md: 22,
+                                                },
 
-                                        fontWeight: 600,
+                                                fontWeight: 700,
 
-                                        mb: 1,
-                                    }}
-                                >
-                                    2021 - 2023
-                                </Typography>
+                                                lineHeight: 1.35,
 
+                                                mb: 1,
 
-                                {/* ================= SCHOOL ================= */}
-
-                                <Typography
-                                    sx={{
-                                        color: "#D6D8E5",
-
-                                        fontSize: {
-                                            xs: 17,
-                                            sm: 15,
-                                            md: 18,
-                                        },
-
-                                        fontWeight: 500,
-
-                                        lineHeight: 1.6,
-
-                                        mb: 1,
-
-                                        overflowWrap:
-                                            "break-word",
-                                    }}
-                                >
-                                    Gurunana Sambanthar
-                                    Mission Matriculation
-                                    Higher Secondary
-                                    School
-                                </Typography>
+                                                overflowWrap:
+                                                    "break-word",
+                                            }}
+                                        >
+                                            Higher Secondary Education
+                                        </Typography>
 
 
-                                {/* ================= LOCATION ================= */}
+                                        {/* ================= YEAR ================= */}
 
-                                <Typography
-                                    sx={{
-                                        color: "#D6D8E5",
+                                        <Typography
+                                            sx={{
+                                                color: "#756CFF",
 
-                                        fontSize: {
-                                            xs: 15,
-                                            sm: 15,
-                                            md: 16,
-                                        },
+                                                fontSize: {
+                                                    xs: 17,
+                                                    sm: 15,
+                                                    md: 17,
+                                                },
 
-                                        fontWeight: 500,
+                                                fontWeight: 600,
 
-                                        lineHeight: 1.6,
-
-                                        mb: 1.5,
-
-                                        overflowWrap:
-                                            "break-word",
-                                    }}
-                                >
-                                    Mayiladuthurai - 609 001
-                                </Typography>
+                                                mb: 1,
+                                            }}
+                                        >
+                                            2021 - 2023
+                                        </Typography>
 
 
-                                {/* ================= DESCRIPTION ================= */}
+                                        {/* ================= SCHOOL ================= */}
 
-                                <Typography
-                                    sx={{
-                                        color: "#BFC2D1",
+                                        <Typography
+                                            sx={{
+                                                color: "#D6D8E5",
 
-                                        fontSize: {
-                                            xs: 15,
-                                            sm: 14,
-                                            md: 15,
-                                        },
+                                                fontSize: {
+                                                    xs: 17,
+                                                    sm: 15,
+                                                    md: 18,
+                                                },
 
-                                        lineHeight: 1.7,
+                                                fontWeight: 500,
 
-                                        overflowWrap:
-                                            "break-word",
-                                    }}
-                                >
-                                    Completed HSC with Computer
-                                    Science stream with excellent
-                                    academic record.
-                                </Typography>
+                                                lineHeight: 1.6,
 
-                            </Box>
+                                                mb: 1,
 
-                        </motion.div>
+                                                overflowWrap:
+                                                    "break-word",
+                                            }}
+                                        >
+                                            Gurunana Sambanthar
+                                            Mission Matriculation
+                                            Higher Secondary
+                                            School
+                                        </Typography>
+
+
+                                        {/* ================= LOCATION ================= */}
+
+                                        <Typography
+                                            sx={{
+                                                color: "#D6D8E5",
+
+                                                fontSize: {
+                                                    xs: 15,
+                                                    sm: 15,
+                                                    md: 16,
+                                                },
+
+                                                fontWeight: 500,
+
+                                                lineHeight: 1.6,
+
+                                                mb: 1.5,
+
+                                                overflowWrap:
+                                                    "break-word",
+                                            }}
+                                        >
+                                            Mayiladuthurai - 609 001
+                                        </Typography>
+
+
+                                        {/* ================= DESCRIPTION ================= */}
+
+                                        <Typography
+                                            sx={{
+                                                color: "#BFC2D1",
+
+                                                fontSize: {
+                                                    xs: 15,
+                                                    sm: 14,
+                                                    md: 15,
+                                                },
+
+                                                lineHeight: 1.7,
+
+                                                overflowWrap:
+                                                    "break-word",
+                                            }}
+                                        >
+                                            Completed HSC with Computer
+                                            Science stream with excellent
+                                            academic record.
+                                        </Typography>
+
+                                    </Box>
+
+                                </motion.div>
+
+                                {/* =================================================
+                                    SSLC / 10TH
+                         ================================================= */}
+
+                                <motion.div variants={bottomToTop}>
+                                    <Box
+                                        sx={{
+                                            position: "relative",
+                                            width: "100%",
+                                            height: "100%",
+                                            p: { xs: 2, sm: 2.5, md: 3 },
+                                            pt: { xs: 2.5, sm: 2.5, md: 3 },
+                                            borderRadius: "18px",
+                                            border: "1px solid rgba(125,70,255,0.45)",
+                                            background: "rgba(10,13,45,0.72)",
+                                            zIndex: 1,
+                                            transition: "0.3s ease",
+                                            boxSizing: "border-box",
+                                            minWidth: 0,
+                                            "&:hover": {
+                                                borderColor: "#8D4DFF",
+                                                boxShadow: "0 0 25px rgba(110,60,255,0.18)",
+                                                transform: "translateY(-4px)",
+                                            },
+                                        }}
+                                    >
+                                        <Box
+                                            sx={{
+                                                position: "absolute",
+                                                top: "-9px",
+                                                left: { xs: "25px", sm: "25px", md: "50%" },
+                                                transform: { xs: "none", sm: "none", md: "translateX(-50%)" },
+                                                width: 16,
+                                                height: 16,
+                                                borderRadius: "50%",
+                                                background: "linear-gradient(135deg,#B52CFF,#477CFF)",
+                                                border: "3px solid #11143D",
+                                                boxShadow: "0 0 12px rgba(144,60,255,0.8)",
+                                                zIndex: 2,
+                                            }}
+                                        />
+
+                                        <Typography
+                                            sx={{
+                                                color: "#fff",
+                                                fontSize: { xs: 21, sm: 19, md: 23 },
+                                                fontWeight: 700,
+                                                lineHeight: 1.35,
+                                                mb: 1,
+                                                overflowWrap: "break-word",
+                                            }}
+                                        >
+                                            SSLC
+                                        </Typography>
+
+                                        <Typography
+                                            sx={{
+                                                color: "#756CFF",
+                                                fontSize: { xs: 17, sm: 15, md: 18 },
+                                                fontWeight: 600,
+                                                mb: 1,
+                                            }}
+                                        >
+                                            2019 - 2020
+                                        </Typography>
+
+                                        <Typography
+                                            sx={{
+                                                color: "#D6D8E5",
+                                                fontSize: { xs: 17, sm: 15, md: 18 },
+                                                fontWeight: 500,
+                                                lineHeight: 1.6,
+                                                mb: 1,
+                                                overflowWrap: "break-word",
+                                            }}
+                                        >
+                                            Gurunana Sambanthar Mission Matriculation Higher Secondary School
+                                        </Typography>
+
+                                        <Typography
+                                            sx={{
+                                                color: "#D6D8E5",
+                                                fontSize: { xs: 15, sm: 15, md: 17 },
+                                                fontWeight: 500,
+                                                lineHeight: 1.6,
+                                                mb: 1.5,
+                                                overflowWrap: "break-word",
+                                            }}
+                                        >
+                                            Mayiladuthurai - 609 001
+                                        </Typography>
+
+                                        <Typography
+                                            sx={{
+                                                color: "#BFC2D1",
+                                                fontSize: { xs: 15, sm: 14, md: 16 },
+                                                lineHeight: 1.7,
+                                                overflowWrap: "break-word",
+                                            }}
+                                        >
+                                            Completed Secondary School Leaving Certificate (SSLC).
+                                        </Typography>
+                                    </Box>
+                                </motion.div>
 
                     </Box>
 
@@ -693,6 +907,5 @@ function Education() {
         </motion.div>
     );
 }
-
 
 export default Education;
