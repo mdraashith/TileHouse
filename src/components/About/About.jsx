@@ -892,9 +892,9 @@ function About() {
                             <Box
                                 component="a"
 
-                                href="/Md_Raashith_Resume_Updated.pdf"
+                                href="/resume.pdf"
 
-                                download="MdRaashith-Resume.pdf"
+                               download="Raashith_Resume.pdf"
 
                                 sx={{
                                     textDecoration: "none",

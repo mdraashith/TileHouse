@@ -122,21 +122,14 @@ function Home() {
     // =====================================================
 
     const downloadResume = () => {
+        const link = document.createElement("a");
 
-        const link =
-            document.createElement("a");
-
-        link.href = "/Md_Raashith_Resume_Updated.pdf";
-
-        link.download =
-            "MdRaashith-Resume.pdf";
+        link.href = "/resume.pdf";
+        link.download = "Raashith_Resume.pdf";
 
         document.body.appendChild(link);
-
         link.click();
-
         document.body.removeChild(link);
-
     };
 
 
@@ -528,7 +521,7 @@ function Home() {
 
                                         key={
                                             roles[
-                                                currentRole
+                                            currentRole
                                             ]
                                         }
 
@@ -565,7 +558,7 @@ function Home() {
                                     >
                                         {
                                             roles[
-                                                currentRole
+                                            currentRole
                                             ]
                                         }
 
