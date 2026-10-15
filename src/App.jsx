@@ -110,9 +110,9 @@ function App() {
                     />
 
                 </Routes>
-
+                <Footer />
             </Suspense>
-            <Footer />
+
 
         </BrowserRouter>
     );
